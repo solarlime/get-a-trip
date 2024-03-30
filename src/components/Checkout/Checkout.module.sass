@@ -1,0 +1,27 @@
+@import 'bulma/sass/utilities/derived-variables.scss'
+
+.specific
+  .specific.selector:after
+    border-color: $dark
+
+  span.more_specific.specific.cards
+    width: auto
+    column-gap: 0.5rem
+    padding-right: var(--bulma-control-padding-horizontal)
+
+  .card_number
+    margin-bottom: -1px
+    border-bottom-right-radius: 0
+    border-bottom-left-radius: 0
+
+  .card_date
+    border-top-left-radius: 0
+
+  .card_cvc
+    border-top-right-radius: 0
+
+  .number_focused
+    z-index: 7
+
+  .specific.icon_focused
+    z-index: 8
