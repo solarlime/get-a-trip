@@ -1,10 +1,13 @@
-const path = require('path');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const HtmlWebPackPlugin = require('html-webpack-plugin');
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+import path, { dirname } from 'path';
+import { CleanWebpackPlugin } from 'clean-webpack-plugin';
+import HtmlWebPackPlugin from'html-webpack-plugin';
+import FaviconsWebpackPlugin from 'favicons-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import { fileURLToPath } from 'url';
 
-module.exports = {
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+export default {
   entry: './src/index.tsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -64,7 +67,7 @@ module.exports = {
       template: './src/index.html',
       filename: './index.html',
     }),
-    new FaviconsWebpackPlugin({ logo: './src/img/favicon.svg', mode: 'webapp', devMode: 'light'}),
+    new FaviconsWebpackPlugin({ logo: './public/favicon.svg', mode: 'webapp', devMode: 'light'}),
     new MiniCssExtractPlugin({
       filename: '[name].css',
       chunkFilename: '[id].css',

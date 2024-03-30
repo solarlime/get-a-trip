@@ -12,6 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/solarlime/get-a-trip.git"
   },
+  "type": "module",
   "author": "solarlime",
   "license": "ISC",
   "bugs": {
