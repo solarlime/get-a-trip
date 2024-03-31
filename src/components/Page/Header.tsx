@@ -52,13 +52,14 @@ const Header = memo(() => {
           <div className={`navbar-menu ${(!collapsed) ? '' : 'is-active'}`}>
             <div className={`navbar-start ml-auto mr-auto is-flex-touch is-flex-wrap-wrap is-justify-content-center ${styles.specific} ${styles.links}`}>
 
-              <Link
+              <HashLink
                 className="navbar-item has-text-white is-size-6"
-                to="/"
+                smooth
+                to="/#search"
                 onClick={() => { if (collapsed) setCollapsed(!collapsed); }}
               >
                 Find your direction
-              </Link>
+              </HashLink>
 
               <HashLink
                 className="navbar-item has-text-white is-size-6"

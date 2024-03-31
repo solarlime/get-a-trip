@@ -1,5 +1,6 @@
 @use "../../../node_modules/bulma/sass/components/navbar"
 @use '../../../node_modules/bulma/sass/grid/columns'
+@use 'bulma/sass/utilities/derived-variables'
 
 $navbar-img-max-height: navbar.$navbar-item-img-max-height
 $navbar-height-new: navbar.$navbar-height + 2rem
@@ -36,13 +37,6 @@ $column-gap: columns.$column-gap
 
     @media (max-width: 768px)
       font-size: 3rem
-
-.my_section:last-of-type
-  .my_hero_body
-    padding-bottom: 3rem
-
-    .my_hero_padding
-      padding-bottom: 1.5rem
 
 .my_section
   scroll-margin: $navbar-height-new
@@ -82,3 +76,30 @@ $column-gap: columns.$column-gap
 
         .my_media_content
           overflow: unset
+
+.my_section:last-of-type, .my_section_coloured
+  .my_hero_body
+    padding-bottom: 3rem
+
+    .my_hero_padding
+      padding-bottom: 1.5rem
+
+.my_search_container
+  padding: 1.5rem 3rem
+  border-radius: 20px
+
+  .specific.selector:after
+    border-color: black
+
+.my_search_container > div
+
+  button
+    min-width: 72px
+
+  @media screen and (max-width: 768px)
+    flex-direction: column
+
+    button:after
+      content: 'Search'
+      color: white
+      padding-left: 10px

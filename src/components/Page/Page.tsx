@@ -8,6 +8,7 @@ import FeaturedProductCards from './ProductCards/FeaturedProductCards';
 import About from './About';
 import Header from './Header';
 import Footer from './Footer';
+import Search from './Search';
 
 const Page = memo(() => (
   <>
@@ -36,6 +37,7 @@ const Page = memo(() => (
           </div>
         </div>
       </section>
+      <Search />
       <About />
       <FeaturedProductCards />
       <div className="has-text-centered">
