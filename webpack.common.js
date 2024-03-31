@@ -37,7 +37,7 @@ export default {
         ],
       },
       {
-        test: /\.sass$/,
+        test: /\.(sass|scss)$/,
         use: [
           MiniCssExtractPlugin.loader,
           {

@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
+import styles from './Checkout.module.sass';
 import Payment from './Payment/Payment';
 import useStore from '../../store/store';
 
@@ -9,7 +10,7 @@ function Checkout() {
   const reset = useStore((state) => state.reset);
 
   return (
-    <main className="hero is-fullheight">
+    <main className={`hero is-fullheight ${styles.checkout}`}>
       <div className="hero-body">
         <div className="columns container is-max-desktop">
           <section className="column">

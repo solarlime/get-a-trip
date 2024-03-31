@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 
-import Page from './components/Page';
+import Page from './components/Page/Page';
 import Checkout from './components/Checkout/Checkout';
 
 function App() {
