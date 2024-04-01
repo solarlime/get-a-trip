@@ -15,8 +15,8 @@ const FeaturedProductCards = memo(() => (
               <label className="label" htmlFor="where">Where</label>
               <div id="where" className="control">
                 <div className={`select is-fullwidth ${styles.specific} ${styles.selector}`}>
-                  <select>
-                    <option value="">Choose destination</option>
+                  <select defaultValue="idle">
+                    <option value="idle" disabled>Choose destination</option>
                     <option value="turkey">Turkey</option>
                     <option value="brazil">Brazil</option>
                     <option value="portugal">Portugal</option>

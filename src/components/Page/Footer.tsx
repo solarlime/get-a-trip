@@ -27,7 +27,8 @@ const Footer = memo(() => (
       </svg>
       <div className="content">
         <p className="has-text-white has-text-right">
-          © 2024 Getatrip. All&nbsp;rights&nbsp;reserved.
+          {`© ${(new Date()).getFullYear()}`}
+          &nbsp;Getatrip. All&nbsp;rights&nbsp;reserved.
         </p>
       </div>
     </div>
