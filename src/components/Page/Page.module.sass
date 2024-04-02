@@ -6,6 +6,9 @@ $navbar-img-max-height: navbar.$navbar-item-img-max-height
 $navbar-height-new: navbar.$navbar-height + 2rem
 $column-gap: columns.$column-gap
 
+img
+  background-color: #e6f7ef
+
 .specific.logo
   height: 20px
   max-height: $navbar-img-max-height
@@ -62,6 +65,10 @@ $column-gap: columns.$column-gap
     img.my_column
       object-fit: cover
       border-radius:  calc(20px + $column-gap)
+
+    picture img.my_column
+      width: 100%
+      height: 100%
 
     .my_columns
       align-items: stretch

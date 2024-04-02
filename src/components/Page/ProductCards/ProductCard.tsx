@@ -1,18 +1,40 @@
-import { memo } from 'react';
+import { memo, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import styles from '../Page.module.sass';
+import useStore from '../../../store/store';
 
 const ProductCard = memo((props: { date: string, location: string, src: string }) => {
   const { date, location, src } = props;
+  const image = useStore((state) => state.image);
+  const getImage = useStore((state) => state.getImage);
+
+  useEffect(() => {
+    getImage(src);
+  }, []);
+
   return (
     <div className={`card ${styles.specific} ${styles.productCard} has-background-primary`}>
       <div className="card-image">
         <figure className="image is-16by9">
-          <img
-            src={src}
-            alt={location}
-          />
+          {
+            (image[src]) ? (
+              <picture className="column is-5">
+                <source
+                  srcSet={`${image[src].value}&auto=compress&fm=jpg&w=320&crop=entropy&fit=clip 320w,
+                      ${image[src].value}&auto=compress&fm=jpg&w=640&crop=entropy&fit=clip 640w,
+                      ${image[src].value}&auto=compress&fm=jpg&w=960&crop=entropy&fit=clip 960w,
+                      ${image[src].value}&auto=compress&fm=jpg&w=1280&crop=entropy&fit=clip 1280w,
+                      ${image[src].value}&auto=compress&fm=jpg&w=1920&crop=entropy&fit=clip 1920w`}
+                  sizes="(max-width: 320px) 320px, (max-width: 768px) 640px, 320px"
+                  type="image/jpeg"
+                />
+                <img src={image[src].value} alt={location} />
+              </picture>
+            ) : (
+              <img src={image.placeholder.value} alt={location} />
+            )
+          }
         </figure>
       </div>
       <div className="card-content has-text-white">

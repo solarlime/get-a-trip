@@ -2,16 +2,13 @@ import { memo } from 'react';
 import { v4 as id } from 'uuid';
 
 import styles from '../Page.module.sass';
-import turkeyKas from '../../../img/denis-volkov-t8PJ2CibOvw-unsplash.jpg';
-import brazilFlorianapolis from '../../../img/agustin-diaz-gargiulo-7F65HDP0-E0-unsplash.jpg';
-import portugalMadeira from '../../../img/tim-roosjen-4DXo5wrZaus-unsplash.jpg';
 import ProductCard from './ProductCard';
 
 const FeaturedProductCards = memo(() => {
   const directions = [
-    { date: 'Dec 01 - Dec 30', location: 'Turkey, Kas', src: turkeyKas },
-    { date: 'Dec 10 - Jan 10', location: 'Brazil, Florianapolis', src: brazilFlorianapolis },
-    { date: 'Dec 01 - Dec 25', location: 'Portugal, Madeira', src: portugalMadeira },
+    { date: 'Dec 01 - Dec 30', location: 'Turkey, Kas', src: 't8PJ2CibOvw' },
+    { date: 'Dec 10 - Jan 10', location: 'Brazil, Florianapolis', src: '7F65HDP0-E0' },
+    { date: 'Dec 01 - Dec 25', location: 'Portugal, Madeira', src: '4DXo5wrZaus' },
   ];
 
   return (

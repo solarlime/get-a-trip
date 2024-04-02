@@ -33,3 +33,11 @@ export interface PaymentActions {
   setCardDateState: (newState: CardDate) => void,
   reset: () => void,
 }
+
+export interface TourState {
+  image: { [key: string]: Base },
+}
+
+export interface TourActions {
+  getImage: (id: string) => Promise<void>,
+}

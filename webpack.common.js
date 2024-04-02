@@ -1,5 +1,6 @@
 import path, { dirname } from 'path';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
+import Dotenv from 'dotenv-webpack';
 import HtmlWebPackPlugin from'html-webpack-plugin';
 import FaviconsWebpackPlugin from 'favicons-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
@@ -52,8 +53,8 @@ export default {
         ],
       },
       {
-        test: /\.svg$/,
-        use: ['@svgr/webpack'],
+        test: /\.svg$/i,
+        type: 'asset/resource',
       },
       {
         test: /\.(png|jpg|gif|ico)$/i,
@@ -63,6 +64,7 @@ export default {
   },
   plugins: [
     new CleanWebpackPlugin(),
+    new Dotenv({ prefix: 'import.meta.env.' }),
     new HtmlWebPackPlugin({
       template: './src/index.html',
       filename: './index.html',

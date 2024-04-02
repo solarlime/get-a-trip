@@ -4390,6 +4390,33 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dotenv-defaults@npm:^2.0.2":
+  version: 2.0.2
+  resolution: "dotenv-defaults@npm:2.0.2"
+  dependencies:
+    dotenv: ^8.2.0
+  checksum: c005960bd048e2189c4799e729c41f362e415e6e0b54313d3f31e853a84b049bf770b25cb21c112c2805bb13a8376edc9de451fb514abf8546392d327c27f6e5
+  languageName: node
+  linkType: hard
+
+"dotenv-webpack@npm:^8.1.0":
+  version: 8.1.0
+  resolution: "dotenv-webpack@npm:8.1.0"
+  dependencies:
+    dotenv-defaults: ^2.0.2
+  peerDependencies:
+    webpack: ^4 || ^5
+  checksum: 9bb53318941b9ea39da7caf4dddd473f0e6bd3b97679fb4b853324e38841d848f8428af784e76d8efeb659f325b9cbcf420422458d635ca6fe72b9057c7c1abe
+  languageName: node
+  linkType: hard
+
+"dotenv@npm:^8.2.0":
+  version: 8.6.0
+  resolution: "dotenv@npm:8.6.0"
+  checksum: 38e902c80b0666ab59e9310a3d24ed237029a7ce34d976796349765ac96b8d769f6df19090f1f471b77a25ca391971efde8a1ea63bb83111bd8bec8e5cc9b2cd
+  languageName: node
+  linkType: hard
+
 "eastasianwidth@npm:^0.2.0":
   version: 0.2.0
   resolution: "eastasianwidth@npm:0.2.0"
@@ -5393,6 +5420,7 @@ __metadata:
     core-js: ^3.36.1
     css-loader: ^6.10.0
     css-minimizer-webpack-plugin: ^6.0.0
+    dotenv-webpack: ^8.1.0
     eslint: ^8.57.0
     eslint-config-airbnb: ^19.0.4
     eslint-config-airbnb-typescript: ^18.0.0
@@ -5415,6 +5443,7 @@ __metadata:
     terser-webpack-plugin: ^5.3.10
     ts-loader: ^9.5.1
     typescript: ^5.4.3
+    unsplash-js: ^7.0.19
     uuid: ^9.0.1
     validator: ^13.11.0
     webpack: ^5.91.0
@@ -9514,6 +9543,13 @@ __metadata:
   version: 1.0.0
   resolution: "unpipe@npm:1.0.0"
   checksum: 4fa18d8d8d977c55cb09715385c203197105e10a6d220087ec819f50cb68870f02942244f1017565484237f1f8c5d3cd413631b1ae104d3096f24fdfde1b4aa2
+  languageName: node
+  linkType: hard
+
+"unsplash-js@npm:^7.0.19":
+  version: 7.0.19
+  resolution: "unsplash-js@npm:7.0.19"
+  checksum: 9284a65ab393108a355cd372b33d5384166dabbe4cb1aa730983ebebe85ebe76025fefedb073fa24689e65828a4f28c347cf0735c9b51570deeb41f0aa530270
   languageName: node
   linkType: hard
 

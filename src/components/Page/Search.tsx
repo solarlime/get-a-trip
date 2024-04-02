@@ -4,7 +4,7 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './Page.module.sass';
 
-const FeaturedProductCards = memo(() => (
+const Search = memo(() => (
   <section id="search" className={`hero is-primary ${styles.my_section} ${styles.my_section_coloured}`}>
     <div className={`hero-body pl-3 pr-3 ${styles.my_hero_body}`}>
       <div className={`container ${styles.my_hero_padding} is-max-widescreen`}>
@@ -55,4 +55,4 @@ const FeaturedProductCards = memo(() => (
   </section>
 ));
 
-export default FeaturedProductCards;
+export default Search;
