@@ -1,10 +1,11 @@
 import { memo, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 
 import styles from './Page.module.sass';
 
 const Header = memo(() => {
+  const location = useLocation();
   const [collapsed, setCollapsed] = useState(false);
 
   return (
@@ -55,7 +56,7 @@ const Header = memo(() => {
               <HashLink
                 className="navbar-item has-text-white is-size-6"
                 smooth
-                to="/#search"
+                to={(location.pathname.includes('directions')) ? '/directions#search' : '/#search'}
                 onClick={() => { if (collapsed) setCollapsed(!collapsed); }}
               >
                 Find your direction

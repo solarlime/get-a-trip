@@ -1,10 +1,8 @@
-type StatusMini = 'idle' | 'success';
-type Status = StatusMini | 'fail';
+import type { Status, StatusMini, Base } from './base';
 
 export const providers = ['visa', 'mastercard', 'amex', 'jcb'] as const;
 type Providers = typeof providers[number];
 
-interface Base { value: string }
 interface CardholderName extends Base { status: StatusMini }
 interface Email extends Base { status: Status }
 interface CardCvc extends Base { status: Status }
@@ -32,12 +30,4 @@ export interface PaymentActions {
   setCardCvcState: (newState: CardCvc) => void,
   setCardDateState: (newState: CardDate) => void,
   reset: () => void,
-}
-
-export interface TourState {
-  image: { [key: string]: Base },
-}
-
-export interface TourActions {
-  getImage: (id: string) => Promise<void>,
 }

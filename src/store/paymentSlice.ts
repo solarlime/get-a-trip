@@ -1,6 +1,6 @@
 import { StateCreator } from 'zustand';
 
-import type { PaymentState, PaymentActions } from './types';
+import type { PaymentState, PaymentActions } from './types/payment';
 
 const initialState: PaymentState = {
   countries: ['Loading...'],

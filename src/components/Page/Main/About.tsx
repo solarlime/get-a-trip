@@ -1,8 +1,8 @@
 /* eslint-disable max-len */
 import { memo, useEffect } from 'react';
 
-import styles from './Page.module.sass';
-import useStore from '../../store/store';
+import styles from '../Page.module.sass';
+import useStore from '../../../store/store';
 
 const About = memo(() => {
   const image = useStore((state) => state.image);
@@ -29,28 +29,28 @@ const About = memo(() => {
             </div>
             <div className="column" />
             {
-                (image[imageId]) ? (
-                  <picture className="column is-5">
-                    <source
-                      srcSet={`${image[imageId].value}&auto=compress&fm=jpg&w=320&crop=entropy&fit=clip 320w,
+              (image[imageId]) ? (
+                <picture className="column is-5">
+                  <source
+                    srcSet={`${image[imageId].value}&auto=compress&fm=jpg&w=320&crop=entropy&fit=clip 320w,
                       ${image[imageId].value}&auto=compress&fm=jpg&w=640&crop=entropy&fit=clip 640w,
                       ${image[imageId].value}&auto=compress&fm=jpg&w=960&crop=entropy&fit=clip 960w,
                       ${image[imageId].value}&auto=compress&fm=jpg&w=1280&crop=entropy&fit=clip 1280w,
                       ${image[imageId].value}&auto=compress&fm=jpg&w=1920&crop=entropy&fit=clip 1920w,
                       ${image[imageId].value}&auto=compress&fm=jpg&w=2560&crop=entropy&fit=clip 2560w`}
-                      sizes="(max-width: 320px) 320px, (max-width: 768px) 640px, (max-width: 1300px) 500px, 1280px"
-                      type="image/jpeg"
-                    />
-                    <img
-                      className={`${styles.my_column}`}
-                      src={image[imageId].value}
-                      alt="people are sitting next to the fire"
-                    />
-                  </picture>
-                ) : (
-                  <img className={`column is-5 ${styles.my_column}`} src={image.placeholder.value} alt="people are sitting next to the fire" />
-                )
-              }
+                    sizes="(max-width: 320px) 320px, (max-width: 768px) 640px, (max-width: 1300px) 500px, 1280px"
+                    type="image/jpeg"
+                  />
+                  <img
+                    className={`${styles.my_column}`}
+                    src={image[imageId].value}
+                    alt="people are sitting next to the fire"
+                  />
+                </picture>
+              ) : (
+                <img className={`column is-5 ${styles.my_column}`} src={image.placeholder.value} alt="people are sitting next to the fire" />
+              )
+            }
           </div>
         </div>
       </div>

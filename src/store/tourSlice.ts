@@ -1,7 +1,7 @@
 import { StateCreator } from 'zustand';
 import { createApi } from 'unsplash-js';
 
-import type { TourState, TourActions } from './types';
+import type { TourState, TourActions } from './types/tour';
 
 // @ts-ignore
 const unsplash = createApi({ accessKey: import.meta.env.UNSPLASH });

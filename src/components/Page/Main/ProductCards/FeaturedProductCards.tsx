@@ -1,13 +1,13 @@
 import { memo } from 'react';
 import { v4 as id } from 'uuid';
 
-import styles from '../Page.module.sass';
+import styles from '../../Page.module.sass';
 import ProductCard from './ProductCard';
 
 const FeaturedProductCards = memo(() => {
   const directions = [
     { date: 'Dec 01 - Dec 30', location: 'Turkey, Kas', src: 't8PJ2CibOvw' },
-    { date: 'Dec 10 - Jan 10', location: 'Brazil, Florianapolis', src: '7F65HDP0-E0' },
+    { date: 'Dec 10 - Jan 10', location: 'Brazil, Florianopolis', src: '7F65HDP0-E0' },
     { date: 'Dec 01 - Dec 25', location: 'Portugal, Madeira', src: '4DXo5wrZaus' },
   ];
 

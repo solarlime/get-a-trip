@@ -1,8 +1,8 @@
 import { memo, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-import styles from '../Page.module.sass';
-import useStore from '../../../store/store';
+import styles from '../../Page.module.sass';
+import useStore from '../../../../store/store';
 
 const ProductCard = memo((props: { date: string, location: string, src: string }) => {
   const { date, location, src } = props;

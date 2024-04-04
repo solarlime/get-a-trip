@@ -8,7 +8,7 @@ import {
 
 import styles from '../../Checkout.module.sass';
 import useStore from '../../../../store/store';
-import { providers } from '../../../../store/types';
+import { providers } from '../../../../store/types/payment';
 
 const prettify = (numberString: string) => {
   const result: Array<string> = [];

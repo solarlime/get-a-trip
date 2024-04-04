@@ -2,7 +2,7 @@ import { memo, useState } from 'react';
 
 import useStore from '../../../store/store';
 
-const Payment = memo(() => {
+const PayButton = memo(() => {
   const emailStatus = useStore((state) => state.email.status);
   const cardNumberStatus = useStore((state) => state.cardNumber.status);
   const cardDateStatus = useStore((state) => state.cardDate.status);
@@ -31,4 +31,4 @@ const Payment = memo(() => {
   );
 });
 
-export default Payment;
+export default PayButton;
