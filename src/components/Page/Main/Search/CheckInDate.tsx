@@ -15,7 +15,13 @@ const CheckInDate = memo(() => {
           type="date"
           placeholder="Add dates"
           value={checkIn.value}
-          onChange={(event) => setCheckIn({ status: 'success', value: event.target.value })}
+          onChange={(event) => {
+            if (new Date(event.target.value) > new Date()) {
+              setCheckIn({ status: 'success', value: event.target.value });
+            } else {
+              setCheckIn({ status: 'idle', value: event.target.value });
+            }
+          }}
         />
       </div>
     </div>

@@ -1,10 +1,12 @@
 @use "../../../node_modules/bulma/sass/components/navbar"
 @use '../../../node_modules/bulma/sass/grid/columns'
 @use 'bulma/sass/utilities/derived-variables'
+@use 'bulma/sass/utilities/initial-variables'
 
 $navbar-img-max-height: navbar.$navbar-item-img-max-height
 $navbar-height-new: navbar.$navbar-height + 2rem
 $column-gap: columns.$column-gap
+$grey: initial-variables.$grey-light
 
 img
   background-color: #e6f7ef
@@ -100,8 +102,13 @@ img
 
 .my_search_container > form
 
-  button
+  a
     min-width: 72px
+
+    &.disabled
+      pointer-events: none
+      cursor: default
+      background-color: $grey
 
   @media screen and (max-width: 768px)
     flex-direction: column
