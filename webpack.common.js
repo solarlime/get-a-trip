@@ -64,7 +64,7 @@ export default {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new Dotenv({ prefix: 'import.meta.env.' }),
+    new Dotenv({ prefix: 'import.meta.env.', systemvars: true }),
     new HtmlWebPackPlugin({
       template: './src/index.html',
       filename: './index.html',

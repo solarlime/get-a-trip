@@ -67,7 +67,6 @@ const createTourSlice: StateCreator<TourState & TourActions> = (set, get) => ({
         places.push(tours[randomIndex].place);
         resultingTours.push(tours[randomIndex]);
       }
-      console.log(randomIndex);
     }
     set((state) => ({ ...state, randomTours: resultingTours }));
   },

@@ -1,6 +1,7 @@
 import { memo } from 'react';
 
 import styles from './Page.module.sass';
+import { getYear } from '../../utils';
 
 const Footer = memo(() => (
   <footer className="footer has-background-black pb-6 pt-6 pl-3 pr-3 is-size-6">
@@ -27,7 +28,7 @@ const Footer = memo(() => (
       </svg>
       <div className="content">
         <p className="has-text-white has-text-right">
-          {`© ${(new Date()).getFullYear()}`}
+          {`© ${getYear()}`}
           &nbsp;Getatrip. All&nbsp;rights&nbsp;reserved.
         </p>
       </div>

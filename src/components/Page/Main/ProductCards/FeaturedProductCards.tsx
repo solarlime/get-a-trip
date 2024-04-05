@@ -4,8 +4,7 @@ import { v4 as id } from 'uuid';
 import styles from '../../Page.module.sass';
 import ProductCard from './ProductCard';
 import useStore from '../../../../store/store';
-
-const formatter = (date: Date) => new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric' }).format(date);
+import { formatter } from '../../../../utils';
 
 const FeaturedProductCards = memo(() => {
   const randomTours = useStore((state) => state.randomTours);
