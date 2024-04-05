@@ -1,0 +1,104 @@
+{
+  "results": [
+    {
+      "place": "Kas",
+      "country": "Turkey",
+      "continent": "Europe",
+      "dates": [
+        { "start_date": "01-10", "end_date": "25-10" },
+        { "start_date": "15-02", "end_date": "10-03" }
+      ],
+      "image_id": "t8PJ2CibOvw"
+    },
+    {
+      "place": "Florianopolis",
+      "country": "Brazil",
+      "continent": "South America",
+      "dates": [
+        { "start_date": "02-03", "end_date": "26-03" },
+        { "start_date": "01-09", "end_date": "25-09" }
+      ],
+      "image_id": "7F65HDP0-E0"
+    },
+    {
+      "place": "Madeira",
+      "country": "Portugal",
+      "continent": "Europe",
+      "dates": [
+        { "start_date": "15-01", "end_date": "10-02" },
+        { "start_date": "15-11", "end_date": "10-12" }
+      ],
+      "image_id": "4DXo5wrZaus"
+    },
+    {
+      "place": "Belgrade",
+      "country": "Serbia",
+      "continent": "Europe",
+      "dates": [
+        { "start_date": "01-05", "end_date": "25-05" },
+        { "start_date": "01-08", "end_date": "25-08" }
+      ],
+      "image_id": "t0sXKOz9qtk"
+    },
+    {
+      "place": "Dahab",
+      "country": "Egypt",
+      "continent": "Africa",
+      "dates": [
+        { "start_date": "03-02", "end_date": "27-02" },
+        { "start_date": "01-12", "end_date": "25-12" }
+      ],
+      "image_id": "Dym2QHJ7n1g"
+    },
+    {
+      "place": "Saranda",
+      "country": "Albania",
+      "continent": "Europe",
+      "dates": [
+        { "start_date": "15-05", "end_date": "10-06" },
+        { "start_date": "15-10", "end_date": "10-11" }
+      ],
+      "image_id": "JrnMqKyyoHw"
+    },
+    {
+      "place": "Ohrid",
+      "country": "North Macedonia",
+      "continent": "Europe",
+      "dates": [
+        { "start_date": "15-03", "end_date": "10-04" },
+        { "start_date": "01-07", "end_date": "25-07" }
+      ],
+      "image_id": "FoIxwB-iiKY"
+    },
+    {
+      "place": "Bansko",
+      "country": "Bulgaria",
+      "continent": "Europe",
+      "dates": [
+        { "start_date": "15-04", "end_date": "10-05" },
+        { "start_date": "15-09", "end_date": "10-10" }
+      ],
+      "image_id": "PWsK_fo2BoM"
+    },
+    {
+      "place": "Fes",
+      "country": "Morocco",
+      "continent": "Africa",
+      "dates": [
+        { "start_date": "05-01", "end_date": "30-01" },
+        { "start_date": "01-11", "end_date": "25-11" }
+      ],
+      "image_id": "wJ2IUPLQot4"
+    },
+    {
+      "place": "Kotor",
+      "country": "Montenegro",
+      "continent": "Europe",
+      "dates": [
+        { "start_date": "01-04", "end_date": "25-04" },
+        { "start_date": "01-06", "end_date": "25-06" }
+      ],
+      "image_id": "qIPzMw3PNE4"
+    }
+  ]
+}

@@ -48,7 +48,9 @@ const ProductCard = memo((props: { date: string, location: string, src: string }
         <div className="content">
           <Link
             className="button is-white has-text-primary is-size-6"
-            to={`/directions/${location.toLocaleLowerCase().replace(', ', '-')}`}
+            to={`/directions/${location.toLocaleLowerCase()
+              .replace(', ', '-')
+              .replace(' ', '-')}`}
           >
             Explore program
           </Link>
