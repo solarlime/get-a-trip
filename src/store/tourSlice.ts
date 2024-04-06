@@ -75,7 +75,10 @@ const createTourSlice: StateCreator<TourState & TourActions & SearchState> = (se
     const places: Array<string> = [];
     for (let i = 0; i < upTo; i += 1) {
       const randomIndex = Math.floor(Math.random() * tours.length);
-      if (indexes.includes(randomIndex) || places.includes(tours[randomIndex].place)) {
+      if (
+        indexes.includes(randomIndex)
+        || places.includes(tours[randomIndex].place)
+        || (tours[randomIndex].dates.end_date < new Date())) {
         upTo += 1;
       } else {
         indexes.push(randomIndex);
