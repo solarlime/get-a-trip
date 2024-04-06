@@ -3,7 +3,7 @@
     {
       "place": "Kas",
       "country": "Turkey",
-      "continent": "Europe",
+      "continent": "Asia",
       "dates": [
         { "start_date": "01-10", "end_date": "25-10" },
         { "start_date": "15-02", "end_date": "10-03" }

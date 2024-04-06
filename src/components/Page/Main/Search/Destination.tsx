@@ -20,7 +20,7 @@ const Destination = memo(() => {
             <option value="Europe">Europe</option>
             <option value="Asia">Asia</option>
             <option value="Africa">Africa</option>
-            <option value="South_America">South America</option>
+            <option value="South America">South America</option>
           </select>
         </div>
       </div>

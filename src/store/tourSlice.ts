@@ -2,6 +2,8 @@ import { StateCreator } from 'zustand';
 import { createApi } from 'unsplash-js';
 
 import type { TourState, TourActions, Tour } from './types/tour';
+import type { SearchState } from './types/search';
+import { placesLeft } from '../utils';
 
 // @ts-ignore
 const unsplash = createApi({ accessKey: import.meta.env.UNSPLASH });
@@ -12,9 +14,11 @@ const initialState: TourState = {
   },
   tours: [],
   randomTours: [],
+  filteredTours: { tours: [], isFilterRun: false },
 };
 
-const createTourSlice: StateCreator<TourState & TourActions> = (set, get) => ({
+// @ts-ignore
+const createTourSlice: StateCreator<TourState & TourActions & SearchState> = (set, get) => ({
   ...initialState,
   getImage: async (id) => {
     try {
@@ -42,6 +46,7 @@ const createTourSlice: StateCreator<TourState & TourActions> = (set, get) => ({
         const [dayEnd, monthEnd] = date.end_date.split('-');
         withDatesAndFlat.push({
           ...tour,
+          left: placesLeft,
           dates: {
             start_date: new Date(`${year}-${monthStart}-${dayStart}`),
             end_date: new Date(`${year}-${monthEnd}-${dayEnd}`),
@@ -49,7 +54,17 @@ const createTourSlice: StateCreator<TourState & TourActions> = (set, get) => ({
         });
       });
     });
-    set((state) => ({ ...state, tours: withDatesAndFlat }));
+    set((state) => ({
+      ...state,
+      tours: withDatesAndFlat
+        .sort((a, b) => ((a.dates.start_date > b.dates.start_date) ? 1 : -1))
+        .map((tour) => {
+          // @ts-ignore
+          const daysLeft = Math.floor((tour.dates.end_date - new Date()) / 1000 / 60 / 60 / 24);
+          // 5 is chosen randomly. Can be changed
+          return { ...tour, left: (daysLeft / 5 > 12) ? 12 : Math.ceil(daysLeft / 5) };
+        }),
+    }));
   },
   getRandomTours: async (number) => {
     const resultingTours: Array<Tour> = [];
@@ -69,6 +84,40 @@ const createTourSlice: StateCreator<TourState & TourActions> = (set, get) => ({
       }
     }
     set((state) => ({ ...state, randomTours: resultingTours }));
+  },
+  getFilteredTours: async () => {
+    const {
+      destination, checkInDate, duration, companions,
+    } = get();
+    if (!get().tours.length) await get().importTours();
+    const { tours } = get();
+    set((state) => ({
+      ...state,
+      filteredTours: {
+        isFilterRun: true,
+        tours: tours.filter((tour) => {
+          const checkIn = new Date(checkInDate.value);
+          const checkOut = new Date(checkInDate.value);
+          checkOut.setDate(checkOut.getDate() + +duration.value);
+          if (
+            (tour.continent === destination.value)
+            // Tours should be now or in future
+            && (tour.dates.end_date >= new Date())
+            // Tour should start earlier than check-in or equal to it
+            && (tour.dates.start_date <= checkIn)
+            // Tour should end later than check-in
+            && (tour.dates.end_date > checkIn)
+            // Tour should cover duration
+            && (tour.dates.end_date >= checkOut)
+            // Tour should have places
+            && (tour.left >= +companions.value)
+          ) {
+            return true;
+          }
+          return false;
+        }),
+      },
+    }));
   },
 });
 

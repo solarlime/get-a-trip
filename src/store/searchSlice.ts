@@ -19,7 +19,7 @@ const createSearchSlice: StateCreator<SearchState & SearchActions> = (set) => ({
     }
   },
   setCompanions: (newState) => {
-    if (+newState.value >= 0) {
+    if (+newState.value > 0) {
       set((state) => ({ ...state, companions: newState }));
     }
   },

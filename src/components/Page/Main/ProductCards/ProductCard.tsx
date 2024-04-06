@@ -4,8 +4,10 @@ import { Link } from 'react-router-dom';
 import styles from '../../Page.module.sass';
 import useStore from '../../../../store/store';
 
-const ProductCard = memo((props: { date: string, location: string, src: string }) => {
-  const { date, location, src } = props;
+const ProductCard = memo((props: { date: string, location: string, src: string, left: number }) => {
+  const {
+    date, location, src, left,
+  } = props;
   const image = useStore((state) => state.image);
   const getImage = useStore((state) => state.getImage);
 
@@ -16,6 +18,7 @@ const ProductCard = memo((props: { date: string, location: string, src: string }
   return (
     <div className={`card ${styles.specific} ${styles.productCard} has-background-primary`}>
       <div className="card-image">
+        <span className={`button is-static has-text-black has-background-white ${styles.left}`}>{`${left} place${(left === 1) ? '' : 's'} left`}</span>
         <figure className="image is-16by9">
           {
             (image[src]) ? (

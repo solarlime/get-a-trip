@@ -4,7 +4,7 @@ import styles from '../../Page.module.sass';
 import Destination from './Destination';
 import CheckInDate from './CheckInDate';
 import Duration from './Duration';
-import Companions from './Companions';
+import People from './People';
 import SearchButton from './SearchButton';
 import useStore from '../../../../store/store';
 
@@ -31,7 +31,7 @@ const Search = memo((props: { title: string, isTop: boolean }) => {
               <Destination />
               <CheckInDate />
               <Duration />
-              <Companions />
+              <People />
               <SearchButton disabled={isDisabled} />
             </form>
           </div>

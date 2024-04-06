@@ -28,6 +28,7 @@ const FeaturedProductCards = memo(() => {
                       date={`${formatter(productCardData.dates.start_date)} – ${formatter(productCardData.dates.end_date)}`}
                       location={`${productCardData.country}, ${productCardData.place}`}
                       src={productCardData.image_id}
+                      left={productCardData.left}
                     />
                   </div>
                 ))
