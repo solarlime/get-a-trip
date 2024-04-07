@@ -4,7 +4,6 @@ import { v4 as id } from 'uuid';
 import styles from '../../Page.module.sass';
 import ProductCard from './ProductCard';
 import useStore from '../../../../store/store';
-import { formatter } from '../../../../utils';
 
 const FeaturedProductCards = memo(() => {
   const randomTours = useStore((state) => state.randomTours);
@@ -24,12 +23,7 @@ const FeaturedProductCards = memo(() => {
               (randomTours.length) ? (
                 randomTours.map((productCardData) => (
                   <div className="column is-one-third" key={id()}>
-                    <ProductCard
-                      date={`${formatter(productCardData.dates.start_date)} – ${formatter(productCardData.dates.end_date)}`}
-                      location={`${productCardData.country}, ${productCardData.place}`}
-                      src={productCardData.image_id}
-                      left={productCardData.left}
-                    />
+                    <ProductCard tour={productCardData} />
                   </div>
                 ))
               ) : ''

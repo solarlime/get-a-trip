@@ -11,7 +11,7 @@ import Search from './Search/Search';
 
 const Main = memo(() => (
   <>
-    <section className={`hero is-fullheight is-background-grey-lighter ${styles.specific} ${styles.first_screen}`}>
+    <section className={`hero is-fullheight is-background-white ${styles.specific} ${styles.first_screen}`}>
       <picture>
         <source
           srcSet={`${firstScreen1280} 1280w, ${firstScreen2560} 2560w`}

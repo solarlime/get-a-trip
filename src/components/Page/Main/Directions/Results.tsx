@@ -6,7 +6,6 @@ import { faHeartCrack } from '@fortawesome/free-solid-svg-icons/faHeartCrack';
 import styles from '../../Page.module.sass';
 import ProductCard from '../ProductCards/ProductCard';
 import useStore from '../../../../store/store';
-import { formatter } from '../../../../utils';
 
 const Results = memo(() => {
   const filteredTours = useStore((state) => state.filteredTours);
@@ -32,12 +31,7 @@ const Results = memo(() => {
                     {
                       filteredTours.tours.map((productCardData) => (
                         <div className="column is-one-third" key={id()}>
-                          <ProductCard
-                            date={`${formatter(productCardData.dates.start_date)} – ${formatter(productCardData.dates.end_date)}`}
-                            location={`${productCardData.country}, ${productCardData.place}`}
-                            src={productCardData.image_id}
-                            left={productCardData.left}
-                          />
+                          <ProductCard tour={productCardData} />
                         </div>
                       ))
                     }

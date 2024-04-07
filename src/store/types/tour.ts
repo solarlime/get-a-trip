@@ -4,6 +4,7 @@ export interface Tour {
   place: string,
   country: string,
   continent: string,
+  accommodation: string,
   dates: {
     start_date: Date,
     end_date: Date,
@@ -22,6 +23,7 @@ export interface TourState {
   tours: Array<Tour>,
   randomTours: Array<Tour>,
   filteredTours: FilteredTours,
+  chosenTour: Tour,
 }
 
 export interface TourActions {
@@ -29,4 +31,6 @@ export interface TourActions {
   importTours: () => Promise<void>,
   getRandomTours: (number?: number) => Promise<void>,
   getFilteredTours: () => Promise<void>,
+  setChosenTour: (tour: Tour) => void,
+  resolveChosenTour: (searchString: string) => Promise<void>,
 }

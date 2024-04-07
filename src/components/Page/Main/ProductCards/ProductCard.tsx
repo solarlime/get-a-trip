@@ -1,17 +1,24 @@
 import { memo, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
+import type { Tour } from '../../../../store/types/tour';
 import styles from '../../Page.module.sass';
 import useStore from '../../../../store/store';
+import { formatter } from '../../../../utils';
 
-const ProductCard = memo((props: { date: string, location: string, src: string, left: number }) => {
-  const {
-    date, location, src, left,
-  } = props;
+const ProductCard = memo((props: { tour: Tour }) => {
+  const { tour } = props;
   const image = useStore((state) => state.image);
   const getImage = useStore((state) => state.getImage);
+  const setChosenTour = useStore((state) => state.setChosenTour);
+
+  const src = tour.image_id;
+  const date = `${formatter(tour.dates.start_date)} – ${formatter(tour.dates.end_date)}`;
+  const location = `${tour.country}, ${tour.place}`;
+  const { left } = tour;
 
   useEffect(() => {
+    // TODO: image caching
     getImage(src);
   }, []);
 
@@ -49,14 +56,16 @@ const ProductCard = memo((props: { date: string, location: string, src: string, 
         </div>
 
         <div className="content">
-          <Link
+          <HashLink
             className="button is-white has-text-primary is-size-6"
             to={`/directions/${location.toLocaleLowerCase()
               .replace(', ', '-')
-              .replace(' ', '-')}`}
+              .replace(' ', '-')}#top`}
+            onClick={() => setChosenTour(tour)}
+            smooth={false}
           >
             Explore program
-          </Link>
+          </HashLink>
         </div>
       </div>
     </div>

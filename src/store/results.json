@@ -4,6 +4,7 @@
       "place": "Kas",
       "country": "Turkey",
       "continent": "Asia",
+      "accommodation": "https://www.airbnb.com/rooms/645018464047366950",
       "dates": [
         { "start_date": "01-10", "end_date": "25-10" },
         { "start_date": "15-02", "end_date": "10-03" }
@@ -14,6 +15,7 @@
       "place": "Florianopolis",
       "country": "Brazil",
       "continent": "South America",
+      "accommodation": "https://www.airbnb.com/rooms/645018464047366950",
       "dates": [
         { "start_date": "02-03", "end_date": "26-03" },
         { "start_date": "01-09", "end_date": "25-09" }
@@ -24,6 +26,7 @@
       "place": "Madeira",
       "country": "Portugal",
       "continent": "Europe",
+      "accommodation": "https://www.airbnb.com/rooms/645018464047366950",
       "dates": [
         { "start_date": "15-01", "end_date": "10-02" },
         { "start_date": "15-11", "end_date": "10-12" }
@@ -34,6 +37,7 @@
       "place": "Belgrade",
       "country": "Serbia",
       "continent": "Europe",
+      "accommodation": "https://www.airbnb.com/rooms/645018464047366950",
       "dates": [
         { "start_date": "01-05", "end_date": "25-05" },
         { "start_date": "01-08", "end_date": "25-08" }
@@ -44,6 +48,7 @@
       "place": "Dahab",
       "country": "Egypt",
       "continent": "Africa",
+      "accommodation": "https://www.airbnb.com/rooms/645018464047366950",
       "dates": [
         { "start_date": "03-02", "end_date": "27-02" },
         { "start_date": "01-12", "end_date": "25-12" }
@@ -54,6 +59,7 @@
       "place": "Saranda",
       "country": "Albania",
       "continent": "Europe",
+      "accommodation": "https://www.airbnb.com/rooms/645018464047366950",
       "dates": [
         { "start_date": "15-05", "end_date": "10-06" },
         { "start_date": "15-10", "end_date": "10-11" }
@@ -64,6 +70,7 @@
       "place": "Ohrid",
       "country": "North Macedonia",
       "continent": "Europe",
+      "accommodation": "https://www.airbnb.com/rooms/645018464047366950",
       "dates": [
         { "start_date": "15-03", "end_date": "10-04" },
         { "start_date": "01-07", "end_date": "25-07" }
@@ -74,6 +81,7 @@
       "place": "Bansko",
       "country": "Bulgaria",
       "continent": "Europe",
+      "accommodation": "https://www.airbnb.com/rooms/645018464047366950",
       "dates": [
         { "start_date": "15-04", "end_date": "10-05" },
         { "start_date": "15-09", "end_date": "10-10" }
@@ -84,6 +92,7 @@
       "place": "Fes",
       "country": "Morocco",
       "continent": "Africa",
+      "accommodation": "https://www.airbnb.com/rooms/645018464047366950",
       "dates": [
         { "start_date": "05-01", "end_date": "30-01" },
         { "start_date": "01-11", "end_date": "25-11" }
@@ -94,6 +103,7 @@
       "place": "Kotor",
       "country": "Montenegro",
       "continent": "Europe",
+      "accommodation": "https://www.airbnb.com/rooms/645018464047366950",
       "dates": [
         { "start_date": "01-04", "end_date": "25-04" },
         { "start_date": "01-06", "end_date": "25-06" }

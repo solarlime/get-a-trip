@@ -15,6 +15,7 @@ const initialState: TourState = {
   tours: [],
   randomTours: [],
   filteredTours: { tours: [], isFilterRun: false },
+  chosenTour: {} as Tour,
 };
 
 // @ts-ignore
@@ -121,6 +122,14 @@ const createTourSlice: StateCreator<TourState & TourActions & SearchState> = (se
         }),
       },
     }));
+  },
+  setChosenTour: (tour) => set((state) => ({ ...state, chosenTour: tour })),
+  resolveChosenTour: async (searchString: string) => {
+    if (!get().tours.length) await get().importTours();
+    const { tours, setChosenTour } = get();
+    const resolvedTour = tours.find((tour) => `${tour.country.toLocaleLowerCase()}-${tour.place.toLocaleLowerCase()}`
+      .replaceAll(' ', '-') === searchString);
+    if (resolvedTour) setChosenTour(resolvedTour);
   },
 });
 
