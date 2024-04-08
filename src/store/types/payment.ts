@@ -13,8 +13,14 @@ interface CardNumber extends Base {
   focused: Boolean,
 }
 
+export interface Country {
+  name: string,
+  code: string,
+  phoneCode: string
+}
+
 export interface PaymentState {
-  countries: Array<string>,
+  countries: Array<Country>,
   email: Email,
   cardholderName: { value: string, status: StatusMini },
   cardNumber: CardNumber,

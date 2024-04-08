@@ -3,7 +3,7 @@ import { memo } from 'react';
 import Country from './Country';
 import Email from './Email';
 import Card from './Card/Card';
-import CardholderName from './CardholderName';
+import Name from './Name';
 import PayButton from './PayButton';
 
 const Payment = memo(() => (
@@ -12,7 +12,7 @@ const Payment = memo(() => (
     <div className="payment-form block">
       <Email />
       <Card />
-      <CardholderName />
+      <Name type="Cardholder name" camelType="cardholderName" setter="setCardholderNameState" />
       <Country />
     </div>
     <PayButton />

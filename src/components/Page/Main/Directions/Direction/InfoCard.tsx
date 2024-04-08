@@ -2,7 +2,6 @@ import { memo } from 'react';
 
 import styles from '../../../Page.module.sass';
 
-// eslint-disable-next-line react/require-default-props
 const InfoCard = memo((props: { first: string, second: string, children?: any }) => {
   const { first, second, children } = props;
   return (

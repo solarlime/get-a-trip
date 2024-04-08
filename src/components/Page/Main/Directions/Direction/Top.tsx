@@ -43,7 +43,7 @@ const Top = memo((props: { tour: Tour }) => {
             <HashLink
               className="button is-primary has-text-white"
               smooth
-              to="/#book_form"
+              to="/#booking"
             >
               <span>Book now</span>
             </HashLink>

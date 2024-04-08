@@ -10,7 +10,7 @@ const Country = memo(() => {
   const [country, setCountry] = useState('');
 
   useEffect(() => {
-    getCountries();
+    if (countries.length === 1) getCountries();
   }, []);
 
   return (
@@ -19,7 +19,7 @@ const Country = memo(() => {
       <div className={`control ${styles.specific}`}>
         <div className={`select is-fullwidth ${styles.specific} ${styles.selector}`}>
           <select id="country" value={(country === '') ? 'United Kingdom' : country} onChange={(event) => setCountry(event.target.value)}>
-            {countries.map((item) => <option value={item} key={id()}>{item}</option>)}
+            {countries.map((item) => <option value={item.name} key={id()}>{item.name}</option>)}
           </select>
         </div>
       </div>

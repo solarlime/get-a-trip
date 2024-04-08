@@ -45,12 +45,16 @@ const createTourSlice: StateCreator<TourState & TourActions & SearchState> = (se
       tour.dates.forEach((date) => {
         const [dayStart, monthStart] = date.start_date.split('-');
         const [dayEnd, monthEnd] = date.end_date.split('-');
+        const start = new Date(`${year}-${monthStart}-${dayStart}`);
+        const end = new Date(`${year}-${monthEnd}-${dayEnd}`);
         withDatesAndFlat.push({
           ...tour,
           left: placesLeft,
           dates: {
             start_date: new Date(`${year}-${monthStart}-${dayStart}`),
             end_date: new Date(`${year}-${monthEnd}-${dayEnd}`),
+            // @ts-ignore
+            duration: Math.floor((end - start) / 1000 / 60 / 60 / 24),
           },
         });
       });

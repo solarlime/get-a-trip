@@ -8,6 +8,7 @@ export interface Tour {
   dates: {
     start_date: Date,
     end_date: Date,
+    duration: number
   },
   left: number,
   image_id: string,

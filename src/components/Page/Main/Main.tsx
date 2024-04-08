@@ -47,11 +47,6 @@ const Main = memo(() => (
     <Search title="Choose and buy tours online" isTop={false} />
     <About />
     <FeaturedProductCards />
-    <div className="has-text-centered">
-      Checkout page is
-      {' '}
-      <Link to="./checkout">here</Link>
-    </div>
   </>
 ));
 

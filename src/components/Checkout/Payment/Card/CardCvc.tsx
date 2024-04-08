@@ -42,7 +42,6 @@ const CardCvc = memo(() => {
           } else if (componentState.value.length > 0 && componentState.value.length !== 3 && cardProvider !== 'amex' && cardProvider !== null) {
             setState({ ...componentState, status: 'fail' });
           } else {
-            console.log(componentState.value.length, cardProvider);
             setState({ ...componentState, status: 'idle' });
           }
         }}

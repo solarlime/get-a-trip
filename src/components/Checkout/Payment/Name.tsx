@@ -3,21 +3,29 @@ import { isAlpha } from 'validator';
 
 import useStore from '../../../store/store';
 
-const CardholderName = memo(() => {
-  const componentState = useStore((state) => state.cardholderName);
-  const setState = useStore((state) => state.setCardholderNameState);
+const Name = memo((props: {
+  type: 'Cardholder name' | 'First name' | 'Last name',
+  camelType: 'cardholderName' | 'firstName' | 'lastName'
+  setter: 'setCardholderNameState' | 'setFirstName' | 'setLastName'
+  classes?: string
+}) => {
+  const {
+    type, camelType, setter, classes,
+  } = props;
+  const componentState = useStore((state) => state[camelType]);
+  const setState = useStore((state) => state[setter]);
 
   return (
     <div className="field">
-      <label className="label" htmlFor="name">
-        Cardholder name
+      <label className={`label ${(classes) || ''}`} htmlFor={camelType}>
+        {type}
       </label>
       <div className="control">
         <input
-          id="name"
+          id={camelType}
           className={`input ${(componentState.status !== 'idle') ? 'is-success' : ''}`}
           type="text"
-          placeholder="Full name on card"
+          placeholder={(camelType === 'cardholderName') ? 'Full name on card' : (camelType === 'firstName') ? 'Sigmund' : 'Freud'}
           value={componentState.value}
           onChange={(event) => {
             const input = event.target.value.trimStart();
@@ -39,4 +47,4 @@ const CardholderName = memo(() => {
   );
 });
 
-export default CardholderName;
+export default Name;

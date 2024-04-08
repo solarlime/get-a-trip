@@ -5,6 +5,7 @@ import styles from '../../../Page.module.sass';
 import useStore from '../../../../../store/store';
 
 const AboutTour = memo(() => {
+  const tour = useStore((state) => state.chosenTour);
   const image = useStore((state) => state.image);
   const getImage = useStore((state) => state.getImage);
   const imageId = 'V7R1QbUOVdM';
@@ -35,7 +36,7 @@ const AboutTour = memo(() => {
                     <img
                       className={styles.my_column}
                       src={image[imageId].value}
-                      alt="people are sitting next to the fire"
+                      alt={`${tour.country}, ${tour.place}`}
                     />
                   </picture>
                 ) : (

@@ -6,6 +6,7 @@
 
 $navbar-height-new: navbar.$navbar-height + 2rem
 $column-gap: columns.$column-gap
+$radius: card.$card-radius
 
 main
   flex-grow: 1
@@ -83,7 +84,7 @@ img
 
     img.my_column
       object-fit: cover
-      border-radius:  calc(20px + $column-gap)
+      border-radius:  calc($radius + $column-gap)
 
     picture img.my_column
       width: 100%
@@ -99,7 +100,7 @@ img
       .specific.productCard
         position: relative
         height: 100%
-        border-radius: 20px
+        border-radius: $radius
 
         & .left
           position: absolute
@@ -110,12 +111,12 @@ img
 
         img
           object-fit: cover
-          border-radius: 20px 20px 0 0
+          border-radius: $radius $radius 0 0
 
         .my_media_content
           overflow: unset
 
-.my_section:last-of-type, .my_section_coloured
+.my_section:last-of-type, .my_section_coloured, .my_section_before_coloured
   .my_hero_body
     padding-bottom: 3rem
 
@@ -124,7 +125,7 @@ img
 
 .my_search_container
   padding: 1.5rem 3rem
-  border-radius: 20px
+  border-radius: $radius
 
   .specific.selector:after
     border-color: black

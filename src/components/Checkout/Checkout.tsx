@@ -1,12 +1,13 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import styles from './Checkout.module.sass';
 import Payment from './Payment/Payment';
 import useStore from '../../store/store';
 
 function Checkout() {
+  const location = useLocation();
   const reset = useStore((state) => state.reset);
 
   return (
@@ -19,7 +20,7 @@ function Checkout() {
               type="button"
               onClick={reset}
             >
-              <Link className="is-small has-text-dark" to="/">
+              <Link className="is-small has-text-dark" to={(location.state.previousLocationPathname) ? location.state.previousLocationPathname : '/'}>
                 <FontAwesomeIcon icon={faArrowLeft} />
                 {' Back to Getatrip'}
               </Link>

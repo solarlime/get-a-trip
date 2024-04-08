@@ -8,11 +8,10 @@ import { formatter } from '../../../../../utils';
 const InfoCards = memo(() => {
   const tour = useStore((state) => state.chosenTour);
   const date = `${formatter(tour.dates.start_date)} – ${formatter(tour.dates.end_date)}`;
-  // @ts-ignore
-  const duration = Math.floor((tour.dates.end_date - tour.dates.start_date) / 1000 / 60 / 60 / 24);
+  const { duration } = tour.dates;
 
   return (
-    <section id="about" className={`hero ${styles.my_section}`}>
+    <section id="infocards" className={`hero ${styles.my_section}`}>
       <div className={`hero-body pl-3 pr-3 ${styles.my_hero_body}`}>
         <div className={`container ${styles.my_hero_padding} is-max-widescreen`}>
           <div className="columns is-multiline">
@@ -27,7 +26,7 @@ const InfoCards = memo(() => {
                 <InfoCard first="Where" second="">
                   <a className="has-text-white is-underlined" href={tour.accommodation} rel="noreferrer" target="_blank">See hotel</a>
                 </InfoCard>
-                <InfoCard first="Cost" second="100$ per day" />
+                <InfoCard first="Cost" second="From 100$/day" />
               </div>
             </div>
           </div>
