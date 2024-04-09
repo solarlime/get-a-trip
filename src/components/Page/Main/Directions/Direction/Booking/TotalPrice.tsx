@@ -38,7 +38,7 @@ const TotalPrice = memo(() => {
   );
 
   return (
-    <div className={`box has-background-white ${styles.my_price_box}`}>
+    <div className={`box ${styles.my_price_box}`}>
       <div className="p-4">
         <h3 className="title mb-5 is-size-4 is-size-5-touch has-text-centered has-text-primary">Price details</h3>
         {

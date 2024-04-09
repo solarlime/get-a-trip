@@ -26,7 +26,7 @@ const InfoCards = memo(() => {
                 <InfoCard first="Where" second="">
                   <a className="has-text-white is-underlined" href={tour.accommodation} rel="noreferrer" target="_blank">See hotel</a>
                 </InfoCard>
-                <InfoCard first="Cost" second="From 100$/day" />
+                <InfoCard first="Cost" second={`From ${tour.basicPrice}$/day`} />
               </div>
             </div>
           </div>

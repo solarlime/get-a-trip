@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { devtools } from 'zustand/middleware';
+import { devtools, persist, createJSONStorage } from 'zustand/middleware';
 
 import type { PaymentActions, PaymentState } from './types/payment';
 import type { TourActions, TourState } from './types/tour';
@@ -21,12 +21,19 @@ BookingState &
 BookingActions
 >()(
   devtools(
-    (...a) => ({
-      ...createPaymentSlice(...a),
-      ...createTourSlice(...a),
-      ...createSearchSlice(...a),
-      ...createBookingSlice(...a),
-    }),
+    persist(
+      (...a) => ({
+        ...createPaymentSlice(...a),
+        ...createTourSlice(...a),
+        ...createSearchSlice(...a),
+        ...createBookingSlice(...a),
+      }),
+      {
+        name: 'getatripStore',
+        storage: createJSONStorage(() => sessionStorage),
+        partialize: (state) => ({ chosenTour: state.chosenTour }),
+      },
+    ),
   ),
 );
 
