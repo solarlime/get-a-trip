@@ -3,7 +3,13 @@ import { StateCreator } from 'zustand';
 import type { SearchState, SearchActions } from './types/search';
 
 const initialState: SearchState = {
-  destination: { value: '', status: 'idle' },
+  destination: {
+    option: { value: '' },
+    status: 'idle',
+    options: [
+      { value: 'Europe' }, { value: 'Asia' }, { value: 'Africa' }, { value: 'South America' },
+    ],
+  },
   checkInDate: { value: '', status: 'idle' },
   duration: { value: '', status: 'idle' },
   companions: { value: '', status: 'idle' },

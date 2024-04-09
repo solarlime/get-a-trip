@@ -18,7 +18,7 @@ const InfoCards = memo(() => {
             <div className="column is-half">
               <div className={`columns ${styles.my_columns} ${styles.specific}`}>
                 <InfoCard first="When" second={date} />
-                <InfoCard first="How long" second={`${duration} days`} />
+                <InfoCard first="How long" second={`${duration} day${(!duration.toString().endsWith('1')) ? 's' : ''}`} />
               </div>
             </div>
             <div className="column is-half">

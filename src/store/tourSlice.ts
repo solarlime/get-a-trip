@@ -108,7 +108,7 @@ const createTourSlice: StateCreator<TourState & TourActions & SearchState> = (se
           const checkOut = new Date(checkInDate.value);
           checkOut.setDate(checkOut.getDate() + +duration.value);
           if (
-            (tour.continent === destination.value)
+            (tour.continent === destination.option.value)
             // Tours should be now or in future
             && (tour.dates.end_date >= new Date())
             // Tour should start earlier than check-in or equal to it

@@ -1,8 +1,9 @@
 import { memo } from 'react';
+import type { ReactNode } from 'react';
 
 import styles from '../../../Page.module.sass';
 
-const InfoCard = memo((props: { first: string, second: string, children?: any }) => {
+const InfoCard = memo((props: { first: string, second: string, children?: ReactNode }) => {
   const { first, second, children } = props;
   return (
     <div className="column">

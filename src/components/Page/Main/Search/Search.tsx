@@ -1,7 +1,7 @@
 import { memo, useMemo } from 'react';
 
 import styles from '../../Page.module.sass';
-import Destination from './Destination';
+import Dropdown from './Dropdown';
 import CheckInDate from './CheckInDate';
 import Duration from './Duration';
 import People from './People';
@@ -28,7 +28,7 @@ const Search = memo((props: { title: string, isTop: boolean }) => {
           <h1 className="title is-size-1 is-size-3-mobile has-text-centered has-text-white">{title}</h1>
           <div className={`container has-background-white ${styles.my_search_container}`}>
             <form className="field is-grouped">
-              <Destination />
+              <Dropdown label="Where" type="destination" setter="setDestination" />
               <CheckInDate />
               <Duration />
               <People />

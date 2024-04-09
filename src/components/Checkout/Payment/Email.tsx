@@ -19,7 +19,7 @@ const Email = memo((props: { classes?: string }) => {
           className={`input ${(componentState.status === 'fail') ? 'is-danger' : (componentState.status === 'success') ? 'is-success' : ''}`}
           type="email"
           value={componentState.value}
-          placeholder="sigmund@freud.online"
+          placeholder="sigmund@freud.site"
           onChange={(event) => setState({ status: 'idle', value: event.target.value })}
           onBlur={() => {
             setState({ ...componentState, status: isEmpty(componentState.value) ? 'idle' : isEmail(componentState.value) ? 'success' : 'fail' });

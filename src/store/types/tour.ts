@@ -5,6 +5,7 @@ export interface Tour {
   country: string,
   continent: string,
   accommodation: string,
+  basicPrice: string,
   dates: {
     start_date: Date,
     end_date: Date,

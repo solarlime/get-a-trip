@@ -135,11 +135,6 @@ img
   a
     min-width: 72px
 
-    &.disabled
-      pointer-events: none
-      cursor: default
-      background-color: initial-variables.$grey-light
-
   @media screen and (max-width: 768px)
     flex-direction: column
 
@@ -150,4 +145,23 @@ img
 
 .top
   padding-top: $navbar-height-new
+
+.padding
+  padding-bottom: 2rem
+
+@media (max-width: 768px)
+  .booking
+    display: flex
+    flex-direction: column
+
+    .price
+      order: 2
+
+    .empty
+      order: 1
+
+.disabled
+  pointer-events: none
+  cursor: default
+  background-color: initial-variables.$grey-light
 

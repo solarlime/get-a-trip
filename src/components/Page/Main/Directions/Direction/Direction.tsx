@@ -1,17 +1,14 @@
 import { memo, useEffect, useState } from 'react';
-import {
-  useParams, Navigate, Link, useLocation,
-} from 'react-router-dom';
+import { useParams, Navigate } from 'react-router-dom';
 
 import useStore from '../../../../../store/store';
 import AboutTour from './AboutTour';
 import Top from './Top';
 import InfoCards from './InfoCards';
 import Activities from './Activities';
-import Booking from './Booking';
+import Booking from './Booking/Booking';
 
 const Direction = memo(() => {
-  const location = useLocation();
   const [resolved, setResolved] = useState(false);
   const params = useParams();
   const chosenTour = useStore((state) => state.chosenTour);
@@ -37,11 +34,6 @@ const Direction = memo(() => {
       <InfoCards />
       <Activities />
       <Booking />
-      <div className="has-text-centered">
-        Checkout page is
-        {' '}
-        <Link to="/checkout" state={{ previousLocationPathname: location.pathname }}>here</Link>
-      </div>
     </>
   );
 });

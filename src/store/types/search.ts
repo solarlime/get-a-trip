@@ -1,6 +1,6 @@
-import type { StatusMini, Base } from './base';
+import type { StatusMini, Base, Dropdown } from './base';
 
-interface Destination extends Base { status: StatusMini }
+interface Destination extends Dropdown {}
 interface CheckInDate extends Base { status: StatusMini }
 interface Duration extends Base { status: StatusMini }
 interface Companions extends Base { status: StatusMini }

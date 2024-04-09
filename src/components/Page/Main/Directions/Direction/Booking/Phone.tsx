@@ -42,19 +42,27 @@ const Phone = memo(() => {
             placeholder="and a bit more numbers"
             value={phone.phoneNumber}
             onChange={(event) => {
-              if (isNumeric(event.target.value) || isEmpty(event.target.value)) {
+              if (isNumeric(event.target.value)) {
                 if (phone.phoneCode === '') {
                   setPhone({
                     phoneCode: '+44',
                     phoneCountry: 'GBR',
                     phoneNumber: event.target.value,
+                    status: 'success',
                   });
                 } else {
                   setPhone({
                     ...phone,
                     phoneNumber: event.target.value,
+                    status: 'success',
                   });
                 }
+              } else if (isEmpty(event.target.value)) {
+                setPhone({
+                  ...phone,
+                  phoneNumber: event.target.value,
+                  status: 'idle',
+                });
               }
             }}
           />
