@@ -4,9 +4,10 @@ import { useParams, Navigate } from 'react-router-dom';
 import useStore from '../../../../../store/store';
 import AboutTour from './AboutTour';
 import Top from './Top';
-import InfoCards from './InfoCards';
+import InfoCards from './InfoCards/InfoCards';
 import Activities from './Activities';
 import Booking from './Booking/Booking';
+import FAQ from './FAQ/FAQ';
 
 const Direction = memo(() => {
   const [resolved, setResolved] = useState(false);
@@ -34,6 +35,7 @@ const Direction = memo(() => {
       <InfoCards />
       <Activities />
       <Booking />
+      <FAQ />
     </>
   );
 });

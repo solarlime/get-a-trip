@@ -1,9 +1,9 @@
 import { memo } from 'react';
 
-import styles from '../../../Page.module.sass';
-import useStore from '../../../../../store/store';
+import styles from '../../../../Page.module.sass';
+import useStore from '../../../../../../store/store';
 import InfoCard from './InfoCard';
-import { formatter } from '../../../../../utils';
+import { formatter } from '../../../../../../utils';
 
 const InfoCards = memo(() => {
   const tour = useStore((state) => state.chosenTour);

@@ -1,9 +1,12 @@
 import { StateCreator } from 'zustand';
 import { createApi } from 'unsplash-js';
+import { v4 as uuid } from 'uuid';
 
-import type { TourState, TourActions, Tour } from './types/tour';
+import type {
+  TourState, TourActions, Tour, QuestionAndAnswer,
+} from './types/tour';
 import type { SearchState } from './types/search';
-import { placesLeft } from '../utils';
+import { nbspify, placesLeft } from '../utils';
 
 // @ts-ignore
 const unsplash = createApi({ accessKey: import.meta.env.UNSPLASH });
@@ -16,6 +19,7 @@ const initialState: TourState = {
   randomTours: [],
   filteredTours: { tours: [], isFilterRun: false },
   chosenTour: {} as Tour,
+  questionsAndAnswers: [] as Array<QuestionAndAnswer>,
 };
 
 // @ts-ignore
@@ -50,6 +54,7 @@ const createTourSlice: StateCreator<TourState & TourActions & SearchState> = (se
         withDatesAndFlat.push({
           ...tour,
           left: placesLeft,
+          promocode: uuid().slice(0, 8),
           dates: {
             start_date: new Date(`${year}-${monthStart}-${dayStart}`),
             end_date: new Date(`${year}-${monthEnd}-${dayEnd}`),
@@ -134,6 +139,22 @@ const createTourSlice: StateCreator<TourState & TourActions & SearchState> = (se
     const resolvedTour = tours.find((tour) => `${tour.country.toLocaleLowerCase()}-${tour.place.toLocaleLowerCase()}`
       .replaceAll(' ', '-') === searchString);
     if (resolvedTour) setChosenTour(resolvedTour);
+  },
+  importQuestionsAndAnswers: async () => {
+    const questionsAndAnswers = await import('./q&a.json').then((res) => res.default.questions_answers);
+    const { default: Typograf } = await import('typograf');
+
+    const typo = new Typograf({ locale: ['en-US'] });
+
+    set((state) => ({
+      ...state,
+      questionsAndAnswers: questionsAndAnswers.map(
+        (item) => ({
+          question: nbspify(typo.execute(item.question)),
+          answer: nbspify(typo.execute(item.answer)),
+        }),
+      ),
+    }));
   },
 });
 

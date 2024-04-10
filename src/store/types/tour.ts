@@ -6,6 +6,7 @@ export interface Tour {
   continent: string,
   accommodation: string,
   basicPrice: string,
+  promocode: string,
   dates: {
     start_date: Date,
     end_date: Date,
@@ -20,12 +21,18 @@ interface FilteredTours {
   isFilterRun: boolean,
 }
 
+export interface QuestionAndAnswer {
+  question: string,
+  answer: string,
+}
+
 export interface TourState {
   image: { [key: string]: Base },
   tours: Array<Tour>,
   randomTours: Array<Tour>,
   filteredTours: FilteredTours,
   chosenTour: Tour,
+  questionsAndAnswers: Array<QuestionAndAnswer>
 }
 
 export interface TourActions {
@@ -35,4 +42,5 @@ export interface TourActions {
   getFilteredTours: () => Promise<void>,
   setChosenTour: (tour: Tour) => void,
   resolveChosenTour: (searchString: string) => Promise<void>,
+  importQuestionsAndAnswers: () => Promise<void>,
 }

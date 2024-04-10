@@ -149,6 +149,13 @@ img
 .padding
   padding-bottom: 2rem
 
+.price
+  position: relative
+
+  .my_price_box
+    position: sticky
+    top: calc($navbar-height-new + $column-gap)
+
 @media (max-width: 768px)
   .booking
     display: flex
@@ -164,4 +171,10 @@ img
   pointer-events: none
   cursor: default
   background-color: initial-variables.$grey-light
+
+.my_card_content
+  display: none
+
+.opened
+  display: block
 

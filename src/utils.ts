@@ -11,3 +11,9 @@ export const formatter = (value: Date | string) => {
 export const getYear = () => (new Date()).getFullYear();
 
 export const placesLeft = 12;
+
+export const nbspify = (str: string) => {
+  // Find all spaces after ' [article | auxiliary verb | and]'
+  const regex = /(?<=[\s\u00A0]([Tt]he|[Aa]|[Aa]n|[Ii]s|[Aa]re|[Ww]as|[Ww]ere|[Ww]ill|[Ss]hall|[Aa]nd))\s/g;
+  return str.replaceAll(regex, '\u00A0');
+};
