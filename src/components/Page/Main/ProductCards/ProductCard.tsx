@@ -1,10 +1,18 @@
-import { memo, useEffect } from 'react';
+import { memo, useEffect, ReactElement } from 'react';
 import { HashLink } from 'react-router-hash-link';
 
 import type { Tour } from '../../../../store/types/tour';
 import styles from '../../Page.module.sass';
 import useStore from '../../../../store/store';
 import { formatter } from '../../../../utils';
+import Resorterra from './Hosters/Resorterra';
+import Tripanyday from './Hosters/Tripanyday';
+import Whatatravel from './Hosters/Whatatravel';
+
+type Hosters = 'resorterra' | 'tripanyday' | 'whatatravel';
+const hosters: { [key in Hosters]: ReactElement } = {
+  resorterra: <Resorterra />, tripanyday: <Tripanyday />, whatatravel: <Whatatravel />,
+};
 
 const ProductCard = memo((props: { tour: Tour }) => {
   const { tour } = props;
@@ -26,6 +34,13 @@ const ProductCard = memo((props: { tour: Tour }) => {
     <div className={`card ${styles.specific} ${styles.productCard} has-background-primary`}>
       <div className="card-image">
         <span className={`button is-static has-text-black has-background-white ${styles.left}`}>{`${left} place${(left === 1) ? '' : 's'} left`}</span>
+        <div className={`button is-static has-background-primary has-text-white is-gap-1 ${styles.hosted}`}>
+          <span>by</span>
+          {
+            (tour.hostedby)
+              ? hosters[tour.hostedby as Hosters] : <Resorterra />
+          }
+        </div>
         <figure className="image is-16by9">
           {
             (image[src]) ? (

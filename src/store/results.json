@@ -4,121 +4,189 @@
       "place": "Kas",
       "country": "Turkey",
       "continent": "Asia",
-      "accommodation": "https://www.airbnb.com/rooms/645018464047366950",
+      "accommodation": "https://www.booking.com/hotel/tr/kas-old-town-hotel.en-gb.html",
       "basicPrice": "80",
+      "hostedby": "resorterra",
       "dates": [
         { "start_date": "01-10", "end_date": "25-10" },
         { "start_date": "15-02", "end_date": "10-03" }
       ],
-      "image_id": "t8PJ2CibOvw"
+      "image_id": "t8PJ2CibOvw",
+      "carousel": ["V7R1QbUOVdM", "X4gaUUM_34s", "6nGoqoky6B4"],
+      "description": [
+        "Kas is everything that a typical Mediterranean seaside resort in Turkey should be. White washed houses cascade down the winding mountain roads to show the way to beautiful beaches and a harbor that reminds you that life is in fact quite good and while in Kas, the best thing to do is to adapt quickly to the Mediterranean lifestyle.",
+        "Many of the houses in Kas are surrounded with pink bougainvillea flowers that immediately make you notice the influence of Greek architecture in some of the older properties, typically the wooden shutters, narrow streets and large terraces for enjoying the mid-day sun.",
+        "Like many towns in this area, there used to be a huge Greek population until 1923 when there was an exchange of citizens between Greece and Turkey. That was a turbulent time for the area, when people were unsure of the future. I think they would be proud now, to know that Kas is making a name for itself as a “must visit” Mediterranean destination in Turkey."
+      ]
     },
     {
       "place": "Florianopolis",
       "country": "Brazil",
       "continent": "South America",
-      "accommodation": "https://www.airbnb.com/rooms/645018464047366950",
+      "accommodation": "https://www.booking.com/hotel/br/ilha-forte-praia.en-gb.html",
       "basicPrice": "100",
+      "hostedby": "whatatravel",
       "dates": [
         { "start_date": "02-03", "end_date": "26-03" },
         { "start_date": "01-09", "end_date": "25-09" }
       ],
-      "image_id": "7F65HDP0-E0"
+      "image_id": "7F65HDP0-E0",
+      "carousel": ["N_V4xpHlm8A", "ekVBBG8ZzIs", "GaDqk4Gle2M"],
+      "description": [
+        "Pretty much every landscape and experience here is magical, in all honesty. Visitors will witness lush rainforest trails that run along local farms that sell fresh fruit and produce. Follow a path and discover hidden coves with white-sand beaches and seaside huts selling caldo de cana (sugarcane juice).",
+        "The center of the island has a more hippie vibe. It’s a trendy area with rustic restaurants and artsy cafes; perfect for backpackers and intrepid travelers.",
+        "Step foot near Lagoa da Conceição and find the center of it all – a great place for nightlife, surfer shops and live music."
+      ]
     },
     {
       "place": "Madeira",
       "country": "Portugal",
       "continent": "Europe",
-      "accommodation": "https://www.airbnb.com/rooms/645018464047366950",
+      "accommodation": "https://www.booking.com/hotel/pt/aqua-natura-madeira.en-gb.html",
       "basicPrice": "140",
+      "hostedby": "resorterra",
       "dates": [
         { "start_date": "15-01", "end_date": "10-02" },
         { "start_date": "15-11", "end_date": "10-12" }
       ],
-      "image_id": "4DXo5wrZaus"
+      "image_id": "4DXo5wrZaus",
+      "carousel": ["Mk78wKZHD9g", "vHtW4CcGELQ", "uwsOJHW_eGc"],
+      "description": [
+        "Right in the middle of the Atlantic, the islands of Madeira and Porto Santo are a haven of natural beauty.",
+        "The springtime temperature, felt all year round, cries out for open air activities. You can go for a walk along the network of levadas (irrigation channels), visit the city of Funchal and discover the heritage associated with the Discoveries or roam freely around the island. Boat rides are an excellent way of admiring the coastline from a different perspective.",
+        "Madeira offers various tourist complexes and accesses to the sea with prime conditions for leisure boating and scuba diving. The island of Porto Santo is the ideal place to escape from stress and undertake a thalassotherapy programme, or a beach holiday combined with a spot of golf."
+      ]
     },
     {
       "place": "Belgrade",
       "country": "Serbia",
       "continent": "Europe",
-      "accommodation": "https://www.airbnb.com/rooms/645018464047366950",
+      "accommodation": "https://www.booking.com/hotel/rs/crystal-belgrade.en-gb.html",
       "basicPrice": "100",
+      "hostedby": "tripanyday",
       "dates": [
         { "start_date": "01-05", "end_date": "25-05" },
         { "start_date": "01-08", "end_date": "25-08" }
       ],
-      "image_id": "t0sXKOz9qtk"
+      "image_id": "t0sXKOz9qtk",
+      "carousel": ["8P5802PiAWQ", "k_n5LPOFLMw", "rCC4mSObuQY"],
+      "description": [
+        "Belgrade's long and storied history is suggested by its architecture, which varies from Byzantine and Ottoman to neoclassic and romantic buildings in the older neighborhoods, and from Art Nouveau to brutalism and neo-Byzantine design in New Belgrade. The city's many theaters, museums, monuments and opera houses boast a deep and fissured cultural life while the beaches and rivers attract sunbathers, sports enthusiasts and partygoers on the popular floating river barges that serve as nightclubs."
+      ]
     },
     {
       "place": "Dahab",
       "country": "Egypt",
       "continent": "Africa",
-      "accommodation": "https://www.airbnb.com/rooms/645018464047366950",
+      "accommodation": "https://www.booking.com/hotel/eg/penguin-village-dahab.en-gb.html",
       "basicPrice": "80",
+      "hostedby": "resorterra",
       "dates": [
         { "start_date": "03-02", "end_date": "27-02" },
         { "start_date": "01-12", "end_date": "25-12" }
       ],
-      "image_id": "Dym2QHJ7n1g"
+      "image_id": "Dym2QHJ7n1g",
+      "carousel": ["zTSThRdAg80", "Dr0LlwOluHI", "HRfKP_tTwso"],
+      "description": [
+        "Dahab is a laid-back coastal town located on the Sinai Peninsula in Egypt, known for its stunning beaches, world-class diving, and relaxed atmosphere.",
+        "Relax on the sandy shores of Dahab's beautiful beaches, where you can sunbathe, swim, and snorkel in the clear turquoise waters of the Red Sea.",
+        "Explore the colorful coral reefs and underwater world by scuba diving or snorkeling at sites like the Blue Hole and the Canyon. Discover the unique charm of Dahab's Bedouin culture by visiting local markets, enjoying traditional tea in Bedouin-style cafés, and learning about their nomadic way of life. Experience the thrill of windsurfing and kiteboarding in the strong sea breeze."
+      ]
     },
     {
       "place": "Saranda",
       "country": "Albania",
       "continent": "Europe",
-      "accommodation": "https://www.airbnb.com/rooms/645018464047366950",
-      "basicPrice": "80",
+      "accommodation": "https://www.booking.com/hotel/al/monte-cristo-with-rooftop-pool.en-gb.html",
+      "basicPrice": "100",
+      "hostedby": "whatatravel",
       "dates": [
         { "start_date": "15-05", "end_date": "10-06" },
         { "start_date": "15-10", "end_date": "10-11" }
       ],
-      "image_id": "JrnMqKyyoHw"
+      "image_id": "JrnMqKyyoHw",
+      "carousel": ["75I2k18Dmpw", "s8meKJ9iUT8", "GBKuGQPz7BQ"],
+      "description": [
+        "Saranda is a picturesque coastal town located in southern Albania, along the Ionian Sea. Nestled between the rugged mountains and crystal-clear waters, this gem is renowned for its breathtaking scenery and rich historical significance.",
+        "Saranda's proximity to archaeological sites such as Butrint and the UNESCO World Heritage Site, makes it a coveted destination for history enthusiasts.",
+        "Apart from its historical significance, Saranda is famous for its vibrant nightlife, pristine beaches, and an array of water activities."
+      ]
     },
     {
       "place": "Ohrid",
       "country": "North Macedonia",
       "continent": "Europe",
-      "accommodation": "https://www.airbnb.com/rooms/645018464047366950",
+      "accommodation": "https://www.booking.com/hotel/mk/villa-jordan.en-gb.html",
       "basicPrice": "80",
+      "hostedby": "tripanyday",
       "dates": [
         { "start_date": "15-03", "end_date": "10-04" },
         { "start_date": "01-07", "end_date": "25-07" }
       ],
-      "image_id": "FoIxwB-iiKY"
+      "image_id": "FoIxwB-iiKY",
+      "carousel": ["oa8oxsxcL6o", "cglvZ6SMKTY", "FmZkWOBc2aw"],
+      "description": [
+        "Known for its rich history, cultural heritage, and stunning natural surroundings, Ohrid is a UNESCO World Heritage site.",
+        "Explore the Old Town, with its narrow cobblestone streets, medieval churches, and Ottoman-era buildings. Discover the ancient ruins of the Roman amphitheater and the Samuel's Fortress, offering panoramic views of the city and the lake. Take a boat trip on Lake Ohrid to explore its crystal-clear waters.",
+        "Ohrid is also known for its vibrant arts scene, with numerous galleries, museums, and summer festivals showcasing local talent."
+      ]
     },
     {
       "place": "Bansko",
       "country": "Bulgaria",
       "continent": "Europe",
-      "accommodation": "https://www.airbnb.com/rooms/645018464047366950",
+      "accommodation": "https://www.booking.com/hotel/bg/seven-springs.en-gb.html",
       "basicPrice": "120",
+      "hostedby": "resorterra",
       "dates": [
         { "start_date": "15-04", "end_date": "10-05" },
         { "start_date": "15-09", "end_date": "10-10" }
       ],
-      "image_id": "PWsK_fo2BoM"
+      "image_id": "PWsK_fo2BoM",
+      "carousel": ["hIVLTIop8yE", "K1ZYjrzJYic", "zbG0qXxoGQI"],
+      "description": [
+        "Known as a winter sports haven, Bansko offers world-class skiing and snowboarding opportunities on its pristine slopes.",
+        "Explore the charming old town, with its cobblestone streets, traditional houses, and cozy taverns. Visit the Holy Trinity Church and the Nikola Vaptsarov Museum to learn about the town's rich cultural heritage.",
+        "In the summer months, Bansko transforms into a gateway for hiking, mountain biking, and exploring the breathtaking landscapes of Pirin National Park."
+      ]
     },
     {
       "place": "Fes",
       "country": "Morocco",
       "continent": "Africa",
-      "accommodation": "https://www.airbnb.com/rooms/645018464047366950",
+      "accommodation": "https://www.booking.com/hotel/ma/eventi.en-gb.html",
       "basicPrice": "80",
+      "hostedby": "tripanyday",
       "dates": [
         { "start_date": "05-01", "end_date": "30-01" },
         { "start_date": "01-11", "end_date": "25-11" }
       ],
-      "image_id": "wJ2IUPLQot4"
+      "image_id": "wJ2IUPLQot4",
+      "carousel": ["NaY693XXXpY", "mPD9BJ_QGXw", "XndgPQSMwDs"],
+      "description": [
+        "Fes, an ancient city, resonates with the echoes of medieval charm and the whispers of history in every winding alley of its famed medina. Its labyrinthine streets, a UNESCO World Heritage Site, are a place where every corner tells a story.",
+        "Discover the artisanal heart of Fes in its bustling souks. Witness master craftsmen at work, creating intricate leather goods at the famous tanneries, weaving exquisite carpets, or crafting delicate pottery.",
+        "Savor the flavors of Fes with exclusive culinary experiences. Enjoy private dining in hidden palaces, tasting traditional Moroccan dishes refined with a gourmet touch, or take part in cooking classes to delve deeper into the culinary heritage of this vibrant city."
+      ]
     },
     {
       "place": "Kotor",
       "country": "Montenegro",
       "continent": "Europe",
-      "accommodation": "https://www.airbnb.com/rooms/645018464047366950",
-      "basicPrice": "100",
+      "accommodation": "https://www.booking.com/hotel/me/pana.en-gb.html",
+      "basicPrice": "140",
+      "hostedby": "whatatravel",
       "dates": [
         { "start_date": "01-04", "end_date": "25-04" },
         { "start_date": "01-06", "end_date": "25-06" }
       ],
-      "image_id": "qIPzMw3PNE4"
+      "image_id": "qIPzMw3PNE4",
+      "carousel": ["-IbGKZdqERw", "vAiCza4PuGk", "Y_-zgq-1pN4"],
+      "description": [
+        "Step into the medieval beauty of Kotor, a coastal town nestled at the foot of towering mountains and surrounded by the pristine waters of the Bay of Kotor.",
+        "Explore the well-preserved Old Town, a UNESCO World Heritage site, with its narrow streets, charming squares, and historic landmarks. Climb the ancient city walls to enjoy panoramic views of the bay and the surrounding landscapes.",
+        "Join attractions in Kotor, such as boat trips to the nearby Blue Cave and Our Lady of the Rocks island, or explore the nearby Lovcen National Park with its breathtaking scenery."
+      ]
     }
   ]
 }

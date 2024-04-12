@@ -43,6 +43,8 @@ const createTourSlice: StateCreator<TourState & TourActions & SearchState> = (se
   },
   importTours: async () => {
     const results = await import('./results.json').then((res) => res.default.results);
+    const { default: Typograf } = await import('typograf');
+    const typo = new Typograf({ locale: ['en-US'] });
     const year = (new Date()).getFullYear();
     const withDatesAndFlat: Array<Tour> = [];
     results.forEach((tour) => {
@@ -61,6 +63,7 @@ const createTourSlice: StateCreator<TourState & TourActions & SearchState> = (se
             // @ts-ignore
             duration: Math.floor((end - start) / 1000 / 60 / 60 / 24),
           },
+          description: tour.description.map((paragraph) => nbspify(typo.execute(paragraph))),
         });
       });
     });

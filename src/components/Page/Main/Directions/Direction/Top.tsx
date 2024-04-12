@@ -1,9 +1,17 @@
-import { memo, useEffect } from 'react';
+import { memo, ReactElement, useEffect } from 'react';
 import { HashLink } from 'react-router-hash-link';
 
 import type { Tour } from '../../../../../store/types/tour';
 import styles from '../../../Page.module.sass';
 import useStore from '../../../../../store/store';
+import Resorterra from '../../ProductCards/Hosters/Resorterra';
+import Tripanyday from '../../ProductCards/Hosters/Tripanyday';
+import Whatatravel from '../../ProductCards/Hosters/Whatatravel';
+
+type Hosters = 'resorterra' | 'tripanyday' | 'whatatravel';
+const hosters: { [key in Hosters]: ReactElement } = {
+  resorterra: <Resorterra />, tripanyday: <Tripanyday />, whatatravel: <Whatatravel />,
+};
 
 const Top = memo((props: { tour: Tour }) => {
   const { tour } = props;
@@ -36,7 +44,7 @@ const Top = memo((props: { tour: Tour }) => {
         )
       }
       <div className="hero-body pl-3 pr-3 is-align-items-flex-start">
-        <div className="container is-max-widescreen">
+        <div className={`container is-max-widescreen ${styles.my_container}`}>
           <h1 className={`title ${styles.first_screen_title}`}>{`${tour.country}, ${tour.place}`}</h1>
           <h2 className="subtitle">A&nbsp;place you&apos;ll&nbsp;want to&nbsp;come back&nbsp;to. More&nbsp;than&nbsp;once</h2>
           <p className="buttons">
@@ -48,6 +56,13 @@ const Top = memo((props: { tour: Tour }) => {
               <span>Book now</span>
             </HashLink>
           </p>
+          <div className={styles.hosted_directions}>
+            <span>by</span>
+            {
+              (tour.hostedby)
+                ? hosters[tour.hostedby as Hosters] : <Resorterra />
+            }
+          </div>
         </div>
       </div>
     </section>

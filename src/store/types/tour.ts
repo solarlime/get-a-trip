@@ -6,6 +6,7 @@ export interface Tour {
   continent: string,
   accommodation: string,
   basicPrice: string,
+  hostedby: string,
   promocode: string,
   dates: {
     start_date: Date,
@@ -14,6 +15,8 @@ export interface Tour {
   },
   left: number,
   image_id: string,
+  carousel: Array<string>
+  description: Array<string>
 }
 
 interface FilteredTours {

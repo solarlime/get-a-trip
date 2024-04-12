@@ -18,8 +18,8 @@ const About = memo(() => {
       <div className={`hero-body pl-3 pr-3 ${styles.my_hero_body}`}>
         <div className={`container ${styles.my_hero_padding} is-max-widescreen`}>
           <h1 className="title is-size-1 is-size-3-mobile has-text-centered has-text-primary">What we are doing</h1>
-          <div className="columns">
-            <div className="column is-6">
+          <div className={`columns ${styles.columns}`}>
+            <div className="column is-7">
               <p className="block">
                 Have you ever found yourself wanting to&nbsp;go somewhere but&nbsp;not&nbsp;wishing to&nbsp;choose a&nbsp;hotel or&nbsp;find travel companions? Or&nbsp;maybe you want something unusual. We understand and&nbsp;can&nbsp;help you!
               </p>
@@ -27,10 +27,9 @@ const About = memo(() => {
                 We have collected a&nbsp;number of&nbsp;interesting destinations around the&nbsp;world for&nbsp;you. We&apos;ve already found the&nbsp;hotel you&apos;ll love. We&apos;ve also found a&nbsp;group of&nbsp;like-minded travelers you won&apos;t&nbsp;be&nbsp;bored with. Want to&nbsp;go with&nbsp;someone? No problem! Choose where you want to&nbsp;go, add&nbsp;the&nbsp;options you want, and&nbsp;we&apos;ll take care of&nbsp;your&nbsp;future rest!
               </p>
             </div>
-            <div className="column" />
             {
               (image[imageId]) ? (
-                <picture className="column is-5">
+                <picture className={`${styles.right_picture} column is-5`}>
                   <source
                     srcSet={`${image[imageId].value}&auto=compress&fm=jpg&w=320&crop=entropy&fit=clip 320w,
                       ${image[imageId].value}&auto=compress&fm=jpg&w=640&crop=entropy&fit=clip 640w,

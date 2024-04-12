@@ -84,7 +84,7 @@ img
 
     img.my_column
       object-fit: cover
-      border-radius:  calc($radius + $column-gap)
+      border-radius: calc($radius + $column-gap)
 
     picture img.my_column
       width: 100%
@@ -115,6 +115,27 @@ img
 
         .my_media_content
           overflow: unset
+
+        .hosted
+          position: absolute
+          right: card.$card-content-padding
+          bottom: card.$card-content-padding
+          height: 36px
+          align-items: center
+          border: 0
+          z-index: 1
+
+          span
+            flex-shrink: 0
+            font-size: 0.9rem
+            color: #fffef0
+
+          svg
+            flex-shrink: 0
+            background-color: transparent
+            height: 100%
+            border-radius: 0
+            color: #fffef0
 
 .my_section:last-of-type, .my_section_coloured, .my_section_before_coloured
   .my_hero_body
@@ -178,3 +199,82 @@ img
 .opened
   display: block
 
+.my_container
+  position: relative
+
+  .hosted_directions
+    position: absolute
+    right: 0
+    bottom: -7rem
+    display: flex
+    align-items: center
+    column-gap: 0.5rem
+    height: 40px
+    border: 0
+    z-index: 1
+
+    @media (max-width: 768px)
+      bottom: 0
+
+
+    span
+      flex-shrink: 0
+      color: #1f1f1f
+
+      @media (min-width: 500px)
+        &:before
+          content: 'hosted '
+
+    svg
+      flex-shrink: 0
+      background-color: transparent
+      height: 100%
+      max-width: 100px
+      border-radius: 0
+      color: #1f1f1f
+
+.appear
+  opacity: 1
+  transition: opacity 0.5s ease-out
+
+.disappear
+  opacity: 0
+  transition: opacity 0.5s ease-out
+
+.my_carousel
+  position: relative
+  aspect-ratio: 16/9
+
+  .my_carousel_buttons
+    position: absolute
+    top: 0
+    left: 0
+    display: flex
+    align-items: center
+    justify-content: space-between
+    width: 100%
+    height: 100%
+    padding-left: 2rem
+    padding-right: 2rem
+
+  .img_focus
+    object-position: top center
+
+    @media (max-width: 768px)
+      object-position: center center
+
+.columns
+  position: relative
+
+  .right_picture, .left_picture
+    height: 100%
+    right: 0
+
+    @media (min-width: 769px)
+      position: absolute
+
+  .right_picture
+    right: 0
+
+  .left_picture
+    left: 0
