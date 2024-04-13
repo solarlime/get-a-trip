@@ -32,9 +32,9 @@ const TotalPrice = memo(() => {
   );
 
   const isDisabled = useMemo(
-    () => ![...recurring, ...notRecurring, firstName, lastName, phone, email]
+    () => ![...recurring, ...notRecurring, firstName, lastName, phone, email, duration]
       .every((input) => input.status === 'success'),
-    [recurring, notRecurring, firstName, lastName, phone, email],
+    [recurring, notRecurring, firstName, lastName, phone, email, duration],
   );
 
   return (

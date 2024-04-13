@@ -22,11 +22,15 @@ const createSearchSlice: StateCreator<SearchState & SearchActions> = (set) => ({
   setDuration: (newState) => {
     if (+newState.value > 0) {
       set((state) => ({ ...state, duration: newState }));
+    } else if (+newState.value === 0) {
+      set((state) => ({ ...state, duration: { ...newState, status: 'idle' } }));
     }
   },
   setCompanions: (newState) => {
     if (+newState.value > 0) {
       set((state) => ({ ...state, companions: newState }));
+    } else if (+newState.value === 0) {
+      set((state) => ({ ...state, companions: { ...newState, status: 'idle' } }));
     }
   },
 });
