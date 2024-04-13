@@ -97,6 +97,11 @@ img
     .my_columns
       align-items: stretch
 
+      .featuredCard
+        @media (max-width: 768px)
+          &:nth-child(2n)
+            display: none
+
       .specific.productCard
         position: relative
         height: 100%

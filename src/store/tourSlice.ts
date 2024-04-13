@@ -53,13 +53,16 @@ const createTourSlice: StateCreator<TourState & TourActions & SearchState> = (se
         const [dayEnd, monthEnd] = date.end_date.split('-');
         const start = new Date(`${year}-${monthStart}-${dayStart}`);
         const end = new Date(`${year}-${monthEnd}-${dayEnd}`);
+        const startDate = new Date(`${year}-${monthStart}-${dayStart}`);
+        const endDate = new Date(`${year}-${monthEnd}-${dayEnd}`);
+
         withDatesAndFlat.push({
           ...tour,
           left: placesLeft,
           promocode: uuid().slice(0, 8),
           dates: {
-            start_date: new Date(`${year}-${monthStart}-${dayStart}`),
-            end_date: new Date(`${year}-${monthEnd}-${dayEnd}`),
+            start_date: (endDate > new Date()) ? startDate : new Date(`${year + 1}-${monthStart}-${dayStart}`),
+            end_date: (endDate > new Date()) ? endDate : new Date(`${year + 1}-${monthEnd}-${dayEnd}`),
             // @ts-ignore
             duration: Math.floor((end - start) / 1000 / 60 / 60 / 24),
           },
@@ -74,8 +77,8 @@ const createTourSlice: StateCreator<TourState & TourActions & SearchState> = (se
         .map((tour) => {
           // @ts-ignore
           const daysLeft = Math.floor((tour.dates.end_date - new Date()) / 1000 / 60 / 60 / 24);
-          // 5 is chosen randomly. Can be changed
-          return { ...tour, left: (daysLeft / 5 > 12) ? 12 : Math.ceil(daysLeft / 5) };
+          // 7 is chosen randomly. Can be changed
+          return { ...tour, left: (daysLeft / 7 > 12) ? 12 : Math.ceil(daysLeft / 7) };
         }),
     }));
   },
@@ -86,16 +89,22 @@ const createTourSlice: StateCreator<TourState & TourActions & SearchState> = (se
     let upTo = number ?? tours.length;
     const indexes: Array<number> = [];
     const places: Array<string> = [];
+    const hosters: Array<string> = [];
     for (let i = 0; i < upTo; i += 1) {
       const randomIndex = Math.floor(Math.random() * tours.length);
       if (
         indexes.includes(randomIndex)
         || places.includes(tours[randomIndex].place)
-        || (tours[randomIndex].dates.end_date < new Date())) {
+        || (hosters.filter((hoster) => hoster === tours[randomIndex].hostedby).length >= 2)
+        || (tours[randomIndex].dates.end_date < new Date())
+        || (Math.floor((
+          // @ts-ignore
+          tours[randomIndex].dates.end_date - new Date()) / 1000 / 60 / 60 / 24 / 30) > 9)) {
         upTo += 1;
       } else {
         indexes.push(randomIndex);
         places.push(tours[randomIndex].place);
+        hosters.push(tours[randomIndex].hostedby);
         resultingTours.push(tours[randomIndex]);
       }
     }
