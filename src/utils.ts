@@ -14,6 +14,13 @@ export const placesLeft = 12;
 
 export const nbspify = (str: string) => {
   // Find all spaces after ' [article | auxiliary verb | and]'
-  const regex = /(?<=[\s\u00A0]([Tt]he|[Aa]|[Aa]n|[Ii]s|[Aa]re|[Ww]as|[Ww]ere|[Ww]ill|[Ss]hall|[Aa]nd))\s/g;
-  return str.replaceAll(regex, '\u00A0');
+
+  // This one does not work in old Safari
+  // eslint-disable-next-line max-len
+  // const regex = /(?<=[\s\u00A0](the|a|an|is|are|was|were|will|shall|and|to))\s/gi;
+  // return str.replaceAll(regex, '\u00A0');
+
+  // Whereas this works
+  const regex = /(?<space>[\s\u00A0](the|a|an|is|are|was|were|will|shall|and|to))\s/gi;
+  return str.replace(regex, '$<space>\u00A0');
 };
