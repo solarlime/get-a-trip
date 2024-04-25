@@ -4,6 +4,8 @@ import { memo } from 'react';
 import styles from '../../../Page.module.sass';
 import Carousel from './Carousel';
 
+const pictures = ['tXiMrX3Gc-g', 'e3OUQGT9bWU', 'UmV2wr-Vbq8'];
+
 const Activities = memo(() => (
   <section id="activities" className={`hero ${styles.my_section} ${styles.my_section_before_coloured}`}>
     <div className={`hero-body pl-3 pr-3 ${styles.my_hero_body}`}>
@@ -21,7 +23,7 @@ const Activities = memo(() => (
               It&apos;s always fun to&nbsp;do something together. You can&nbsp;easily find your&nbsp;company among the&nbsp;community for&nbsp;windsurfing, fishing, jogging and&nbsp;anything else.
             </p>
           </div>
-          <Carousel imageLocation="right" />
+          <Carousel imageLocation="right" pictures={pictures} />
         </div>
       </div>
     </div>

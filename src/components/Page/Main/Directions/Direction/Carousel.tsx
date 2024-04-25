@@ -8,40 +8,46 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from '../../../Page.module.sass';
 import useStore from '../../../../../store/store';
 
-const Carousel = memo((props: { imageLocation: 'left' | 'right' }) => {
-  const { imageLocation } = props;
+const Carousel = memo((props: { imageLocation: 'left' | 'right', pictures?: Array<string> }) => {
+  const { imageLocation, pictures: imageFromProps } = props;
   const tour = useStore((state) => state.chosenTour);
   const image = useStore((state) => state.image);
   const getImage = useStore((state) => state.getImage);
+  const [resultImage, setResultImage] = useState(imageFromProps);
   const [shown, setShown] = useState(0);
   const shownRef = useRef(null);
 
   useEffect(() => {
-    Promise
-      .all(tour.carousel.map((imageId) => getImage(imageId)))
-      .then(() => setShown(0));
-  }, []);
+    if (!resultImage) {
+      setResultImage(tour.carousel);
+    } else {
+      Promise
+        .all(resultImage.map((imageId) => getImage(imageId)))
+        .then(() => setShown(0));
+    }
+  }, [resultImage]);
 
   return (
     <div className={`column is-5 ${styles.my_carousel} ${(imageLocation === 'left') ? styles.left_picture : styles.right_picture}`}>
       <picture>
         {
-          (image[tour.carousel[shown]])
+          // @ts-ignore
+          (resultImage && image[resultImage[shown]])
             ? (
               <>
                 <source
-                  srcSet={`${image[tour.carousel[shown]].value}&auto=compress&fm=jpg&w=320&crop=entropy&fit=clip 320w,
-                              ${image[tour.carousel[shown]].value}&auto=compress&fm=jpg&w=640&crop=entropy&fit=clip 640w,
-                              ${image[tour.carousel[shown]].value}&auto=compress&fm=jpg&w=960&crop=entropy&fit=clip 960w,
-                              ${image[tour.carousel[shown]].value}&auto=compress&fm=jpg&w=1280&crop=entropy&fit=clip 1280w,
-                              ${image[tour.carousel[shown]].value}&auto=compress&fm=jpg&w=1920&crop=entropy&fit=clip 1920w,
-                              ${image[tour.carousel[shown]].value}&auto=compress&fm=jpg&w=2560&crop=entropy&fit=clip 2560w`}
+                  srcSet={`${image[resultImage[shown]].value}&auto=compress&fm=jpg&w=320&crop=entropy&fit=clip 320w,
+                              ${image[resultImage[shown]].value}&auto=compress&fm=jpg&w=640&crop=entropy&fit=clip 640w,
+                              ${image[resultImage[shown]].value}&auto=compress&fm=jpg&w=960&crop=entropy&fit=clip 960w,
+                              ${image[resultImage[shown]].value}&auto=compress&fm=jpg&w=1280&crop=entropy&fit=clip 1280w,
+                              ${image[resultImage[shown]].value}&auto=compress&fm=jpg&w=1920&crop=entropy&fit=clip 1920w,
+                              ${image[resultImage[shown]].value}&auto=compress&fm=jpg&w=2560&crop=entropy&fit=clip 2560w`}
                   sizes="(max-width: 320px) 320px, (max-width: 768px) 640px, (max-width: 1300px) 500px, 1280px"
                   type="image/jpeg"
                 />
                 <img
                   className={`${styles.my_column} ${styles.appear}`}
-                  src={image[tour.carousel[shown]].value}
+                  src={image[resultImage[shown]].value}
                   alt={`${tour.country}, ${tour.place}`}
                   ref={shownRef}
                   onLoad={(event) => {
