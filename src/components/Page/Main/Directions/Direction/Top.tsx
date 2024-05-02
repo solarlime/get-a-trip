@@ -1,17 +1,10 @@
-import { memo, ReactElement, useEffect } from 'react';
+import { memo, useEffect } from 'react';
 import { HashLink } from 'react-router-hash-link';
 
 import type { Tour } from '../../../../../store/types/tour';
+import Hoster, { Hosters } from '../../../common/Hoster';
 import styles from '../../../Page.module.sass';
 import useStore from '../../../../../store/store';
-import Resorterra from '../../ProductCards/Hosters/Resorterra';
-import Tripanyday from '../../ProductCards/Hosters/Tripanyday';
-import Whatatravel from '../../ProductCards/Hosters/Whatatravel';
-
-type Hosters = 'resorterra' | 'tripanyday' | 'whatatravel';
-const hosters: { [key in Hosters]: ReactElement } = {
-  resorterra: <Resorterra />, tripanyday: <Tripanyday />, whatatravel: <Whatatravel />,
-};
 
 const Top = memo((props: { tour: Tour }) => {
   const { tour } = props;
@@ -58,10 +51,7 @@ const Top = memo((props: { tour: Tour }) => {
           </p>
           <div className={styles.hosted_directions}>
             <span>by</span>
-            {
-              (tour.hostedby)
-                ? hosters[tour.hostedby as Hosters] : <Resorterra />
-            }
+            <Hoster hostedby={tour.hostedby as Hosters} />
           </div>
         </div>
       </div>

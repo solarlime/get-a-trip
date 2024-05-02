@@ -55,7 +55,14 @@ export default {
       },
       {
         test: /\.svg$/i,
-        type: 'asset/resource',
+        type: 'asset',
+        resourceQuery: { not: [/react/] }, // exclude react component if *.svg?react
+      },
+      {
+        test: /\.svg$/i,
+        issuer: /\.[jt]sx?$/,
+        resourceQuery: /react/, // *.svg?react
+        use: ['@svgr/webpack'],
       },
       {
         test: /\.(png|jpg|gif|ico)$/i,
