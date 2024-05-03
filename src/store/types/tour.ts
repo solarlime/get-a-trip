@@ -29,8 +29,12 @@ export interface QuestionAndAnswer {
   answer: string,
 }
 
+export interface Images {
+  [key: string]: Base,
+}
+
 export interface TourState {
-  image: { [key: string]: Base },
+  images: Images,
   tours: Array<Tour>,
   randomTours: Array<Tour>,
   filteredTours: FilteredTours,
@@ -39,7 +43,7 @@ export interface TourState {
 }
 
 export interface TourActions {
-  getImage: (id: string) => Promise<void>,
+  getImages: (id: string) => Promise<void>,
   importTours: () => Promise<void>,
   getRandomTours: (number?: number) => Promise<void>,
   getFilteredTours: () => Promise<void>,

@@ -1,3 +1,5 @@
+import type { Images } from './store/types/tour';
+
 export const formatter = (value: Date | string) => {
   let date: Date;
   if (typeof value === 'string') {
@@ -23,4 +25,36 @@ export const nbspify = (str: string) => {
   // Whereas this works
   const regex = /(?<space>[\s\u00A0](the|a|an|is|are|was|were|will|shall|and|to))\s/gi;
   return str.replace(regex, '$<space>\u00A0');
+};
+
+export const setSrcset = (src: string, srcSet: Array<number>) => srcSet
+  .reduce((previous, current, index, sources) => {
+    const newSource = `${previous}${src}&auto=format&fm=avif&q=50&w=${current}&crop=entropy&fit=clip ${current}w`;
+    if (index === sources.length - 1) {
+      return newSource;
+    }
+    return `${newSource}, `;
+  }, '');
+
+export const cacheImages = async (
+  allImages: Images,
+  neededImages: Array<string>,
+  sizes: string,
+  srcSet: Array<number>,
+) => {
+  const imagesToCache = Object.entries(allImages)
+    .filter((entry) => neededImages.includes(entry[0]))
+    .map((entry) => entry[1].value);
+  const promises = imagesToCache.map(
+    (src: string): Promise<void> => new Promise((resolve, reject) => {
+      const img = new Image();
+      img.src = src;
+      img.srcset = setSrcset(src, srcSet);
+      img.sizes = sizes;
+      img.addEventListener('load', () => resolve());
+      img.addEventListener('error', () => reject());
+    }),
+  );
+
+  await Promise.all(promises);
 };

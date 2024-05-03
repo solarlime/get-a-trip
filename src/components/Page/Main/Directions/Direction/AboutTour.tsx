@@ -4,7 +4,7 @@ import { v4 as id } from 'uuid';
 
 import styles from '../../../Page.module.sass';
 import useStore from '../../../../../store/store';
-import Carousel from './Carousel';
+import Carousel from '../../../common/Carousel';
 
 const AboutTour = memo(() => {
   const tour = useStore((state) => state.chosenTour);

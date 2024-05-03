@@ -1,9 +1,0 @@
-<svg height="100%" stroke-miterlimit="10" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" version="1.1" viewBox="0 0 640 480" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
-<defs/>
-<clipPath id="ArtboardFrame">
-<rect height="480" width="640" x="0" y="0"/>
-</clipPath>
-<g clip-path="url(#ArtboardFrame)" id="Layer">
-<path d="M-3.55271e-15 0L640 0L640 480L-3.55271e-15 480L-3.55271e-15 0Z" fill="#e6f7ef" fill-rule="nonzero" opacity="1" stroke="none"/>
-</g>
-</svg>

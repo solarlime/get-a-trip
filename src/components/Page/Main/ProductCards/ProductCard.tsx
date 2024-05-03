@@ -5,12 +5,13 @@ import type { Tour } from '../../../../store/types/tour';
 import Hoster, { Hosters } from '../../common/Hoster';
 import styles from '../../Page.module.sass';
 import useStore from '../../../../store/store';
+import ImagePreloader from '../../common/ImagePreloader';
 import { formatter } from '../../../../utils';
 
 const ProductCard = memo((props: { tour: Tour }) => {
   const { tour } = props;
-  const image = useStore((state) => state.image);
-  const getImage = useStore((state) => state.getImage);
+  const allImages = useStore((state) => state.images);
+  const getImages = useStore((state) => state.getImages);
   const setChosenTour = useStore((state) => state.setChosenTour);
 
   const src = tour.image_id;
@@ -19,8 +20,7 @@ const ProductCard = memo((props: { tour: Tour }) => {
   const { left } = tour;
 
   useEffect(() => {
-    // TODO: image caching
-    getImage(src);
+    getImages(src);
   }, []);
 
   return (
@@ -33,21 +33,17 @@ const ProductCard = memo((props: { tour: Tour }) => {
         </div>
         <figure className="image is-16by9">
           {
-            (image[src]) ? (
-              <picture className="column is-5">
-                <source
-                  srcSet={`${image[src].value}&auto=compress&fm=jpg&w=320&crop=entropy&fit=clip 320w,
-                      ${image[src].value}&auto=compress&fm=jpg&w=640&crop=entropy&fit=clip 640w,
-                      ${image[src].value}&auto=compress&fm=jpg&w=960&crop=entropy&fit=clip 960w,
-                      ${image[src].value}&auto=compress&fm=jpg&w=1280&crop=entropy&fit=clip 1280w,
-                      ${image[src].value}&auto=compress&fm=jpg&w=1920&crop=entropy&fit=clip 1920w`}
-                  sizes="(max-width: 320px) 320px, (max-width: 768px) 640px, 320px"
-                  type="image/jpeg"
-                />
-                <img src={image[src].value} alt={location} />
-              </picture>
+            (allImages[src]) ? (
+              <ImagePreloader
+                className={styles.my_image}
+                allImages={allImages}
+                neededImages={[src]}
+                sizes="(max-width: 320px) 320px, (max-width: 768px) 640px, 320px"
+                srcSet={[320, 640, 960, 1280, 1920]}
+                alt={location}
+              />
             ) : (
-              <img src={image.placeholder.value} alt={location} />
+              <div className={`${styles.my_image} is-skeleton`} />
             )
           }
         </figure>

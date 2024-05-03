@@ -4,36 +4,33 @@ import { HashLink } from 'react-router-hash-link';
 import type { Tour } from '../../../../../store/types/tour';
 import Hoster, { Hosters } from '../../../common/Hoster';
 import styles from '../../../Page.module.sass';
+import ImagePreloader from '../../../common/ImagePreloader';
 import useStore from '../../../../../store/store';
 
 const Top = memo((props: { tour: Tour }) => {
   const { tour } = props;
-  const image = useStore((state) => state.image);
-  const getImage = useStore((state) => state.getImage);
+  const allImages = useStore((state) => state.images);
+  const getImages = useStore((state) => state.getImages);
   const imageId = tour.image_id;
 
   useEffect(() => {
-    getImage(imageId);
+    getImages(imageId);
   }, []);
 
   return (
     <section id="top" className={`hero is-medium is-background-white ${styles.specific} ${styles.first_screen} ${styles.directions}`}>
       {
-        (image[imageId]) ? (
-          <picture>
-            <source
-              srcSet={`${image[imageId].value}&auto=compress&fm=jpg&w=1280&crop=entropy&fit=clip 1280w,
-                      ${image[imageId].value}&auto=compress&fm=jpg&w=1920&crop=entropy&fit=clip 1920w`}
-              type="image/jpeg"
-            />
-            <img
-              className={styles.first_screen_image}
-              src={image[imageId].value}
-              alt="people are hiking"
-            />
-          </picture>
+        (allImages[imageId]) ? (
+          <ImagePreloader
+            className={styles.top_image}
+            allImages={allImages}
+            neededImages={[imageId]}
+            sizes="100vw, 1280px"
+            srcSet={[640, 1280, 1920]}
+            alt={`${tour.country}, ${tour.place}`}
+          />
         ) : (
-          <img src={image.placeholder.value} className={styles.first_screen_image} alt={`${tour.country}, ${tour.place}`} />
+          <div className={`${styles.top_image} is-skeleton`} />
         )
       }
       <div className="hero-body pl-3 pr-3 is-align-items-flex-start">

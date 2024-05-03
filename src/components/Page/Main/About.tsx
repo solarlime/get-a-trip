@@ -3,14 +3,15 @@ import { memo, useEffect } from 'react';
 
 import styles from '../Page.module.sass';
 import useStore from '../../../store/store';
+import ImagePreloader from '../common/ImagePreloader';
 
 const About = memo(() => {
-  const image = useStore((state) => state.image);
-  const getImage = useStore((state) => state.getImage);
+  const allImages = useStore((state) => state.images);
+  const getImages = useStore((state) => state.getImages);
   const imageId = 'AZMmUy2qL6A';
 
   useEffect(() => {
-    getImage(imageId);
+    getImages(imageId);
   }, []);
 
   return (
@@ -28,26 +29,19 @@ const About = memo(() => {
               </p>
             </div>
             {
-              (image[imageId]) ? (
-                <picture className={`${styles.right_picture} column is-5`}>
-                  <source
-                    srcSet={`${image[imageId].value}&auto=compress&fm=jpg&w=320&crop=entropy&fit=clip 320w,
-                      ${image[imageId].value}&auto=compress&fm=jpg&w=640&crop=entropy&fit=clip 640w,
-                      ${image[imageId].value}&auto=compress&fm=jpg&w=960&crop=entropy&fit=clip 960w,
-                      ${image[imageId].value}&auto=compress&fm=jpg&w=1280&crop=entropy&fit=clip 1280w,
-                      ${image[imageId].value}&auto=compress&fm=jpg&w=1920&crop=entropy&fit=clip 1920w,
-                      ${image[imageId].value}&auto=compress&fm=jpg&w=2560&crop=entropy&fit=clip 2560w`}
+              (allImages[imageId]) ? (
+                <div className={`${styles.right_picture} column is-5`}>
+                  <ImagePreloader
+                    className={`${styles.my_image}`}
+                    allImages={allImages}
+                    neededImages={[imageId]}
                     sizes="(max-width: 320px) 320px, (max-width: 768px) 640px, (max-width: 1300px) 500px, 1280px"
-                    type="image/jpeg"
-                  />
-                  <img
-                    className={`${styles.my_column}`}
-                    src={image[imageId].value}
+                    srcSet={[320, 640, 960, 1280, 1920, 2560]}
                     alt="people are sitting next to the fire"
                   />
-                </picture>
+                </div>
               ) : (
-                <img className={`column is-5 ${styles.my_column}`} src={image.placeholder.value} alt="people are sitting next to the fire" />
+                <div className={`${styles.my_image} is-skeleton`} />
               )
             }
           </div>

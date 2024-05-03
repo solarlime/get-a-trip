@@ -12,9 +12,7 @@ import { nbspify, placesLeft } from '../utils';
 const unsplash = createApi({ accessKey: import.meta.env.UNSPLASH });
 
 const initialState: TourState = {
-  image: {
-    placeholder: { value: '/placeholder.svg' },
-  },
+  images: {},
   tours: [],
   randomTours: [],
   filteredTours: { tours: [], isFilterRun: false },
@@ -25,13 +23,13 @@ const initialState: TourState = {
 // @ts-ignore
 const createTourSlice: StateCreator<TourState & TourActions & SearchState> = (set, get) => ({
   ...initialState,
-  getImage: async (id) => {
+  getImages: async (id: string) => {
     try {
       const result = await unsplash.photos.get({ photoId: id });
       if (result.response) {
         set((state) => ({
-          image: {
-            ...state.image,
+          images: {
+            ...state.images,
             [id]: { value: result.response.urls.raw },
           },
         }));
