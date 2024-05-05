@@ -7,7 +7,8 @@ import { formatter } from '../../../../../../utils';
 
 const InfoCards = memo(() => {
   const tour = useStore((state) => state.chosenTour);
-  const date = `${formatter(tour.dates.start_date)} – ${formatter(tour.dates.end_date)}`;
+  const { date: startDate, year } = formatter(tour.dates.start_date);
+  const date = `${startDate} – ${formatter(tour.dates.end_date).date}`;
   const { duration } = tour.dates;
 
   return (
@@ -17,13 +18,13 @@ const InfoCards = memo(() => {
           <div className="columns is-multiline">
             <div className="column is-half">
               <div className={`columns ${styles.my_columns} ${styles.specific}`}>
-                <InfoCard first="When" second={date} />
+                <InfoCard first="When" second={`${year}: ${date}`} />
                 <InfoCard first="How long" second={`${duration} day${(!duration.toString().endsWith('1')) ? 's' : ''}`} />
               </div>
             </div>
             <div className="column is-half">
               <div className={`columns ${styles.my_columns} ${styles.specific}`}>
-                <InfoCard first="Where" second="">
+                <InfoCard first="Where">
                   <a className="has-text-white is-underlined" href={tour.accommodation} rel="noreferrer" target="_blank">See hotel</a>
                 </InfoCard>
                 <InfoCard first="Cost" second={`From ${tour.basicPrice}$/day`} />

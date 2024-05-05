@@ -15,7 +15,8 @@ const ProductCard = memo((props: { tour: Tour }) => {
   const setChosenTour = useStore((state) => state.setChosenTour);
 
   const src = tour.image_id;
-  const date = `${formatter(tour.dates.start_date)} – ${formatter(tour.dates.end_date)}`;
+  const { date: startDate, year } = formatter(tour.dates.start_date);
+  const date = `${startDate} – ${formatter(tour.dates.end_date).date}`;
   const location = `${tour.country}, ${tour.place}`;
   const { left } = tour;
 
@@ -61,7 +62,7 @@ const ProductCard = memo((props: { tour: Tour }) => {
             className="button is-white has-text-primary is-size-6"
             to={`/directions/${location.toLocaleLowerCase()
               .replace(', ', '-')
-              .replace(' ', '-')}#top`}
+              .replace(' ', '-')}-${year}-${startDate.replace(/ /i, '-')}#top`}
             onClick={() => setChosenTour(tour)}
             smooth={false}
           >

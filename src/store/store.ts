@@ -32,7 +32,6 @@ BookingActions
         name: 'getatripStore',
         storage: createJSONStorage(() => sessionStorage),
         partialize: (state) => ({
-          chosenTour: state.chosenTour,
           questionsAndAnswers: state.questionsAndAnswers,
         }),
       },

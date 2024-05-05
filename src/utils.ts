@@ -1,13 +1,16 @@
 import type { Images } from './store/types/tour';
 
-export const formatter = (value: Date | string) => {
+export const formatter = (value: Date | string): { date: string, year: number } => {
   let date: Date;
   if (typeof value === 'string') {
     date = new Date(value);
   } else {
     date = value;
   }
-  return new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric' }).format(date);
+  return {
+    date: new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric' }).format(date),
+    year: date.getFullYear(),
+  };
 };
 
 export const getYear = () => (new Date()).getFullYear();

@@ -2,7 +2,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { Link, useLocation } from 'react-router-dom';
 
-import styles from './Checkout.module.sass';
 import Payment from './Payment/Payment';
 import useStore from '../../store/store';
 
@@ -11,7 +10,7 @@ function Checkout() {
   const reset = useStore((state) => state.reset);
 
   return (
-    <main className={`hero is-fullheight ${styles.checkout}`}>
+    <main className="hero is-fullheight">
       <div className="hero-body">
         <div className="columns container is-max-desktop">
           <section className="column">
@@ -20,7 +19,7 @@ function Checkout() {
               type="button"
               onClick={reset}
             >
-              <Link className="is-small has-text-dark" to={(location.state.previousLocationPathname) ? location.state.previousLocationPathname : '/'}>
+              <Link className="is-small has-text-dark" to={(location?.state?.previousLocationPathname) ? location.state.previousLocationPathname : '/'}>
                 <FontAwesomeIcon icon={faArrowLeft} />
                 {' Back to Getatrip'}
               </Link>

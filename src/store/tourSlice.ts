@@ -6,7 +6,7 @@ import type {
   TourState, TourActions, Tour, QuestionAndAnswer,
 } from './types/tour';
 import type { SearchState } from './types/search';
-import { nbspify, placesLeft } from '../utils';
+import { formatter, nbspify, placesLeft } from '../utils';
 
 // @ts-ignore
 const unsplash = createApi({ accessKey: import.meta.env.UNSPLASH });
@@ -146,8 +146,11 @@ const createTourSlice: StateCreator<TourState & TourActions & SearchState> = (se
   resolveChosenTour: async (searchString: string) => {
     if (!get().tours.length) await get().importTours();
     const { tours, setChosenTour } = get();
-    const resolvedTour = tours.find((tour) => `${tour.country.toLocaleLowerCase()}-${tour.place.toLocaleLowerCase()}`
-      .replaceAll(' ', '-') === searchString);
+    const resolvedTour = tours.find((tour) => {
+      const { date: startDate, year } = formatter(tour.dates.start_date);
+      return `${`${tour.country.toLocaleLowerCase()}-${tour.place.toLocaleLowerCase()}`
+        .replaceAll(' ', '-')}-${year}-${startDate.replace(/ /i, '-')}` === searchString;
+    });
     if (resolvedTour) setChosenTour(resolvedTour);
   },
   importQuestionsAndAnswers: async () => {

@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 
 import styles from '../../../../Page.module.sass';
 
-const InfoCard = memo((props: { first: string, second: string, children?: ReactNode }) => {
+const InfoCard = memo((props: { first: string, second?: string, children?: ReactNode }) => {
   const { first, second, children } = props;
   return (
     <div className="column">
@@ -13,7 +13,7 @@ const InfoCard = memo((props: { first: string, second: string, children?: ReactN
             <div className={`media-content ${styles.my_media_content}`}>
               <p className="title is-4 pb-3 has-text-white">{first}</p>
               <p className="subtitle is-6 has-text-white">
-                {(second === '') ? children : second}
+                {(!second) ? children : second}
               </p>
             </div>
           </div>

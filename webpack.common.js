@@ -44,6 +44,13 @@ export default {
           MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
+            options: {
+              modules: {
+                mode: 'local',
+                auto: true,
+                localIdentName: '[name]__[local]--[hash:base64:5]'
+              }
+            }
           },
           {
             loader: 'sass-loader',

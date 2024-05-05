@@ -8,6 +8,7 @@ import InfoCards from './InfoCards/InfoCards';
 import Activities from './Activities';
 import Booking from './Booking/Booking';
 import FAQ from './FAQ/FAQ';
+import NotFound from '../../NotFound';
 
 const Direction = memo(() => {
   const [resolved, setResolved] = useState(false);
@@ -23,7 +24,10 @@ const Direction = memo(() => {
 
   if (!Object.keys(chosenTour).length) {
     if (resolved) {
-      return <Navigate to="/directions" />;
+      if (window.location.pathname.startsWith('/directions')) {
+        return <Navigate to="/directions" />;
+      }
+      return <NotFound />;
     }
     return <div>Loading...</div>;
   }

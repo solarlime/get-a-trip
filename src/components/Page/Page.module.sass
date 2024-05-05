@@ -9,10 +9,12 @@ $column-gap: columns.$column-gap
 $radius: card.$card-radius
 
 main
+  display: flex
+  flex-direction: column
   flex-grow: 1
 
-img
-  background-color: #e6f7ef
+//img
+//  background-color: #e6f7ef
 
 .specific.logo
   height: 20px
@@ -292,3 +294,33 @@ img
 
   .left_picture
     left: 0
+
+.not_found
+  flex-grow: 1
+  padding-top: $navbar-height-new
+
+.not_found_body
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: space-between
+  gap: 2rem
+  padding-bottom: 0
+
+.not_found_title
+  font-size: 4rem
+
+  @media (max-width: 480px)
+    font-size: 3rem
+
+.not_found_content
+  display: flex
+  flex-direction: column
+  align-items: center
+  text-align: center
+
+.not_found_img
+  min-width: 180px
+  width: 40vw
+  max-width: 270px
+  height: auto
