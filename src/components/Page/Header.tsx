@@ -1,11 +1,9 @@
 import { memo, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { HashLink } from 'react-router-hash-link';
+import { Link } from 'react-router-dom';
 
 import styles from './Page.module.sass';
 
 const Header = memo(() => {
-  const location = useLocation();
   const [collapsed, setCollapsed] = useState(false);
 
   return (
@@ -53,32 +51,29 @@ const Header = memo(() => {
           <div className={`navbar-menu ${(!collapsed) ? '' : 'is-active'}`}>
             <div className={`navbar-start ml-auto mr-auto is-flex-touch is-flex-wrap-wrap is-justify-content-center ${styles.specific} ${styles.links}`}>
 
-              <HashLink
+              <Link
                 className="navbar-item has-text-white is-size-6"
-                smooth
-                to={(location.pathname.includes('directions')) ? '/directions#search' : '/#search'}
+                to="/directions#search"
                 onClick={() => { if (collapsed) setCollapsed(!collapsed); }}
               >
                 Find your direction
-              </HashLink>
+              </Link>
 
-              <HashLink
+              <Link
                 className="navbar-item has-text-white is-size-6"
-                smooth
                 to="/#about"
                 onClick={() => { if (collapsed) setCollapsed(!collapsed); }}
               >
                 What we are doing
-              </HashLink>
+              </Link>
 
-              <HashLink
+              <Link
                 className="navbar-item has-text-white is-size-6"
-                smooth
                 to="/#featured"
                 onClick={() => { if (collapsed) setCollapsed(!collapsed); }}
               >
                 Featured variants
-              </HashLink>
+              </Link>
             </div>
 
             <div className="navbar-end is-flex-touch is-flex-wrap-wrap is-justify-content-center">

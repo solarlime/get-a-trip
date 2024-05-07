@@ -15,11 +15,11 @@ const About = memo(() => {
   }, []);
 
   return (
-    <section id="about" className={`hero ${styles.my_section}`}>
+    <section id="about" className={`hero is-primary ${styles.my_section} ${styles.my_section_coloured}`}>
       <div className={`hero-body pl-3 pr-3 ${styles.my_hero_body}`}>
         <div className={`container ${styles.my_hero_padding} is-max-widescreen`}>
-          <h1 className="title is-size-1 is-size-3-mobile has-text-centered has-text-primary">What we are doing</h1>
-          <div className={`columns ${styles.columns}`}>
+          <h1 className="title is-size-1 is-size-3-mobile has-text-centered has-text-white">What we are doing</h1>
+          <div className={`columns has-text-white ${styles.columns}`}>
             <div className="column is-7">
               <p className="block">
                 Have you ever found yourself wanting to&nbsp;go somewhere but&nbsp;not&nbsp;wishing to&nbsp;choose a&nbsp;hotel or&nbsp;find travel companions? Or&nbsp;maybe you want something unusual. We understand and&nbsp;can&nbsp;help you!

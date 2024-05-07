@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { HashLink } from 'react-router-hash-link';
 
 import styles from '../Page.module.sass';
 import useStore from '../../../store/store';
@@ -36,18 +35,11 @@ function FirstScreen() {
           <h1 className={`title ${styles.first_screen_title}`}>From a&nbsp;small trip to&nbsp;a&nbsp;big adventure</h1>
           <p className="buttons">
             <Link
-              className="button is-primary is-outlined has-background-white"
-              to="/directions"
-            >
-              <span>Explore tours</span>
-            </Link>
-            <HashLink
               className="button is-primary has-text-white"
-              smooth
-              to="/#search"
+              to="/directions#search"
             >
               <span>Find your tour now</span>
-            </HashLink>
+            </Link>
           </p>
         </div>
       </div>

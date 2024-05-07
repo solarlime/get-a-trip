@@ -1,5 +1,5 @@
 import { memo, useEffect } from 'react';
-import { HashLink } from 'react-router-hash-link';
+import { Link } from 'react-router-dom';
 
 import type { Tour } from '../../../../../store/types/tour';
 import Hoster, { Hosters } from '../../../common/Hoster';
@@ -38,13 +38,12 @@ const Top = memo((props: { tour: Tour }) => {
           <h1 className={`title ${styles.first_screen_title}`}>{`${tour.country}, ${tour.place}`}</h1>
           <h2 className="subtitle">A&nbsp;place you&apos;ll&nbsp;want to&nbsp;come back&nbsp;to. More&nbsp;than&nbsp;once</h2>
           <p className="buttons">
-            <HashLink
+            <Link
               className="button is-primary has-text-white"
-              smooth
               to="./#booking"
             >
               <span>Book now</span>
-            </HashLink>
+            </Link>
           </p>
           <div className={styles.hosted_directions}>
             <span>by</span>

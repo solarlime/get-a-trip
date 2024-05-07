@@ -1,5 +1,5 @@
 import { memo, useEffect } from 'react';
-import { HashLink } from 'react-router-hash-link';
+import { Link } from 'react-router-dom';
 
 import type { Tour } from '../../../../store/types/tour';
 import Hoster, { Hosters } from '../../common/Hoster';
@@ -58,16 +58,15 @@ const ProductCard = memo((props: { tour: Tour }) => {
         </div>
 
         <div className="content">
-          <HashLink
+          <Link
             className="button is-white has-text-primary is-size-6"
             to={`/directions/${location.toLocaleLowerCase()
               .replace(', ', '-')
               .replace(' ', '-')}-${year}-${startDate.replace(/ /i, '-')}#top`}
             onClick={() => setChosenTour(tour)}
-            smooth={false}
           >
             Explore program
-          </HashLink>
+          </Link>
         </div>
       </div>
     </div>
