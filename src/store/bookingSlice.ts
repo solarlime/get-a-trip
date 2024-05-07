@@ -37,6 +37,7 @@ const initialState: BookingState = {
     ],
     isRecurring: true,
   },
+  total: 0,
 };
 
 const createBookingSlice: StateCreator<BookingState & BookingActions> = (set) => ({
@@ -47,6 +48,7 @@ const createBookingSlice: StateCreator<BookingState & BookingActions> = (set) =>
   setRoom: (newState) => set((state) => ({ ...state, room: newState })),
   setSim: (newState) => set((state) => ({ ...state, sim: newState })),
   setInsurance: (newState) => set((state) => ({ ...state, insurance: newState })),
+  setTotal: (total) => set((state) => ({ ...state, total })),
 });
 
 export default createBookingSlice;

@@ -7,6 +7,7 @@ import useStore from '../../store/store';
 
 function Checkout() {
   const location = useLocation();
+  const total = useStore((state) => state.total);
   const reset = useStore((state) => state.reset);
 
   return (
@@ -25,7 +26,7 @@ function Checkout() {
               </Link>
             </button>
             <h1 className="title is-4 has-text-weight-normal">Your total payment</h1>
-            <h2 className="subtitle is-1 has-text-weight-semibold">$300</h2>
+            <h2 className="subtitle is-1 has-text-weight-semibold">{`${total}$`}</h2>
           </section>
           <Payment />
         </div>

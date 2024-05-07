@@ -1,4 +1,4 @@
-import { memo, useMemo } from 'react';
+import { memo, useMemo, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { v4 as id } from 'uuid';
 
@@ -18,6 +18,8 @@ const TotalPrice = memo(() => {
   const room = useStore((state) => state.room);
   const sim = useStore((state) => state.sim);
   const insurance = useStore((state) => state.insurance);
+  const total = useStore((state) => state.total);
+  const setTotal = useStore((state) => state.setTotal);
 
   const [recurring, notRecurring] = useMemo(
     () => {
@@ -36,6 +38,23 @@ const TotalPrice = memo(() => {
       .every((input) => input.status === 'success'),
     [recurring, notRecurring, firstName, lastName, phone, email, duration],
   );
+
+  const calculated = notRecurring.reduce((accumulator, current) => {
+    if (current.option.price) {
+      return accumulator + current.option.price;
+    }
+    return accumulator;
+  }, 0)
+    + recurring.reduce((accumulator, current) => {
+      if (current.option.price && duration.status === 'success') {
+        return accumulator + current.option.price * +duration.value;
+      }
+      return accumulator;
+    }, 0);
+
+  useEffect(() => {
+    if (calculated !== total) setTotal(calculated);
+  }, [calculated]);
 
   return (
     <div className={`box ${styles.my_price_box}`}>
@@ -85,22 +104,7 @@ const TotalPrice = memo(() => {
             <div className="is-flex-shrink-0">
               <p className="content has-text-right is-size-4 is-size-5-touch">
                 <strong>
-                  {
-                    `${
-                      notRecurring.reduce((accumulator, current) => {
-                        if (current.option.price) {
-                          return accumulator + current.option.price;
-                        }
-                        return accumulator;
-                      }, 0)
-                      + recurring.reduce((accumulator, current) => {
-                        if (current.option.price && duration.status === 'success') {
-                          return accumulator + current.option.price * +duration.value;
-                        }
-                        return accumulator;
-                      }, 0)
-                    }$`
-                  }
+                  {`${calculated}$`}
                 </strong>
               </p>
             </div>

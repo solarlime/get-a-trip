@@ -20,6 +20,7 @@ export interface BookingState {
   room: Room,
   sim: Sim,
   insurance: Insurance,
+  total: number,
 }
 
 export interface BookingActions {
@@ -29,4 +30,5 @@ export interface BookingActions {
   setRoom: (newState: Room) => void,
   setSim: (newState: Sim) => void,
   setInsurance: (newState: Insurance) => void,
+  setTotal: (total: number) => void,
 }
