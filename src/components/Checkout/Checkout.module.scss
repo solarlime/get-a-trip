@@ -1,0 +1,68 @@
+@use "src/variables";
+@use "src/styles";
+@use "bulma/sass/utilities/controls";
+
+// ----------------------------------------
+// Colors
+
+@mixin color($value) {
+  color: $value;
+}
+
+.color-danger {
+  @include color(styles.$danger);
+}
+
+.color-green {
+  @include color(variables.$green);
+}
+
+.color-dark {
+  @include color(styles.$dark);
+}
+
+// ----------------------------------------
+// Card information
+
+.card-info {
+  .card-info__cvc {
+    border-top-right-radius: 0;
+  }
+
+  .card-info__date {
+    border-top-left-radius: 0;
+  }
+
+  .card-info__number {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+    .card-info__number_focused {
+      z-index: 7;
+    }
+
+  .card-info__number-icons {
+    width: auto !important;
+    column-gap: 0.5rem;
+    padding-right: controls.$control-padding-horizontal;
+  }
+}
+
+// ----------------------------------------
+// Others
+
+.country-selector:after {
+  border-color: styles.$dark !important;
+}
+
+.hidden {
+  display: none;
+}
+
+.icon_focused {
+  z-index: 8;
+}
+
+// ----------------------------------------

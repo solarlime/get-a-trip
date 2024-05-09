@@ -6,7 +6,7 @@ import {
   faCcAmex, faCcJcb, faCcMastercard, faCcVisa,
 } from '@fortawesome/free-brands-svg-icons';
 
-import styles from '../../Checkout.module.sass';
+import styles from '../../Checkout.module.scss';
 import useStore from '../../../../store/store';
 import { providers } from '../../../../store/types/payment';
 
@@ -28,7 +28,7 @@ const CardNumber = memo(() => {
     <div className="control has-icons-right">
       <input
         id="card"
-        className={`input ${styles.card_number} ${(componentState.status === 'fail') ? 'is-danger' : (componentState.status === 'success') ? 'is-success' : ''} ${(componentState.focused) ? styles.number_focused : ''}`}
+        className={`input ${styles.cardInfo__number} ${(componentState.status === 'fail') ? 'is-danger' : (componentState.status === 'success') ? 'is-success' : ''} ${(componentState.focused) ? styles.cardInfo__number_focused : ''}`}
         type="text"
         placeholder="1234 1234 1234 1234"
         value={componentState.value}
@@ -70,11 +70,11 @@ const CardNumber = memo(() => {
       />
       {
           (componentState.status === 'fail') ? (
-            <span className={`icon is-small is-right ${styles.specific} ${(componentState.focused) ? styles.icon_focused : ''}`}>
-              <FontAwesomeIcon className="has-text-danger" icon={faCircleExclamation} />
+            <span className={`icon is-small is-right ${(componentState.focused) ? styles.icon_focused : ''}`}>
+              <FontAwesomeIcon className={styles.colorDanger} icon={faCircleExclamation} />
             </span>
           ) : (
-            <span className={`icon is-small is-right ${styles.more_specific} ${styles.specific} ${styles.cards} ${(componentState.focused) ? styles.icon_focused : ''}`}>
+            <span className={`icon is-small is-right ${styles.cardInfo__numberIcons} ${(componentState.focused) ? styles.icon_focused : ''}`}>
               {
                 (!componentState.provider)
                   ? (
@@ -84,10 +84,10 @@ const CardNumber = memo(() => {
                       <FontAwesomeIcon icon={faCcAmex} />
                       <FontAwesomeIcon icon={faCcJcb} />
                     </>
-                  ) : (componentState.provider === 'visa') ? <FontAwesomeIcon className="has-text-success" icon={faCcVisa} />
-                    : (componentState.provider === 'mastercard') ? <FontAwesomeIcon className="has-text-success" icon={faCcMastercard} />
-                      : (componentState.provider === 'amex') ? <FontAwesomeIcon className="has-text-success" icon={faCcAmex} />
-                        : <FontAwesomeIcon className="has-text-success" icon={faCcJcb} />
+                  ) : (componentState.provider === 'visa') ? <FontAwesomeIcon className={styles.colorGreen} icon={faCcVisa} />
+                    : (componentState.provider === 'mastercard') ? <FontAwesomeIcon className={styles.colorGreen} icon={faCcMastercard} />
+                      : (componentState.provider === 'amex') ? <FontAwesomeIcon className={styles.colorGreen} icon={faCcAmex} />
+                        : <FontAwesomeIcon className={styles.colorGreen} icon={faCcJcb} />
               }
             </span>
           )

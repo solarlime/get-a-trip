@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleExclamation } from '@fortawesome/free-solid-svg-icons';
 import { isEmpty, isNumeric } from 'validator';
 
-import styles from '../../Checkout.module.sass';
+import styles from '../../Checkout.module.scss';
 import useStore from '../../../../store/store';
 
 const CardCvc = memo(() => {
@@ -19,7 +19,7 @@ const CardCvc = memo(() => {
     <div className="control is-expanded has-icons-right">
       <input
         id="cardCvc"
-        className={`input ${styles.card_cvc} ${(componentState.status === 'success') ? 'is-success' : (componentState.status === 'fail') ? 'is-danger' : ''}`}
+        className={`input ${styles.cardInfo__cvc} ${(componentState.status === 'success') ? 'is-success' : (componentState.status === 'fail') ? 'is-danger' : ''}`}
         type="text"
         placeholder="CVC"
         value={componentState.value}
@@ -47,8 +47,8 @@ const CardCvc = memo(() => {
         }}
         required
       />
-      <span className={`icon is-small is-right ${(componentState.status !== 'fail') ? 'is-hidden' : ''}`}>
-        <FontAwesomeIcon className="has-text-danger" icon={faCircleExclamation} />
+      <span className={`icon is-small is-right ${(componentState.status !== 'fail') ? styles.hidden : ''}`}>
+        <FontAwesomeIcon className={styles.colorDanger} icon={faCircleExclamation} />
       </span>
     </div>
   );

@@ -1,20 +1,63 @@
-$black-new: #1f1f1f;
-$white-new: #fffef2;
-$green: #00A562;
-$font-family: "Red Hat Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Ubuntu, sans-serif;
+@use "variables";
 
-@use 'bulma/sass' with (
-  $primary: $green,
-  $black: $black-new,
-  $white: $white-new,
-  $family-primary: $font-family
+@use "bulma/sass/utilities" with (
+  $primary: variables.$green,
+  $success: variables.$green,
+  $black: variables.$black,
+  $white: variables.$white,
+  $family-primary: variables.$font-family,
+  $radius: variables.$radius,
+  $radius-small: variables.$radius,
+  $radius-medium: variables.$radius,
+  $radius-large: variables.$radius,
 );
+
+@use "bulma/sass/components/card" with (
+  $card-radius: variables.$radius,
+);
+
+// Activate only light theme
+@use "bulma/sass/themes/light";
+@use "bulma/sass/themes/setup";
+
+@forward "bulma/sass/base";
+@forward "bulma/sass/base/skeleton";
+
+@forward "bulma/sass/grid/columns";
+
+@forward "bulma/sass/layout/hero";
+@forward "bulma/sass/layout/container";
+@forward "bulma/sass/layout/footer";
+
+@forward "bulma/sass/utilities/initial-variables";
+@forward "bulma/sass/utilities/derived-variables";
+
+@forward "bulma/sass/components/navbar";
+@forward "bulma/sass/components/card";
+
+@forward "bulma/sass/elements/button";
+@forward "bulma/sass/elements/icon";
+@forward "bulma/sass/elements/block";
+@forward "bulma/sass/elements/title";
+@forward "bulma/sass/elements/image";
+@forward "bulma/sass/elements/box";
+
+@forward "bulma/sass/form/input-textarea";
+@forward "bulma/sass/form/select";
+@forward "bulma/sass/form/tools";
+
+@forward "bulma/sass/helpers";
+
+:root {
+  @include light.light-theme;
+  @include setup.setup-theme;
+}
 
 @font-face {
   font-family: "Red Hat Display";
   src: url("/src/fonts/RedHatDisplayVF.woff2") format("woff2-variations");
   font-weight: 400 700;
-  font-style: normal
+  font-style: normal;
 }
 
 #root {

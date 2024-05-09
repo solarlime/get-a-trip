@@ -50,8 +50,8 @@ const ProductCard = memo((props: { tour: Tour }) => {
         </figure>
       </div>
       <div className="card-content has-text-white">
-        <div className="media">
-          <div className={`media-content ${styles.my_media_content}`}>
+        <div className="block">
+          <div className={`content ${styles.my_media_content}`}>
             <p className="title is-4 pb-3 has-text-white">{date}</p>
             <p className="subtitle is-6 has-text-white">{location}</p>
           </div>

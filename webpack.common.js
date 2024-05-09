@@ -48,7 +48,8 @@ export default {
               modules: {
                 mode: 'local',
                 auto: true,
-                localIdentName: '[name]__[local]--[hash:base64:5]'
+                localIdentName: '[name]__[local]--[hash:base64:5]',
+                exportLocalsConvention: 'dashes',
               }
             }
           },

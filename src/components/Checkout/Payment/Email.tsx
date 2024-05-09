@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleExclamation } from '@fortawesome/free-solid-svg-icons';
 
 import useStore from '../../../store/store';
+import styles from '../Checkout.module.scss';
 
 const Email = memo((props: { classes?: string }) => {
   const { classes } = props;
@@ -29,12 +30,12 @@ const Email = memo((props: { classes?: string }) => {
         {
           (componentState.status === 'fail') ? (
             <span className="icon is-small is-right">
-              <FontAwesomeIcon className="has-text-danger" icon={faCircleExclamation} />
+              <FontAwesomeIcon className={styles.colorDanger} icon={faCircleExclamation} />
             </span>
           ) : ''
         }
       </div>
-      <p className={`help ${(classes) || 'is-danger'} ${(componentState.status !== 'fail') ? 'is-hidden' : ''}`}>
+      <p className={`help ${(classes) || 'is-danger'} ${(componentState.status !== 'fail') ? styles.hidden : ''}`}>
         Your email is incomplete.
       </p>
     </div>

@@ -1,7 +1,7 @@
 import { memo, useEffect, useState } from 'react';
 import { v4 as id } from 'uuid';
 
-import styles from '../Checkout.module.sass';
+import styles from '../Checkout.module.scss';
 import useStore from '../../../store/store';
 
 const Country = memo(() => {
@@ -16,8 +16,8 @@ const Country = memo(() => {
   return (
     <div className="field">
       <label className="label" htmlFor="country">Country or region</label>
-      <div className={`control ${styles.specific}`}>
-        <div className={`select is-fullwidth ${styles.specific} ${styles.selector}`}>
+      <div className="control">
+        <div className={`select is-fullwidth ${styles.countrySelector}`}>
           <select id="country" value={(country === '') ? 'United Kingdom' : country} onChange={(event) => setCountry(event.target.value)}>
             {countries.map((item) => <option value={item.name} key={id()}>{item.name}</option>)}
           </select>

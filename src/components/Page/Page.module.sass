@@ -1,12 +1,8 @@
-@use 'bulma/sass/components/navbar'
-@use 'bulma/sass/grid/columns'
-@use 'bulma/sass/components/card'
-@use 'bulma/sass/utilities/derived-variables'
-@use 'bulma/sass/utilities/initial-variables'
+@use "src/styles"
 
-$navbar-height-new: navbar.$navbar-height + 2rem
-$column-gap: columns.$column-gap
-$radius: card.$card-radius
+$navbar-height-new: styles.$navbar-height + 2rem
+$column-gap: styles.$column-gap
+$radius: styles.$radius
 
 main
   display: flex
@@ -18,7 +14,7 @@ main
 
 .specific.logo
   height: 20px
-  max-height: navbar.$navbar-item-img-max-height
+  max-height: styles.$navbar-item-img-max-height
 
 @media screen and (min-width: 1024px)
   .specific.logo
@@ -91,7 +87,7 @@ main
 
     img.my_image
       object-fit: cover
-      border-radius: calc($radius + $column-gap)
+      border-radius: $radius
 
     .my_image
       width: 100%
@@ -116,8 +112,8 @@ main
 
         & .left
           position: absolute
-          right: card.$card-content-padding
-          top: card.$card-content-padding
+          right: styles.$card-content-padding
+          top: styles.$card-content-padding
           border-color: transparent
           z-index: 1
 
@@ -130,8 +126,8 @@ main
 
         .hosted
           position: absolute
-          right: card.$card-content-padding
-          bottom: card.$card-content-padding
+          right: styles.$card-content-padding
+          bottom: styles.$card-content-padding
           height: 36px
           align-items: center
           border: 0
@@ -203,7 +199,7 @@ main
 .disabled
   pointer-events: none
   cursor: default
-  background-color: initial-variables.$grey-light
+  background-color: styles.$grey-light
 
 .my_card_content
   display: none

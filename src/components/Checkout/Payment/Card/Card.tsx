@@ -1,6 +1,6 @@
 import { memo } from 'react';
 
-import styles from '../../Checkout.module.sass';
+import styles from '../../Checkout.module.scss';
 import CardNumber from './CardNumber';
 import CardDate from './CardDate';
 import CardCvc from './CardCvc';
@@ -12,20 +12,20 @@ const Card = memo(() => {
   const cardCvcStatus = useStore((state) => state.cardCvc.status);
 
   return (
-    <div className={`field has-addons-centered ${styles.specific}`}>
+    <div className={`field has-addons-centered ${styles.cardInfo}`}>
       <label className="label" htmlFor="card">Card information</label>
       <CardNumber />
       <div className="field has-addons">
         <CardDate />
         <CardCvc />
       </div>
-      <p className={`help is-danger ${(cardNumberStatus !== 'fail') ? 'is-hidden' : ''}`}>
+      <p className={`help is-danger ${(cardNumberStatus !== 'fail') ? styles.hidden : ''}`}>
         Your card number is invalid.
       </p>
-      <p className={`help is-danger ${(cardDateStatus !== 'fail') ? 'is-hidden' : ''}`}>
+      <p className={`help is-danger ${(cardDateStatus !== 'fail') ? styles.hidden : ''}`}>
         Your card&apos;s expiration date is invalid.
       </p>
-      <p className={`help is-danger ${(cardCvcStatus !== 'fail') ? 'is-hidden' : ''}`}>
+      <p className={`help is-danger ${(cardCvcStatus !== 'fail') ? styles.hidden : ''}`}>
         Your card&apos;s security code is incomplete.
       </p>
     </div>

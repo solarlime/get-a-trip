@@ -3,7 +3,7 @@ import { isEmpty, isNumeric } from 'validator';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleExclamation } from '@fortawesome/free-solid-svg-icons';
 
-import styles from '../../Checkout.module.sass';
+import styles from '../../Checkout.module.scss';
 import useStore from '../../../../store/store';
 
 const prettify = (numberString: string) => {
@@ -23,7 +23,7 @@ const CardDate = memo(() => {
     <div className="control is-expanded has-icons-right">
       <input
         id="cardDate"
-        className={`input ${styles.card_date} ${(componentState.status === 'fail') ? 'is-danger' : (componentState.status === 'success') ? 'is-success' : ''}`}
+        className={`input ${styles.cardInfo__date} ${(componentState.status === 'fail') ? 'is-danger' : (componentState.status === 'success') ? 'is-success' : ''}`}
         type="text"
         placeholder="MM / YY"
         value={componentState.value}
@@ -54,8 +54,8 @@ const CardDate = memo(() => {
         }}
         required
       />
-      <span className={`icon is-small is-right ${(componentState.status !== 'fail') ? 'is-hidden' : ''}`}>
-        <FontAwesomeIcon className="has-text-danger" icon={faCircleExclamation} />
+      <span className={`icon is-small is-right ${(componentState.status !== 'fail') ? styles.hidden : ''}`}>
+        <FontAwesomeIcon className={styles.colorDanger} icon={faCircleExclamation} />
       </span>
     </div>
   );
