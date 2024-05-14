@@ -1,18 +1,18 @@
 import { memo, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import styles from './Page.module.sass';
+import styles from './Bars.module.scss';
 
 const Header = memo(() => {
   const [collapsed, setCollapsed] = useState(false);
 
   return (
     <header>
-      <nav className="navbar is-black is-fixed-top pt-4 pb-4" role="navigation" aria-label="main navigation">
+      <nav className={`navbar is-black is-fixed-top ${styles.navbar}`} role="navigation" aria-label="main navigation">
         <div className="container is-max-widescreen">
           <div className="navbar-brand">
             <Link className="navbar-item" to="/">
-              <svg className={`${styles.specific} ${styles.logo}`} strokeMiterlimit="10" version="1.1" viewBox="0 0 266 38.5212" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg">
+              <svg className={`${styles.logo}`} strokeMiterlimit="10" version="1.1" viewBox="0 0 266 38.5212" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg">
                 <defs />
                 <clipPath id="ArtboardFrame">
                   <rect height="38.5212" width="266" x="0" y="0" />
@@ -49,10 +49,10 @@ const Header = memo(() => {
           </div>
 
           <div className={`navbar-menu ${(!collapsed) ? '' : 'is-active'}`}>
-            <div className={`navbar-start ml-auto mr-auto is-flex-touch is-flex-wrap-wrap is-justify-content-center ${styles.specific} ${styles.links}`}>
+            <div className={`navbar-end ${styles.navbar__links}`}>
 
               <Link
-                className="navbar-item has-text-white is-size-6"
+                className={`navbar-item ${styles.colorWhite}`}
                 to="/directions#search"
                 onClick={() => { if (collapsed) setCollapsed(!collapsed); }}
               >
@@ -60,7 +60,7 @@ const Header = memo(() => {
               </Link>
 
               <Link
-                className="navbar-item has-text-white is-size-6"
+                className={`navbar-item ${styles.colorWhite}`}
                 to="/#about"
                 onClick={() => { if (collapsed) setCollapsed(!collapsed); }}
               >
@@ -68,7 +68,7 @@ const Header = memo(() => {
               </Link>
 
               <Link
-                className="navbar-item has-text-white is-size-6"
+                className={`navbar-item ${styles.colorWhite}`}
                 to="/#featured"
                 onClick={() => { if (collapsed) setCollapsed(!collapsed); }}
               >
@@ -76,9 +76,9 @@ const Header = memo(() => {
               </Link>
             </div>
 
-            <div className="navbar-end is-flex-touch is-flex-wrap-wrap is-justify-content-center">
+            <div className={`navbar-end ${styles.navbar__links}`}>
               <div className="navbar-item">
-                <a className="button is-primary has-text-white is-size-6" href="mailto:dmitriy@solarlime.dev?subject=Предложение о сотрудничестве" target="_blank" rel="noreferrer">
+                <a className={`${styles.colorWhite} button is-primary`} href="mailto:dmitriy@solarlime.dev?subject=Предложение о сотрудничестве" target="_blank" rel="noreferrer">
                   Write us
                 </a>
               </div>

@@ -1,12 +1,12 @@
 import { memo } from 'react';
 
-import styles from './Page.module.sass';
+import styles from './Bars.module.scss';
 import { getYear } from '../../utils';
 
 const Footer = memo(() => (
-  <footer className="footer has-background-black pb-6 pt-6 pl-3 pr-3 is-size-6">
-    <div className="container is-flex is-justify-content-space-between is-align-items-center is-max-widescreen is-gap-1">
-      <svg className={`${styles.specific} ${styles.logo}`} strokeMiterlimit="10" version="1.1" viewBox="0 0 266 38.5212" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg">
+  <footer className="footer">
+    <div className={`${styles.footerContainer} container is-max-widescreen`}>
+      <svg className={`${styles.logo} ${styles.footerContainer__logo}`} strokeMiterlimit="10" version="1.1" viewBox="0 0 266 38.5212" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg">
         <defs />
         <clipPath id="ArtboardFrame">
           <rect height="38.5212" width="266" x="0" y="0" />
@@ -26,8 +26,8 @@ const Footer = memo(() => (
           </g>
         </g>
       </svg>
-      <div className="content">
-        <p className="has-text-white has-text-right">
+      <div className={`${styles.footerContainer__copyright}`}>
+        <p>
           {`© ${getYear()}`}
           &nbsp;Getatrip. All&nbsp;rights&nbsp;reserved.
         </p>

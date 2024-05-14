@@ -1,0 +1,29 @@
+@use "../styles";
+@use "../variables";
+
+@forward "../styles";
+
+// ----------------------------------------
+// Colors
+
+@mixin color($value) {
+  color: $value;
+}
+
+.color-danger {
+  @include color(styles.$danger);
+}
+
+.color-green {
+  @include color(variables.$green);
+}
+
+.color-dark {
+  @include color(styles.$dark);
+}
+
+.color-white {
+  @include color(variables.$white);
+}
+
+// ----------------------------------------

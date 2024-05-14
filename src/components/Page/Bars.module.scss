@@ -1,0 +1,61 @@
+@use "../Base.module";
+@use "bulma/sass/utilities/mixins";
+@use "bulma/sass/utilities/initial-variables";
+@use "bulma/sass/components/navbar";
+
+// ----------------------------------------
+// Header
+
+.navbar {
+  padding: navbar.$navbar-padding-vertical 0
+}
+
+.navbar__links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  @include mixins.until(initial-variables.$tablet) {
+    flex-direction: column;
+  }
+
+  @include mixins.from(initial-variables.$tablet) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+// ----------------------------------------
+// Logo
+
+.logo {
+  @include mixins.until(initial-variables.$desktop) {
+    height: 20px;
+  }
+  @include mixins.from(initial-variables.$desktop) {
+    height: 24px;
+  }
+}
+
+// ----------------------------------------
+// Footer
+
+.footer-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.footer-container__logo {
+  flex-shrink: 1;
+}
+
+.footer-container__copyright {
+  flex-shrink: 2;
+  color: Base.$white;
+  text-align: right;
+}
+
+// ----------------------------------------

@@ -16,6 +16,11 @@
   $card-radius: variables.$radius,
 );
 
+@use "bulma/sass/layout/footer" with (
+  $footer-background-color: variables.$black,
+  $footer-padding: 3rem 0.75rem,
+);
+
 // Activate only light theme
 @use "bulma/sass/themes/light";
 @use "bulma/sass/themes/setup";

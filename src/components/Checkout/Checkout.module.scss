@@ -1,27 +1,6 @@
-@use "src/variables";
-@use "src/styles";
+@use "src/components/Base.module";
 @use "bulma/sass/utilities/controls";
 
-// ----------------------------------------
-// Colors
-
-@mixin color($value) {
-  color: $value;
-}
-
-.color-danger {
-  @include color(styles.$danger);
-}
-
-.color-green {
-  @include color(variables.$green);
-}
-
-.color-dark {
-  @include color(styles.$dark);
-}
-
-// ----------------------------------------
 // Card information
 
 .card-info {
@@ -54,7 +33,7 @@
 // Others
 
 .country-selector:after {
-  border-color: styles.$dark !important;
+  border-color: Base.$dark !important;
 }
 
 .hidden {
