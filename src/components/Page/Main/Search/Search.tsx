@@ -1,6 +1,6 @@
 import { memo, useMemo } from 'react';
 
-import styles from '../../Page.module.sass';
+import styles from '../../Page.module.scss';
 import Dropdown from './Dropdown';
 import CheckInDate from './CheckInDate';
 import Duration from './Duration';

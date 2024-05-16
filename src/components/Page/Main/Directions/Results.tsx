@@ -3,7 +3,7 @@ import { v4 as id } from 'uuid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeartCrack } from '@fortawesome/free-solid-svg-icons/faHeartCrack';
 
-import styles from '../../Page.module.sass';
+import styles from '../../Page.module.scss';
 import ProductCard from '../ProductCards/ProductCard';
 import useStore from '../../../../store/store';
 

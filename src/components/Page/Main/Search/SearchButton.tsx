@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
-import styles from '../../Page.module.sass';
+import styles from '../../Page.module.scss';
 import useStore from '../../../../store/store';
 
 const SearchButton = memo((props: { disabled: boolean }) => {

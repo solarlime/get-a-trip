@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import { memo } from 'react';
 
-import styles from '../../../Page.module.sass';
+import styles from '../../../Page.module.scss';
 import Carousel from '../../../common/Carousel';
 
 const pictures = ['tXiMrX3Gc-g', 'e3OUQGT9bWU', 'UmV2wr-Vbq8'];

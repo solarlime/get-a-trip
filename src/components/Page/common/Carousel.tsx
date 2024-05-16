@@ -5,7 +5,7 @@ import {
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import styles from '../Page.module.sass';
+import styles from '../Page.module.scss';
 import useStore from '../../../store/store';
 import ImagePreloader from './ImagePreloader';
 

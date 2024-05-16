@@ -1,7 +1,7 @@
 import { memo } from 'react';
 import { v4 as id } from 'uuid';
 
-import styles from '../../Page.module.sass';
+import styles from '../../Page.module.scss';
 import useStore from '../../../../store/store';
 
 const Dropdown = memo((props: {

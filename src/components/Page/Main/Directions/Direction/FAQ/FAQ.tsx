@@ -5,7 +5,7 @@ import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 import { v4 as id } from 'uuid';
 
 import type { QuestionAndAnswer } from '../../../../../../store/types/tour';
-import styles from '../../../../Page.module.sass';
+import styles from '../../../../Page.module.scss';
 import useStore from '../../../../../../store/store';
 
 const FAQItem = memo((props: QuestionAndAnswer) => {

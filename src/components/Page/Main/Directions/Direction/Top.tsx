@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import type { Tour } from '../../../../../store/types/tour';
 import Hoster, { Hosters } from '../../../common/Hoster';
-import styles from '../../../Page.module.sass';
+import styles from '../../../Page.module.scss';
 import ImagePreloader from '../../../common/ImagePreloader';
 import useStore from '../../../../../store/store';
 
@@ -18,11 +18,11 @@ const Top = memo((props: { tour: Tour }) => {
   }, []);
 
   return (
-    <section id="top" className={`hero is-medium is-background-white ${styles.specific} ${styles.first_screen} ${styles.directions}`}>
+    <section id="top" className={`${styles.firstScreen} ${styles.directions} hero is-medium`}>
       {
         (allImages[imageId]) ? (
           <ImagePreloader
-            className={styles.top_image}
+            className={styles.topImage}
             allImages={allImages}
             neededImages={[imageId]}
             sizes="100vw, 1280px"
@@ -30,22 +30,22 @@ const Top = memo((props: { tour: Tour }) => {
             alt={`${tour.country}, ${tour.place}`}
           />
         ) : (
-          <div className={`${styles.top_image} is-skeleton`} />
+          <div className={`${styles.topImage} is-skeleton`} />
         )
       }
-      <div className="hero-body pl-3 pr-3 is-align-items-flex-start">
-        <div className={`container is-max-widescreen ${styles.my_container}`}>
-          <h1 className={`title ${styles.first_screen_title}`}>{`${tour.country}, ${tour.place}`}</h1>
+      <div className={`hero-body ${styles.firstScreen__content}`}>
+        <div className={`container is-max-widescreen ${styles.directions__content}`}>
+          <h1 className={`title ${styles.firstScreen__content__title}`}>{`${tour.country}, ${tour.place}`}</h1>
           <h2 className="subtitle">A&nbsp;place you&apos;ll&nbsp;want to&nbsp;come back&nbsp;to. More&nbsp;than&nbsp;once</h2>
           <p className="buttons">
             <Link
-              className="button is-primary has-text-white"
+              className={`button ${styles.colorWhite} is-primary`}
               to="./#booking"
             >
               <span>Book now</span>
             </Link>
           </p>
-          <div className={styles.hosted_directions}>
+          <div className={styles.directions__content__hosted}>
             <span>by</span>
             <Hoster hostedby={tour.hostedby as Hosters} />
           </div>

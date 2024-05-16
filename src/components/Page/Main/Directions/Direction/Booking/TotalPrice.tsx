@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { v4 as id } from 'uuid';
 
 import useStore from '../../../../../../store/store';
-import styles from '../../../../Page.module.sass';
+import styles from '../../../../Page.module.scss';
 import ListItem from './ListItem';
 
 const TotalPrice = memo(() => {

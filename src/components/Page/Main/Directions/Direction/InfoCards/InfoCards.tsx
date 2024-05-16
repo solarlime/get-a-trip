@@ -1,6 +1,6 @@
 import { memo } from 'react';
 
-import styles from '../../../../Page.module.sass';
+import styles from '../../../../Page.module.scss';
 import useStore from '../../../../../../store/store';
 import InfoCard from './InfoCard';
 import { formatter } from '../../../../../../utils';

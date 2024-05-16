@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import styles from '../Page.module.sass';
+import styles from '../Page.module.scss';
 import notfound from '../../../img/notfound.svg';
 
 function NotFound() {

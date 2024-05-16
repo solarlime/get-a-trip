@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import type { Tour } from '../../../../store/types/tour';
 import Hoster, { Hosters } from '../../common/Hoster';
-import styles from '../../Page.module.sass';
+import styles from '../../Page.module.scss';
 import useStore from '../../../../store/store';
 import ImagePreloader from '../../common/ImagePreloader';
 import { formatter } from '../../../../utils';

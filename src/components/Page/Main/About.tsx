@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import { memo, useEffect } from 'react';
 
-import styles from '../Page.module.sass';
+import styles from '../Page.module.scss';
 import useStore from '../../../store/store';
 import ImagePreloader from '../common/ImagePreloader';
 

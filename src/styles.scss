@@ -21,6 +21,10 @@
   $footer-padding: 3rem 0.75rem,
 );
 
+@forward "bulma/sass/layout/hero" with (
+  $hero-body-padding-medium: variables.$hero-body-padding-vertical 0.75rem,
+);
+
 // Activate only light theme
 @use "bulma/sass/themes/light";
 @use "bulma/sass/themes/setup";

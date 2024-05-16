@@ -1,6 +1,6 @@
 import { memo } from 'react';
 
-import styles from '../../../../Page.module.sass';
+import styles from '../../../../Page.module.scss';
 import Email from '../../../../../Checkout/Payment/Email';
 import Name from '../../../../../Checkout/Payment/Name';
 import Phone from './Phone';
