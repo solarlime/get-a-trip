@@ -1,0 +1,54 @@
+@use "../../Base.module";
+@use "../../../variables";
+@use "bulma/sass/utilities/initial-variables";
+@use "bulma/sass/components/navbar";
+@use "bulma/sass/utilities/mixins";
+
+$navbar-height-full: Base.$navbar-height + 2 * navbar.$navbar-padding-vertical;
+
+// ----------------------------------------
+// Section
+
+.section {
+  flex-grow: 1;
+  padding-top: $navbar-height-full;
+
+  .section__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 0 variables.$side-padding;
+
+    .section__body__container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .container__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        .container__content__title {
+          font-size: 4rem;
+
+          @include mixins.until(initial-variables.$tablet) {
+            font-size: 3rem;
+          }
+        }
+      }
+    }
+
+    .section__body__image {
+      min-width: 180px;
+      width: 40vw;
+      max-width: 270px;
+      height: auto;
+    }
+  }
+}
+
+// ----------------------------------------

@@ -18,11 +18,11 @@
 
 @use "bulma/sass/layout/footer" with (
   $footer-background-color: variables.$black,
-  $footer-padding: 3rem 0.75rem,
+  $footer-padding: 3rem variables.$side-padding,
 );
 
 @forward "bulma/sass/layout/hero" with (
-  $hero-body-padding-medium: variables.$hero-body-padding-vertical 0.75rem,
+  $hero-body-padding-medium: variables.$hero-body-padding-vertical variables.$side-padding,
 );
 
 // Activate only light theme
