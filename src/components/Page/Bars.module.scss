@@ -1,4 +1,5 @@
 @use "../Base.module";
+@use "../../variables";
 @use "bulma/sass/utilities/mixins";
 @use "bulma/sass/utilities/initial-variables";
 @use "bulma/sass/components/navbar";
@@ -54,7 +55,7 @@
 
 .footer-container__copyright {
   flex-shrink: 2;
-  color: Base.$white;
+  color: variables.$white;
   text-align: right;
 }
 

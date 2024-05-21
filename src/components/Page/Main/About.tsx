@@ -15,11 +15,11 @@ const About = memo(() => {
   }, []);
 
   return (
-    <section id="about" className={`hero is-primary ${styles.my_section} ${styles.my_section_coloured}`}>
-      <div className={`hero-body pl-3 pr-3 ${styles.my_hero_body}`}>
-        <div className={`container ${styles.my_hero_padding} is-max-widescreen`}>
-          <h1 className="title is-size-1 is-size-3-mobile has-text-centered has-text-white">What we are doing</h1>
-          <div className={`columns has-text-white ${styles.columns}`}>
+    <section id="about" className={`hero is-primary ${styles.section} ${styles.section_coloured}`}>
+      <div className={`hero-body ${styles.section__body}`}>
+        <div className={`container ${styles.section__body__container} is-max-widescreen`}>
+          <h1 className={`title ${styles.container__title}`}>What we are doing</h1>
+          <div className={`columns ${styles.container__columns}`}>
             <div className="column is-7">
               <p className="block">
                 Have you ever found yourself wanting to&nbsp;go somewhere but&nbsp;not&nbsp;wishing to&nbsp;choose a&nbsp;hotel or&nbsp;find travel companions? Or&nbsp;maybe you want something unusual. We understand and&nbsp;can&nbsp;help you!
@@ -30,9 +30,9 @@ const About = memo(() => {
             </div>
             {
               (allImages[imageId]) ? (
-                <div className={`${styles.right_picture} column is-5`}>
+                <div className={`${styles.columns__picture_right} column is-5`}>
                   <ImagePreloader
-                    className={`${styles.my_image}`}
+                    className={`${styles.picture__image}`}
                     allImages={allImages}
                     neededImages={[imageId]}
                     sizes="(max-width: 320px) 320px, (max-width: 768px) 640px, (max-width: 1300px) 500px, 1280px"
@@ -41,7 +41,7 @@ const About = memo(() => {
                   />
                 </div>
               ) : (
-                <div className={`${styles.my_image} is-skeleton`} />
+                <div className={`${styles.picture__image} is-skeleton`} />
               )
             }
           </div>
