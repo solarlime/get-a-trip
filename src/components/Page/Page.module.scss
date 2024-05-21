@@ -249,7 +249,7 @@ $radius: Base.$radius;
 
 .my_search_container > form {
   a {
-    min-width: 72px;
+    min-width: var(--calculated-height, 72px);
   }
 
   @media screen and (max-width: 768px) {
