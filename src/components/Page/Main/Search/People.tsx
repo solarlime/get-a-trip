@@ -1,5 +1,6 @@
 import { memo } from 'react';
 
+import styles from '../../Page.module.scss';
 import useStore from '../../../../store/store';
 import { placesLeft } from '../../../../utils';
 
@@ -8,7 +9,7 @@ const People = memo(() => {
   const setCompanions = useStore((state) => state.setCompanions);
 
   return (
-    <div className="is-flex-grow-1">
+    <div className={styles.search__people}>
       <label className="label" htmlFor="people">People</label>
       <div id="people" className="control">
         <input

@@ -1,5 +1,6 @@
 import { memo } from 'react';
 
+import styles from '../../Page.module.scss';
 import useStore from '../../../../store/store';
 
 const CheckInDate = memo(() => {
@@ -7,7 +8,7 @@ const CheckInDate = memo(() => {
   const setCheckIn = useStore((state) => state.setCheckInDate);
 
   return (
-    <div className="is-flex-shrink-0">
+    <div className={styles.search__checkInDate}>
       <label className="label" htmlFor="checkin">Check in</label>
       <div id="checkin" className="control">
         <input

@@ -5,7 +5,7 @@ import Results from './Results';
 
 const Directions = memo(() => (
   <>
-    <Search title="Find your perfect tour" isTop />
+    <Search title="Find your perfect tour" />
     <Results />
   </>
 ));

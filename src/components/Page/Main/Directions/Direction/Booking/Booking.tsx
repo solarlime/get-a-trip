@@ -5,7 +5,7 @@ import Email from '../../../../../Checkout/Payment/Email';
 import Name from '../../../../../Checkout/Payment/Name';
 import Phone from './Phone';
 import Duration from '../../../Search/Duration';
-import Dropdown from '../../../Search/Dropdown';
+import Dropdown from '../../../../common/Dropdown';
 import TotalPrice from './TotalPrice';
 import skyscanner from '../../../../../../img/skyscanner.svg';
 import useStore from '../../../../../../store/store';

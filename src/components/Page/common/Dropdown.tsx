@@ -1,8 +1,8 @@
 import { memo } from 'react';
 import { v4 as id } from 'uuid';
 
-import styles from '../../Page.module.scss';
-import useStore from '../../../../store/store';
+import styles from '../Page.module.scss';
+import useStore from '../../../store/store';
 
 const Dropdown = memo((props: {
   label: 'Where' | 'Room' | 'SIM card' | 'Travel insurance',
@@ -17,10 +17,10 @@ const Dropdown = memo((props: {
   const setComponentState = useStore((state) => state[setter]);
 
   return (
-    <div className={`${(type !== 'destination') ? 'field' : ''}`}>
+    <div className={`${styles.dropdown} ${(type !== 'destination') ? 'field' : ''}`}>
       <label className={`label ${(classes) || ''}`} htmlFor="where">{label}</label>
       <div id="where" className="control">
-        <div className={`select is-fullwidth ${styles.specific} ${styles.selector}`}>
+        <div className={`select ${styles.dropdown__selector} is-fullwidth`}>
           <select
             value={componentState.option.value}
             // @ts-ignore

@@ -120,6 +120,19 @@ $radius: Base.$radius;
   }
 }
 
+.dropdown {
+
+  .dropdown__selector:after {
+    border-color: variables.$black !important;
+  }
+}
+
+.disabled {
+  pointer-events: none;
+  cursor: default;
+  background-color: Base.$grey-light;
+}
+
 // ----------------------------------------
 // Section
 
@@ -200,6 +213,54 @@ $radius: Base.$radius;
 
 .section_top {
   padding-top: $navbar-height-full;
+}
+
+// ----------------------------------------
+// Search
+
+.container__search {
+  padding: 1.5rem 3rem;
+  border-radius: $radius;
+  background-color: variables.$white;
+
+  form {
+    display: flex;
+    flex-direction: row;
+
+    .search__check-in-date {
+      flex-shrink: 0;
+    }
+
+    .search__duration, .search__people {
+      flex-grow: 1;
+    }
+
+    .search__button {
+      flex-shrink: 0;
+      min-width: var(--calculated-height, 72px);
+
+      .search__button__icon {
+        font-size: 1.5rem;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+
+      .search__button {
+
+        &:after {
+          content: 'Search';
+          color: variables.$white;
+          padding-left: 10px;
+        }
+
+        .search__button__icon {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
 }
 
 // ----------------------------------------

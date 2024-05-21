@@ -15,12 +15,12 @@ const SearchButton = memo((props: { disabled: boolean }) => {
 
   return (
     <Link
-      className={`button is-primary is-flex-shrink-0 has-text-white ${disabled ? styles.disabled : ''}`}
+      className={`button ${styles.search__button} is-primary ${disabled ? styles.disabled : ''}`}
       to="/directions#results"
       onClick={getFilteredTours}
       ref={ref}
     >
-      <FontAwesomeIcon className="is-size-6-mobile is-size-4" icon={faMagnifyingGlass} />
+      <FontAwesomeIcon className={`${styles.search__button__icon} ${styles.colorWhite}`} icon={faMagnifyingGlass} />
     </Link>
   );
 });

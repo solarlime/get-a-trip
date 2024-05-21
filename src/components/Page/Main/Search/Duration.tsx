@@ -1,6 +1,7 @@
 import { memo } from 'react';
 
 import useStore from '../../../../store/store';
+import styles from '../../Page.module.scss';
 
 const Duration = memo((props: { classes?: string }) => {
   const { classes } = props;
@@ -9,7 +10,7 @@ const Duration = memo((props: { classes?: string }) => {
   const chosenTour = useStore((state) => state.chosenTour);
 
   return (
-    <div className="is-flex-grow-1">
+    <div className={styles.search__duration}>
       <label className={`label ${(classes) || ''}`} htmlFor="duration">Duration</label>
       <div id="duration" className="control">
         <input
