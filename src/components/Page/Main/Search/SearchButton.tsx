@@ -5,12 +5,12 @@ import { Link } from 'react-router-dom';
 
 import styles from '../../Page.module.scss';
 import useStore from '../../../../store/store';
-import useResizeObserver from './useResizeObserver';
+import useButtonSize from './useButtonSize';
 
 const SearchButton = memo((props: { disabled: boolean }) => {
   const ref: MutableRefObject<HTMLAnchorElement | null> = useRef(null);
   const getFilteredTours = useStore((state) => state.getFilteredTours);
-  useResizeObserver(ref);
+  useButtonSize(ref);
   const { disabled } = props;
 
   return (
