@@ -20,14 +20,6 @@ const About = memo(() => {
         <div className={`container ${styles.section__body__container} is-max-widescreen`}>
           <h1 className={`title ${styles.container__title}`}>What we are doing</h1>
           <div className={`columns ${styles.container__columns}`}>
-            <div className="column is-7">
-              <p className="block">
-                Have you ever found yourself wanting to&nbsp;go somewhere but&nbsp;not&nbsp;wishing to&nbsp;choose a&nbsp;hotel or&nbsp;find travel companions? Or&nbsp;maybe you want something unusual. We understand and&nbsp;can&nbsp;help you!
-              </p>
-              <p className="block">
-                We have collected a&nbsp;number of&nbsp;interesting destinations around the&nbsp;world for&nbsp;you. We&apos;ve already found the&nbsp;hotel you&apos;ll love. We&apos;ve also found a&nbsp;group of&nbsp;like-minded travelers you won&apos;t&nbsp;be&nbsp;bored with. Want to&nbsp;go with&nbsp;someone? No problem! Choose where you want to&nbsp;go, add&nbsp;the&nbsp;options you want, and&nbsp;we&apos;ll take care of&nbsp;your&nbsp;future rest!
-              </p>
-            </div>
             {
               (allImages[imageId]) ? (
                 <div className={`${styles.columns__picture_right} column is-5`}>
@@ -44,6 +36,14 @@ const About = memo(() => {
                 <div className={`${styles.picture__image} is-skeleton`} />
               )
             }
+            <div className={`column is-7 ${styles.columns__text}`}>
+              <p className="block">
+                Have you ever found yourself wanting to&nbsp;go somewhere but&nbsp;not&nbsp;wishing to&nbsp;choose a&nbsp;hotel or&nbsp;find travel companions? Or&nbsp;maybe you want something unusual. We understand and&nbsp;can&nbsp;help you!
+              </p>
+              <p className="block">
+                We have collected a&nbsp;number of&nbsp;interesting destinations around the&nbsp;world for&nbsp;you. We&apos;ve already found the&nbsp;hotel you&apos;ll love. We&apos;ve also found a&nbsp;group of&nbsp;like-minded travelers you won&apos;t&nbsp;be&nbsp;bored with. Want to&nbsp;go with&nbsp;someone? No problem! Choose where you want to&nbsp;go, add&nbsp;the&nbsp;options you want, and&nbsp;we&apos;ll take care of&nbsp;your&nbsp;future rest!
+              </p>
+            </div>
           </div>
         </div>
       </div>

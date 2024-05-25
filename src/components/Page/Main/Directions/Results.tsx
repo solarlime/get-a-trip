@@ -11,22 +11,22 @@ const Results = memo(() => {
   const filteredTours = useStore((state) => state.filteredTours);
 
   return (
-    <section id="results" className={`hero ${styles.my_section}`}>
-      <div className={`hero-body pl-3 pr-3 ${styles.my_hero_body}`}>
-        <div className={`container ${styles.my_hero_padding} is-max-widescreen`}>
+    <section id="results" className={`hero ${styles.section}`}>
+      <div className={`hero-body ${styles.section__body}`}>
+        <div className={`container ${styles.section__body__container} is-max-widescreen`}>
           {
             (!filteredTours.isFilterRun) ? (
-              <h1 className="title is-size-3 has-text-centered has-text-primary">Your results will be there</h1>
+              <h1 className={`title ${styles.container__title} ${styles.resultsTitle}`}>Your results will be there</h1>
             ) : (
               (!filteredTours.tours.length) ? (
-                <h1 className="title is-size-3 has-text-centered has-text-primary">
+                <h1 className={`title ${styles.container__title} ${styles.resultsTitle}`}>
                   Nothing fits your preferences perfectly
                   {' '}
-                  <FontAwesomeIcon className="has-text-danger" icon={faHeartCrack} />
+                  <FontAwesomeIcon className={styles.colorDanger} icon={faHeartCrack} />
                 </h1>
               ) : (
                 <>
-                  <h1 className="title is-size-3 has-text-centered has-text-primary">Something fits your preferences!</h1>
+                  <h1 className={`title ${styles.container__title} ${styles.resultsTitle}`}>Something fits your preferences!</h1>
                   <div className={`columns is-multiline ${styles.my_columns}`}>
                     {
                       filteredTours.tours.map((productCardData) => (

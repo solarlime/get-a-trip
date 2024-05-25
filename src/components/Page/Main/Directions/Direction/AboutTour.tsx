@@ -10,13 +10,13 @@ const AboutTour = memo(() => {
   const tour = useStore((state) => state.chosenTour);
 
   return (
-    <section id="about" className={`hero ${styles.my_section}`}>
-      <div className={`hero-body pl-3 pr-3 ${styles.my_hero_body}`}>
-        <div className={`container ${styles.my_hero_padding} is-max-widescreen`}>
-          <h1 className="title is-size-1 is-size-3-mobile has-text-centered has-text-primary">About tour</h1>
-          <div className={`columns ${styles.columns}`}>
+    <section id="about-tour" className={`hero ${styles.section}`}>
+      <div className={`hero-body ${styles.section__body}`}>
+        <div className={`container ${styles.section__body__container} is-max-widescreen`}>
+          <h1 className={`title ${styles.container__title}`}>About tour</h1>
+          <div className={`columns ${styles.container__columns}`}>
             <Carousel imageLocation="left" />
-            <div className="column is-7 is-offset-5">
+            <div className={`column is-7 is-offset-5 ${styles.columns__text}`}>
               {
                 tour.description.map((paragraph) => (
                   <p className="block" key={id()}>{paragraph}</p>

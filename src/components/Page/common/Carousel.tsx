@@ -32,14 +32,14 @@ const Carousel = memo((props: { imageLocation: 'left' | 'right', pictures?: Arra
   }, [neededImages]);
 
   return (
-    <div className={`column is-5 ${styles.my_carousel} ${(imageLocation === 'left') ? styles.left_picture : styles.right_picture}`}>
-      <div className={styles.picture_container}>
+    <div className={`column is-5 ${styles.carousel} ${(imageLocation === 'left') ? styles.columns__picture_left : styles.columns__picture_right}`}>
+      <div className={styles.carousel__content}>
         {
           // @ts-ignore
           (neededImages && allImages[neededImages[shown]])
             ? (
               <ImagePreloader
-                className={`${styles.my_image} ${styles.appear}`}
+                className={`${styles.picture__image} ${styles.appear}`}
                 allImages={allImages}
                 neededImages={neededImages}
                 sizes="(max-width: 320px) 320px, (max-width: 768px) 640px, (max-width: 1300px) 500px, 1280px"
@@ -50,11 +50,11 @@ const Carousel = memo((props: { imageLocation: 'left' | 'right', pictures?: Arra
                 ref={shownRef}
               />
             ) : (
-              <div className={`${styles.my_image} is-skeleton`} />
+              <div className={`${styles.picture__image} is-skeleton`} />
             )
         }
       </div>
-      <div className={styles.my_carousel_buttons}>
+      <div className={styles.carousel__buttons}>
         <button
           className="button"
           type="button"

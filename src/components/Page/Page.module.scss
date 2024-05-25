@@ -5,7 +5,6 @@
 @use "bulma/sass/utilities/mixins";
 
 $navbar-height-full: Base.$navbar-height + 2 * navbar.$navbar-padding-vertical;
-$column-gap: Base.$column-gap;
 $radius: Base.$radius;
 
 .main {
@@ -133,6 +132,12 @@ $radius: Base.$radius;
   background-color: Base.$grey-light;
 }
 
+.results-title {
+  @include mixins.from(initial-variables.$tablet) {
+    font-size: 2rem !important;
+  }
+}
+
 // ----------------------------------------
 // Section
 
@@ -146,10 +151,18 @@ $radius: Base.$radius;
       padding: 1.5rem 0 0;
 
       .container__title {
-        margin-bottom: 4rem;
+        padding: 0 2rem;
         font-size: 3rem;
         text-align: center;
-        color: variables.$white;
+        color: variables.$green;
+
+        &:not(:last-child) {
+          margin-bottom: 4rem;
+
+          @include mixins.until(initial-variables.$tablet) {
+            margin-bottom: 2rem;
+          }
+        }
 
         @include mixins.until(initial-variables.$tablet) {
           margin-bottom: 2rem;
@@ -160,10 +173,39 @@ $radius: Base.$radius;
       .container__columns {
         position: relative;
 
+        @media (min-width: initial-variables.$tablet) and (max-width: 768px) {
+          display: block;
+
+          .columns__picture_left, .columns__picture_right {
+            min-width: 280px;
+          }
+
+          .columns__picture_left {
+            float: left;
+            margin-right: Base.$column-gap;
+          }
+
+          .columns__picture_right {
+            float: right;
+            margin-left: Base.$column-gap;
+          }
+
+          .columns__text {
+            margin: 0;
+            width: auto;
+
+            &:after {
+              content: '';
+              display: block;
+              clear: both;
+            }
+          }
+        }
+
         .columns__picture_left, .columns__picture_right {
           height: auto;
 
-          @include mixins.from(initial-variables.$tablet) {
+          @include mixins.from(768px) {
             position: absolute;
             height: 100%;
           }
@@ -195,10 +237,8 @@ $radius: Base.$radius;
   scroll-margin: $navbar-height-full;
 
   .section__body {
-    padding-bottom: 3rem;
 
     .section__body__container {
-      padding-bottom: 1.5rem;
 
       .container__title {
         color: variables.$white;
@@ -207,6 +247,16 @@ $radius: Base.$radius;
       .container__columns {
         color: variables.$white;
       }
+    }
+  }
+}
+
+.section:last-of-type, .section_coloured, .section_before-coloured {
+  .section__body {
+    padding-bottom: 3rem;
+
+    .section__body__container {
+      padding-bottom: 1.5rem;
     }
   }
 }
@@ -260,6 +310,41 @@ $radius: Base.$radius;
         }
       }
     }
+  }
+}
+
+// ----------------------------------------
+// Carousel
+
+.appear {
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+}
+
+.disappear {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+
+.carousel {
+  position: relative;
+  aspect-ratio: 4/3;
+
+  .carousel__content {
+    height: 100%;
+  }
+
+  .carousel__buttons {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }
 
@@ -420,7 +505,7 @@ $radius: Base.$radius;
 
   .my_price_box {
     position: sticky;
-    top: calc($navbar-height-full + $column-gap);
+    top: $navbar-height-full + Base.$column-gap;
   }
 }
 

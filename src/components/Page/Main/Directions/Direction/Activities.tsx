@@ -7,12 +7,13 @@ import Carousel from '../../../common/Carousel';
 const pictures = ['tXiMrX3Gc-g', 'e3OUQGT9bWU', 'UmV2wr-Vbq8'];
 
 const Activities = memo(() => (
-  <section id="activities" className={`hero ${styles.my_section} ${styles.my_section_before_coloured}`}>
-    <div className={`hero-body pl-3 pr-3 ${styles.my_hero_body}`}>
-      <div className={`container ${styles.my_hero_padding} is-max-widescreen`}>
-        <h1 className="title is-size-1 is-size-3-mobile has-text-centered has-text-primary">Activities</h1>
-        <div className={`columns ${styles.columns}`}>
-          <div className="column is-7">
+  <section id="activities" className={`hero ${styles.section} ${styles.section_beforeColoured}`}>
+    <div className={`hero-body ${styles.section__body}`}>
+      <div className={`container ${styles.section__body__container} is-max-widescreen`}>
+        <h1 className={`title ${styles.container__title}`}>Activities</h1>
+        <div className={`columns ${styles.container__columns}`}>
+          <Carousel imageLocation="right" pictures={pictures} />
+          <div className={`column is-7 ${styles.columns__text}`}>
             <p className="block">
               We always have an&nbsp;idea for&nbsp;evening event. We can arrange a&nbsp;party and&nbsp;pool, wine tasting or&nbsp;a&nbsp;joint trip to&nbsp;the&nbsp;nearby ancient city on&nbsp;scooters. We will have a&nbsp;list of&nbsp;what we&nbsp;can&nbsp;offer, but&nbsp;each participant is&nbsp;able&nbsp;to&nbsp;offer their&nbsp;own ideas, and&nbsp;we will&nbsp;plan them together!
             </p>
@@ -23,7 +24,6 @@ const Activities = memo(() => (
               It&apos;s always fun to&nbsp;do something together. You can&nbsp;easily find your&nbsp;company among the&nbsp;community for&nbsp;windsurfing, fishing, jogging and&nbsp;anything else.
             </p>
           </div>
-          <Carousel imageLocation="right" pictures={pictures} />
         </div>
       </div>
     </div>
