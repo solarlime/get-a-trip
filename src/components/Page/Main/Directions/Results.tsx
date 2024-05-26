@@ -27,10 +27,10 @@ const Results = memo(() => {
               ) : (
                 <>
                   <h1 className={`title ${styles.container__title} ${styles.resultsTitle}`}>Something fits your preferences!</h1>
-                  <div className={`columns is-multiline ${styles.my_columns}`}>
+                  <div className={`columns is-multiline ${styles.container__columns_cards}`}>
                     {
                       filteredTours.tours.map((productCardData) => (
-                        <div className="column is-one-third" key={id()}>
+                        <div className={`column ${styles.cardContainer} is-one-third`} key={id()}>
                           <ProductCard tour={productCardData} />
                         </div>
                       ))

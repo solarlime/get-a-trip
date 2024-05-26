@@ -14,15 +14,15 @@ const FeaturedProductCards = memo(() => {
   }, []);
 
   return (
-    <section id="featured" className={`hero ${styles.my_section}`}>
-      <div className={`hero-body pl-3 pr-3 ${styles.my_hero_body}`}>
-        <div className={`container ${styles.my_hero_padding} is-max-widescreen`}>
-          <h1 className="title is-size-1 is-size-3-mobile has-text-centered has-text-primary">Featured variants</h1>
-          <div className={`columns ${styles.my_columns} is-multiline`}>
+    <section id="featured" className={`hero ${styles.section}`}>
+      <div className={`hero-body ${styles.section__body}`}>
+        <div className={`container ${styles.section__body__container} is-max-widescreen`}>
+          <h1 className={`title ${styles.container__title}`}>Featured variants</h1>
+          <div className={`columns ${styles.container__columns_cards} is-multiline`}>
             {
               (randomTours.length) ? (
                 randomTours.map((productCardData) => (
-                  <div className={`column is-one-third ${styles.featuredCard}`} key={id()}>
+                  <div className={`column ${styles.cardContainer} is-one-third ${styles.cardContainer_featured}`} key={id()}>
                     <ProductCard tour={productCardData} />
                   </div>
                 ))

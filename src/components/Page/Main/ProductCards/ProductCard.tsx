@@ -25,10 +25,10 @@ const ProductCard = memo((props: { tour: Tour }) => {
   }, []);
 
   return (
-    <div className={`card ${styles.specific} ${styles.productCard} has-background-primary`}>
+    <div className={`card ${styles.card}`}>
       <div className="card-image">
-        <span className={`button is-static has-text-black has-background-white ${styles.left}`}>{`${left} place${(left === 1) ? '' : 's'} left`}</span>
-        <div className={`button is-static has-background-primary has-text-white is-gap-1 ${styles.hosted}`}>
+        <span className={`button is-static ${styles.card__label_left}`}>{`${left} place${(left === 1) ? '' : 's'} left`}</span>
+        <div className={`button is-static ${styles.card__label_hosted}`}>
           <span>by</span>
           <Hoster hostedby={tour.hostedby as Hosters} />
         </div>
@@ -36,7 +36,7 @@ const ProductCard = memo((props: { tour: Tour }) => {
           {
             (allImages[src]) ? (
               <ImagePreloader
-                className={styles.my_image}
+                className={styles.card__image}
                 allImages={allImages}
                 neededImages={[src]}
                 sizes="(max-width: 320px) 320px, (max-width: 768px) 640px, 320px"
@@ -44,22 +44,22 @@ const ProductCard = memo((props: { tour: Tour }) => {
                 alt={location}
               />
             ) : (
-              <div className={`${styles.my_image} is-skeleton`} />
+              <div className={`${styles.card__image} is-skeleton`} />
             )
           }
         </figure>
       </div>
-      <div className="card-content has-text-white">
+      <div className="card-content">
         <div className="block">
-          <div className={`content ${styles.my_media_content}`}>
-            <p className="title is-4 pb-3 has-text-white">{date}</p>
-            <p className="subtitle is-6 has-text-white">{location}</p>
+          <div className={styles.card__content}>
+            <p className={`${styles.card__content__title} title is-4`}>{date}</p>
+            <p className={`${styles.colorWhite} subtitle is-6`}>{location}</p>
           </div>
         </div>
 
-        <div className="content">
+        <div>
           <Link
-            className="button is-white has-text-primary is-size-6"
+            className={`button ${styles.colorGreen} is-white is-size-6`}
             to={`/directions/${location.toLocaleLowerCase()
               .replace(', ', '-')
               .replace(' ', '-')}-${year}-${startDate.replace(/ /i, '-')}#top`}
