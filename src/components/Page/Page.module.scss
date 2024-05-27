@@ -138,6 +138,22 @@ $radius: Base.$radius;
   }
 }
 
+.info-cards {
+
+  .info-cards__block {
+
+    @media (min-width: initial-variables.$tablet) and (max-width: 820px) {
+      flex: none;
+      width: 100%;
+    }
+
+    .info-card__child {
+      color: variables.$white;
+      text-decoration: underline;
+    }
+  }
+}
+
 // ----------------------------------------
 // Section
 
@@ -430,6 +446,36 @@ $radius: Base.$radius;
     &:nth-child(2n) {
       display: none
     }
+  }
+}
+
+// ----------------------------------------
+// FAQ
+
+.faq-item {
+  overflow: hidden;
+
+  .faq-item__header {
+    color: variables.$white;
+    background-color: variables.$green;
+
+    .faq-item__header__text {
+      padding: 1.5rem;
+      color: variables.$white;
+      font-size: 1.5rem;
+
+      @include mixins.until(initial-variables.$tablet) {
+        font-size: 1.25rem;
+      }
+    }
+  }
+
+  .faq-item__content_default {
+    display: none;
+  }
+
+  .faq-item__content_opened {
+    display: block;
   }
 }
 

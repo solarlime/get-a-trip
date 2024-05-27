@@ -12,20 +12,20 @@ const InfoCards = memo(() => {
   const { duration } = tour.dates;
 
   return (
-    <section id="infocards" className={`hero ${styles.my_section}`}>
-      <div className={`hero-body pl-3 pr-3 ${styles.my_hero_body}`}>
-        <div className={`container ${styles.my_hero_padding} is-max-widescreen`}>
-          <div className="columns is-multiline">
-            <div className="column is-half">
-              <div className={`columns ${styles.my_columns} ${styles.specific}`}>
+    <section id="infocards" className={`hero ${styles.section}`}>
+      <div className={`hero-body ${styles.section__body}`}>
+        <div className={`container ${styles.section__body__container} is-max-widescreen`}>
+          <div className={`columns ${styles.infoCards} is-multiline`}>
+            <div className={`column ${styles.infoCards__block} is-half`}>
+              <div className="columns">
                 <InfoCard first="When" second={`${year}: ${date}`} />
                 <InfoCard first="How long" second={`${duration} day${(!duration.toString().endsWith('1')) ? 's' : ''}`} />
               </div>
             </div>
-            <div className="column is-half">
-              <div className={`columns ${styles.my_columns} ${styles.specific}`}>
+            <div className={`column ${styles.infoCards__block} is-half`}>
+              <div className="columns">
                 <InfoCard first="Where">
-                  <a className="has-text-white is-underlined" href={tour.accommodation} rel="noreferrer" target="_blank">See hotel</a>
+                  <a className={styles.infoCard__child} href={tour.accommodation} rel="noreferrer" target="_blank">See hotel</a>
                 </InfoCard>
                 <InfoCard first="Cost" second={`From ${tour.basicPrice}$/day`} />
               </div>

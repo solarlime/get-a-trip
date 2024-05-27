@@ -6,13 +6,13 @@ import styles from '../../../../Page.module.scss';
 const InfoCard = memo((props: { first: string, second?: string, children?: ReactNode }) => {
   const { first, second, children } = props;
   return (
-    <div className="column">
-      <div className={`card ${styles.specific} ${styles.productCard} has-background-primary`}>
-        <div className="card-content has-text-white">
+    <div className={`column ${styles.cardContainer}`}>
+      <div className={`card ${styles.card}`}>
+        <div className="card-content">
           <div className="media">
-            <div className={`media-content ${styles.my_media_content}`}>
-              <p className="title is-4 pb-3 has-text-white">{first}</p>
-              <p className="subtitle is-6 has-text-white">
+            <div className={`media-content ${styles.card__content}`}>
+              <p className={`${styles.card__content__title} title is-4`}>{first}</p>
+              <p className={`${styles.colorWhite} subtitle is-6`}>
                 {(!second) ? children : second}
               </p>
             </div>

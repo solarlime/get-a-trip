@@ -13,11 +13,11 @@ const FAQItem = memo((props: QuestionAndAnswer) => {
   const [isOpened, setIsOpened] = useState(false);
 
   return (
-    <div className="card is-overflow-hidden">
-      <header className="card-header has-background-primary has-text-white">
-        <p className="card-header-title is-size-4 is-size-5-mobile p-5 has-text-white">{question}</p>
+    <div className={`card ${styles.faqItem}`}>
+      <header className={`card-header ${styles.faqItem__header}`}>
+        <p className={`card-header-title ${styles.faqItem__header__text}`}>{question}</p>
         <button
-          className="card-header-icon is-size-4 is-size-5-mobile p-5"
+          className={`card-header-icon ${styles.faqItem__header__text}`}
           onClick={() => setIsOpened(!isOpened)}
           type="button"
         >
@@ -32,7 +32,7 @@ const FAQItem = memo((props: QuestionAndAnswer) => {
           </span>
         </button>
       </header>
-      <div className={`card-content has-background-white ${styles.my_card_content} ${(isOpened) ? styles.opened : ''}`}>
+      <div className={`card-content ${styles.faqItem__content_default} ${(isOpened) ? styles.faqItem__content_opened : ''}`}>
         <div className="content">{answer}</div>
       </div>
     </div>
@@ -50,10 +50,10 @@ const FAQ = memo(() => {
   }, []);
 
   return (
-    <section id="faq" className={`hero ${styles.my_section}`}>
-      <div className={`hero-body pl-3 pr-3 ${styles.my_hero_body}`}>
-        <div className={`container ${styles.my_hero_padding} is-max-widescreen`}>
-          <h1 className="title is-size-1 is-size-3-mobile has-text-centered has-text-primary">FAQ</h1>
+    <section id="faq" className={`hero ${styles.section}`}>
+      <div className={`hero-body ${styles.section__body}`}>
+        <div className={`container ${styles.section__body__container} is-max-widescreen`}>
+          <h1 className={`title ${styles.container__title}`}>FAQ</h1>
           {
             questionsAndAnswers.map((pair) => (
               <FAQItem key={id()} question={pair.question} answer={pair.answer} />
