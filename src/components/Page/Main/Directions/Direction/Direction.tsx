@@ -7,7 +7,7 @@ import Top from './Top';
 import InfoCards from './InfoCards/InfoCards';
 import Activities from './Activities';
 import Booking from './Booking/Booking';
-import FAQ from './FAQ/FAQ';
+import Faq from './FAQ/Faq';
 import NotFound from '../../NotFound';
 
 const Direction = memo(() => {
@@ -39,7 +39,7 @@ const Direction = memo(() => {
       <InfoCards />
       <Activities />
       <Booking />
-      <FAQ />
+      <Faq />
     </>
   );
 });
