@@ -57,13 +57,13 @@ const TotalPrice = memo(() => {
   }, [calculated]);
 
   return (
-    <div className={`box ${styles.my_price_box}`}>
-      <div className="p-4">
-        <h3 className="title mb-5 is-size-4 is-size-5-touch has-text-centered has-text-primary">Price details</h3>
+    <div className={`box ${styles.booking__price__priceBox}`}>
+      <div className={styles.priceBox__content}>
+        <h3 className={`title ${styles.priceBox__content__title}`}>Price details</h3>
         {
-          (notRecurring.length) ? (
-            <div>
-              <h3 className="subtitle mb-4 is-size-5 is-size-6-touch has-text-centered has-text-primary">For whole trip</h3>
+          (notRecurring.length && notRecurring.some((item) => item.status === 'success')) ? (
+            <div className={styles.priceBox__content__part}>
+              <h4 className={`subtitle ${styles.part__title}`}>For whole trip</h4>
               {
                 notRecurring.map((item) => ((item.status === 'success' && item.option.price !== undefined) ? (
                   <ListItem
@@ -76,47 +76,40 @@ const TotalPrice = memo(() => {
             </div>
           ) : ''
         }
-        <div className="mt-5">
-          {
-            (recurring.length && duration.status === 'success') ? (
-              <div>
-                <h3 className="subtitle mb-4 is-size-5 is-size-6-touch has-text-centered has-text-primary">
-                  {`For ${duration.value} day${!duration.value.endsWith('1') ? 's' : ''}`}
-                </h3>
-                {
-                  recurring.map((item) => ((item.status === 'success' && item.option.price !== undefined) ? (
-                    <ListItem
-                      first={item.option.value}
-                      second={(item.option.price * +duration.value).toString()}
-                      key={id()}
-                    />
-                  ) : ''))
-                }
-              </div>
-            ) : ''
-          }
-        </div>
-        <div className="mt-5">
-          <div className="is-flex is-gap-1">
-            <div className="is-flex-grow-1">
-              <p className="content is-size-4 is-size-5-touch"><strong>Total</strong></p>
+        {
+          (recurring.length && duration.status === 'success') ? (
+            <div className={styles.priceBox__content__part}>
+              <h4 className={`subtitle ${styles.part__title}`}>
+                {`For ${duration.value} day${!duration.value.endsWith('1') ? 's' : ''}`}
+              </h4>
+              {
+                recurring.map((item) => ((item.status === 'success' && item.option.price !== undefined) ? (
+                  <ListItem
+                    first={item.option.value}
+                    second={(item.option.price * +duration.value).toString()}
+                    key={id()}
+                  />
+                ) : ''))
+              }
             </div>
-            <div className="is-flex-shrink-0">
-              <p className="content has-text-right is-size-4 is-size-5-touch">
-                <strong>
-                  {`${calculated}$`}
-                </strong>
-              </p>
-            </div>
-          </div>
+          ) : ''
+        }
+        <div className={styles.priceBox__content__part}>
+          <ListItem
+            first="Total"
+            second={calculated.toString()}
+            isBold
+          />
         </div>
-        <Link
-          className={`button is-primary has-text-white is-size-6 is-block mt-5 ${isDisabled ? styles.disabled : ''}`}
-          to="/checkout"
-          state={{ previousLocationPathname: location.pathname }}
-        >
-          Checkout
-        </Link>
+        <div className={styles.priceBox__content__part}>
+          <Link
+            className={`button is-primary ${styles.part__button} ${isDisabled ? styles.disabled : ''}`}
+            to="/checkout"
+            state={{ previousLocationPathname: location.pathname }}
+          >
+            Checkout
+          </Link>
+        </div>
       </div>
     </div>
   );

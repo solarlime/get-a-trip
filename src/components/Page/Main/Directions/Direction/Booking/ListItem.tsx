@@ -1,15 +1,17 @@
 import { memo } from 'react';
 
-const ListItem = memo((props: { first: string, second: string }) => {
-  const { first, second } = props;
+import styles from '../../../../Page.module.scss';
+
+const ListItem = memo((props: { first: string, second: string, isBold?: boolean }) => {
+  const { first, second, isBold } = props;
 
   return (
-    <div className="is-flex is-gap-1">
-      <div className="is-flex-grow-1">
-        <p className="content">{first}</p>
+    <div className={(isBold) ? styles.part__listItem_bold : styles.part__listItem}>
+      <div className={styles.part__listItem__key}>
+        <p>{first}</p>
       </div>
-      <div className="is-flex-shrink-0">
-        <p className="content has-text-right">{`${second}$`}</p>
+      <div className={styles.part__listItem__value}>
+        <p>{`${second}$`}</p>
       </div>
     </div>
   );

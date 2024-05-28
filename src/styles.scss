@@ -10,6 +10,7 @@
   $radius-small: variables.$radius,
   $radius-medium: variables.$radius,
   $radius-large: variables.$radius,
+  $tablet: 577px,
 );
 
 @use "bulma/sass/components/card" with (
@@ -54,8 +55,6 @@
 @forward "bulma/sass/form/input-textarea";
 @forward "bulma/sass/form/select";
 @forward "bulma/sass/form/tools";
-
-@forward "bulma/sass/helpers";
 
 :root {
   @include light.light-theme;

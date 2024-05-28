@@ -1,9 +1,9 @@
 import { memo } from 'react';
 
 import Country from './Country';
-import Email from './Email';
+import Email from '../../common/Email';
 import Card from './Card/Card';
-import Name from './Name';
+import Name from '../../common/Name';
 import PayButton from './PayButton';
 
 const Payment = memo(() => (

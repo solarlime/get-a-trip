@@ -3,8 +3,8 @@ import { isEmail, isEmpty } from 'validator';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleExclamation } from '@fortawesome/free-solid-svg-icons';
 
-import useStore from '../../../store/store';
-import styles from '../Checkout.module.scss';
+import useStore from '../../store/store';
+import styles from '../Checkout/Checkout.module.scss';
 
 const Email = memo((props: { classes?: string }) => {
   const { classes } = props;

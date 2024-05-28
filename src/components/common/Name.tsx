@@ -1,7 +1,7 @@
 import { memo } from 'react';
 import { isAlpha } from 'validator';
 
-import useStore from '../../../store/store';
+import useStore from '../../store/store';
 
 const Name = memo((props: {
   type: 'Cardholder name' | 'First name' | 'Last name',

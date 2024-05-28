@@ -1,3 +1,4 @@
+@use "sass:math";
 @use "../Base.module";
 @use "../../variables";
 @use "bulma/sass/utilities/initial-variables";
@@ -480,289 +481,147 @@ $radius: Base.$radius;
 }
 
 // ----------------------------------------
+// Booking
 
-//img {
-//  background-color: #e6f7ef;
-//}
+.booking {
+  justify-content: space-between;
 
-.my_section {
-  scroll-margin: $navbar-height-full;
+  .booking__price {
+    position: relative;
 
-  .my_hero_body {
-    padding-top: 3rem;
-    padding-bottom: 0;
+    .booking__price__price-box {
+      position: sticky;
+      top: $navbar-height-full + Base.$column-gap;
 
-    .my_hero_padding {
-      padding-top: 1.5rem;
-      padding-bottom: 0;
+      .price-box__content {
+        padding: 1rem;
 
-      h1:not(:last-child) {
-        margin-bottom: 4rem;
-      }
-    }
+        .price-box__content__title {
+          margin-bottom: 1.5rem;
+          color: variables.$green;
+          font-size: 1.5rem;
+          text-align: center;
 
-    @media (max-width: 768px) {
-      .my_hero_padding {
-        padding: 0;
-
-        h1:not(:last-child) {
-          margin-bottom: 2rem
-        }
-      }
-    }
-
-    img.my_image {
-      object-fit: cover;
-      border-radius: $radius;
-    }
-
-    .my_image {
-      width: 100%;
-      height: 100%;
-    }
-
-    .my_columns.specific {
-      @media (min-width: 450px) {
-        display: flex;
-      }
-    }
-
-    .my_columns {
-      align-items: stretch;
-
-      .featuredCard {
-        @media (max-width: 768px) {
-          &:nth-child(2n) {
-            display: none
+          @include mixins.until(initial-variables.$tablet) {
+            font-size: 1.25rem;
           }
         }
-      }
 
-      .specific.productCard {
-        position: relative;
-        height: 100%;
-        border-radius: $radius;
+        .price-box__content__part {
 
-        & .left {
-          position: absolute;
-          right: Base.$card-content-padding;
-          top: Base.$card-content-padding;
-          border-color: transparent;
-          z-index: 1;
-        }
-
-        img {
-          object-fit: cover;
-          border-radius: $radius $radius 0 0;
-        }
-
-        .my_media_content {
-          overflow: unset;
-        }
-
-        .hosted {
-          position: absolute;
-          right: Base.$card-content-padding;
-          bottom: Base.$card-content-padding;
-          height: 36px;
-          align-items: center;
-          border: 0;
-          z-index: 1;
-
-          span {
-            flex-shrink: 0;
-            font-size: 0.9rem;
-            color: #fffef0;
+          &:not(:first-of-type) {
+            margin-top: 1.5rem;
           }
 
-          svg {
-            flex-shrink: 0;
-            background-color: transparent;
-            height: 100%;
-            border-radius: 0;
-            color: #fffef0;
+          .part__title {
+            margin-bottom: 1rem;
+            color: variables.$green;
+            font-size: 1.25rem;
+            text-align: center;
+
+            @include mixins.until(initial-variables.$tablet) {
+              font-size: 1.25rem;
+            }
+          }
+
+          .part__list-item, .part__list-item_bold {
+            display: flex;
+            column-gap: 0.5rem;
+
+            .part__list-item__key {
+              flex-grow: 1;
+            }
+
+            .part__list-item__value {
+              flex-shrink: 0;
+              text-align: right;
+            }
+          }
+
+          .part__list-item_bold {
+            font-weight: 600;
+            font-size: 1.5rem;
+
+            @include mixins.until(initial-variables.$tablet) {
+              font-size: 1.25rem;
+            }
+          }
+
+          .part__button {
+            display: block;
+            color: variables.$white;
           }
         }
+
       }
     }
   }
-}
 
-.my_section:last-of-type, .my_section_coloured, .my_section_before_coloured {
-  .my_hero_body {
-    padding-bottom: 3rem;
+  .booking__info {
 
-    .my_hero_padding {
-      padding-bottom: 1.5rem;
+    .info__part {
+      &:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+
+      .info__part__title {
+        font-size: 1.5rem;
+        color: variables.$white;
+
+        @include mixins.until(initial-variables.$tablet) {
+          font-size: 1.25rem;
+        }
+      }
+
+      .info__part__content {
+        margin-bottom: 1.5rem;
+        color: variables.$white;
+      }
+
+      .info__part__call {
+        display: block;
+        padding-top: 0.75rem;
+      }
     }
   }
-}
 
-.my_search_container {
-  padding: 1.5rem 3rem;
-  border-radius: $radius;
-
-  .specific.selector:after {
-    border-color: black;
-  }
-}
-
-.my_search_container > form {
-  a {
-    min-width: var(--calculated-height, 72px);
+  @mixin column-width($size) {
+    width: calc(#{math.percentage(math.div($size, 12))} - #{Base.$column-gap} / 2);
   }
 
-  @media screen and (max-width: 768px) {
-    flex-direction: column;
-
-    a:after {
-      content: 'Search';
-      color: white;
-      padding-left: 10px;
+  @include mixins.until(920px) {
+    .booking__price {
+      @include column-width(5);
     }
   }
-}
 
-.top {
-  padding-top: $navbar-height-new;
-}
+  //@media (min-width: initial-variables.$tablet) and (max-width: 820px) {
+  @media (max-width: 820px) {
+    .booking__price {
+      @include column-width(5.5);
+    }
 
-.padding {
-  padding-bottom: 2rem;
-}
+    .booking__info {
+      @include column-width(6.5);
 
-.price {
-  position: relative;
-
-  .my_price_box {
-    position: sticky;
-    top: $navbar-height-full + Base.$column-gap;
+      .info__part__flexible {
+        display: block;
+      }
+    }
   }
-}
 
-@media (max-width: 768px) {
-  .booking {
+  @media (max-width: 640px) {
     display: flex;
     flex-direction: column;
 
-    .price {
-      order: 2;
+    .booking__info, .booking__price {
+      width: 100%;
     }
 
-    .empty {
+    .booking__price {
       order: 1;
     }
   }
 }
 
-.disabled {
-  pointer-events: none;
-  cursor: default;
-  background-color: Base.$grey-light;
-}
-
-.my_card_content {
-  display: none;
-}
-
-.opened {
-  display: block;
-}
-
-.appear {
-  opacity: 1;
-  transition: opacity 0.5s ease-out;
-}
-
-.disappear {
-  opacity: 0;
-  transition: opacity 0.5s ease-out;
-}
-
-.my_carousel {
-  position: relative;
-  aspect-ratio: 16/9;
-
-  .my_carousel_buttons {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    height: 100%;
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-
-  .img_focus {
-    object-position: top center;
-
-    @media (max-width: 768px) {
-      object-position: center center;
-    }
-  }
-}
-
-.columns {
-  position: relative;
-
-  .right_picture, .left_picture {
-    height: auto;
-    right: 0;
-
-    @media (min-width: 769px) {
-      position: absolute;
-      height: 100%;
-    }
-
-    .picture_container {
-      height: 100%;
-    }
-  }
-
-  .right_picture {
-    right: 0
-  }
-
-  .left_picture {
-    left: 0
-  }
-}
-
-.not_found {
-  flex-grow: 1;
-  padding-top: $navbar-height-new;
-}
-
-.not_found_body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  padding-bottom: 0;
-}
-
-.not_found_title {
-  font-size: 4rem;
-
-  @media (max-width: 480px) {
-    font-size: 3rem;
-  }
-}
-
-.not_found_content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.not_found_img {
-  min-width: 180px;
-  width: 40vw;
-  max-width: 270px;
-  height: auto;
-}
+// ----------------------------------------

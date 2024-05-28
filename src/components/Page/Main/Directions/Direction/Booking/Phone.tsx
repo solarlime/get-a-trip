@@ -2,6 +2,7 @@ import { memo, useEffect } from 'react';
 import { v4 as id } from 'uuid';
 import { isEmpty, isNumeric } from 'validator';
 
+import styles from '../../../../Page.module.scss';
 import useStore from '../../../../../../store/store';
 
 const Phone = memo(() => {
@@ -16,10 +17,10 @@ const Phone = memo(() => {
 
   return (
     <div className="field">
-      <label className="label has-text-white" htmlFor="phone">Phone number</label>
-      <div className="field has-addons">
+      <label className={`label ${styles.colorWhite}`} htmlFor="phone">Phone number</label>
+      <div className={`field ${styles.dropdown} has-addons`}>
         <div id="people" className="control">
-          <span className="select">
+          <span className={`select ${styles.dropdown__selector}`}>
             <select
               id="phoneCode"
               value={(phone.phoneCountry === '') ? 'GBR' : phone.phoneCountry}
