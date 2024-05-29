@@ -6,6 +6,7 @@ import { v4 as id } from 'uuid';
 import styles from '../../../../Page.module.scss';
 import useStore from '../../../../../../store/store';
 import FaqItem from './FaqItem';
+import Section from '../../../../common/Section';
 
 const idsArray = (length: number) => [...Array(length)].map(() => id());
 
@@ -22,25 +23,21 @@ const Faq = memo(() => {
   }, []);
 
   return (
-    <section id="faq" className={`hero ${styles.section}`}>
-      <div className={`hero-body ${styles.section__body}`}>
-        <div className={`container ${styles.section__body__container} is-max-widescreen`}>
-          <h1 className={`title ${styles.container__title}`}>FAQ</h1>
-          {
-            questionsAndAnswers.map((pair, i) => (
-              <FaqItem
-                key={ids[i]}
-                id={ids[i]}
-                question={pair.question}
-                answer={pair.answer}
-                isOpened={(opened === ids[i])}
-                setOpened={setOpened}
-              />
-            ))
-          }
-        </div>
-      </div>
-    </section>
+    <Section id="faq">
+      <h1 className={`title ${styles.container__title}`}>FAQ</h1>
+      {
+        questionsAndAnswers.map((pair, i) => (
+          <FaqItem
+            key={ids[i]}
+            id={ids[i]}
+            question={pair.question}
+            answer={pair.answer}
+            isOpened={(opened === ids[i])}
+            setOpened={setOpened}
+          />
+        ))
+      }
+    </Section>
   );
 });
 

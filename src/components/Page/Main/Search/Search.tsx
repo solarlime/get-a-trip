@@ -1,12 +1,13 @@
 import { memo, useMemo } from 'react';
 
 import styles from '../../Page.module.scss';
+import useStore from '../../../../store/store';
 import Dropdown from '../../common/Dropdown';
 import CheckInDate from './CheckInDate';
 import Duration from './Duration';
 import People from './People';
 import SearchButton from './SearchButton';
-import useStore from '../../../../store/store';
+import Section from '../../common/Section';
 
 const Search = memo((props: { title: string }) => {
   const { title } = props;
@@ -22,22 +23,18 @@ const Search = memo((props: { title: string }) => {
   );
 
   return (
-    <section id="search" className={`hero is-primary ${styles.section} ${styles.section_coloured} ${styles.section_top}`}>
-      <div className={`hero-body ${styles.section__body}`}>
-        <div className={`container ${styles.section__body__container} is-max-widescreen`}>
-          <h1 className={`title ${styles.container__title}`}>{title}</h1>
-          <div className={`container ${styles.container__search}`}>
-            <form className="field is-grouped">
-              <Dropdown label="Where" type="destination" setter="setDestination" />
-              <CheckInDate />
-              <Duration />
-              <People />
-              <SearchButton disabled={isDisabled} />
-            </form>
-          </div>
-        </div>
+    <Section id="search" classes={`is-primary ${styles.section_coloured} ${styles.section_top}`}>
+      <h1 className={`title ${styles.container__title}`}>{title}</h1>
+      <div className={`container ${styles.container__search}`}>
+        <form className="field is-grouped">
+          <Dropdown label="Where" type="destination" setter="setDestination" />
+          <CheckInDate />
+          <Duration />
+          <People />
+          <SearchButton disabled={isDisabled} />
+        </form>
       </div>
-    </section>
+    </Section>
   );
 });
 
