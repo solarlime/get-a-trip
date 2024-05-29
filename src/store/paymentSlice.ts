@@ -16,8 +16,18 @@ const initialState: PaymentState = {
 const createPaymentSlice: StateCreator<PaymentState & PaymentActions> = (set, get) => ({
   ...initialState,
   getCountries: async () => {
-    const response = await fetch('https://restcountries.com/v3.1/all');
-    const result = await response.json();
+    const result = await Promise.any([
+      fetch('https://restcountries.com/v3.1/all?fields=name,cca3,idd').then((response) => {
+        console.info('Successfully loaded countries');
+        return response.json();
+      }),
+      new Promise((resolve) => {
+        setTimeout(() => import('./fallback_countries.json').then((module) => {
+          console.info('Fallback countries loaded');
+          resolve(module.default);
+        }), 5000);
+      }),
+    ]);
     const countriesAndCodesAndPhonesList = result
       .filter((item: any) => item.idd.root)
       .map((item: any) => ({

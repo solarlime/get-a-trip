@@ -1,0 +1,3319 @@
+[
+  {
+    "name": {
+      "common": "Moldova"
+    },
+    "cca3": "MDA",
+    "idd": {
+      "root": "+3",
+      "suffixes": [
+        "73"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "United States"
+    },
+    "cca3": "USA",
+    "idd": {
+      "root": "+1",
+      "suffixes": [
+        "201",
+        "202",
+        "203",
+        "205",
+        "206",
+        "207",
+        "208",
+        "209",
+        "210",
+        "212",
+        "213",
+        "214",
+        "215",
+        "216",
+        "217",
+        "218",
+        "219",
+        "220",
+        "224",
+        "225",
+        "227",
+        "228",
+        "229",
+        "231",
+        "234",
+        "239",
+        "240",
+        "248",
+        "251",
+        "252",
+        "253",
+        "254",
+        "256",
+        "260",
+        "262",
+        "267",
+        "269",
+        "270",
+        "272",
+        "274",
+        "276",
+        "281",
+        "283",
+        "301",
+        "302",
+        "303",
+        "304",
+        "305",
+        "307",
+        "308",
+        "309",
+        "310",
+        "312",
+        "313",
+        "314",
+        "315",
+        "316",
+        "317",
+        "318",
+        "319",
+        "320",
+        "321",
+        "323",
+        "325",
+        "327",
+        "330",
+        "331",
+        "334",
+        "336",
+        "337",
+        "339",
+        "346",
+        "347",
+        "351",
+        "352",
+        "360",
+        "361",
+        "364",
+        "380",
+        "385",
+        "386",
+        "401",
+        "402",
+        "404",
+        "405",
+        "406",
+        "407",
+        "408",
+        "409",
+        "410",
+        "412",
+        "413",
+        "414",
+        "415",
+        "417",
+        "419",
+        "423",
+        "424",
+        "425",
+        "430",
+        "432",
+        "434",
+        "435",
+        "440",
+        "442",
+        "443",
+        "447",
+        "458",
+        "463",
+        "464",
+        "469",
+        "470",
+        "475",
+        "478",
+        "479",
+        "480",
+        "484",
+        "501",
+        "502",
+        "503",
+        "504",
+        "505",
+        "507",
+        "508",
+        "509",
+        "510",
+        "512",
+        "513",
+        "515",
+        "516",
+        "517",
+        "518",
+        "520",
+        "530",
+        "531",
+        "534",
+        "539",
+        "540",
+        "541",
+        "551",
+        "559",
+        "561",
+        "562",
+        "563",
+        "564",
+        "567",
+        "570",
+        "571",
+        "573",
+        "574",
+        "575",
+        "580",
+        "585",
+        "586",
+        "601",
+        "602",
+        "603",
+        "605",
+        "606",
+        "607",
+        "608",
+        "609",
+        "610",
+        "612",
+        "614",
+        "615",
+        "616",
+        "617",
+        "618",
+        "619",
+        "620",
+        "623",
+        "626",
+        "628",
+        "629",
+        "630",
+        "631",
+        "636",
+        "641",
+        "646",
+        "650",
+        "651",
+        "657",
+        "660",
+        "661",
+        "662",
+        "667",
+        "669",
+        "678",
+        "681",
+        "682",
+        "701",
+        "702",
+        "703",
+        "704",
+        "706",
+        "707",
+        "708",
+        "712",
+        "713",
+        "714",
+        "715",
+        "716",
+        "717",
+        "718",
+        "719",
+        "720",
+        "724",
+        "725",
+        "727",
+        "730",
+        "731",
+        "732",
+        "734",
+        "737",
+        "740",
+        "743",
+        "747",
+        "754",
+        "757",
+        "760",
+        "762",
+        "763",
+        "765",
+        "769",
+        "770",
+        "772",
+        "773",
+        "774",
+        "775",
+        "779",
+        "781",
+        "785",
+        "786",
+        "801",
+        "802",
+        "803",
+        "804",
+        "805",
+        "806",
+        "808",
+        "810",
+        "812",
+        "813",
+        "814",
+        "815",
+        "816",
+        "817",
+        "818",
+        "828",
+        "830",
+        "831",
+        "832",
+        "843",
+        "845",
+        "847",
+        "848",
+        "850",
+        "854",
+        "856",
+        "857",
+        "858",
+        "859",
+        "860",
+        "862",
+        "863",
+        "864",
+        "865",
+        "870",
+        "872",
+        "878",
+        "901",
+        "903",
+        "904",
+        "906",
+        "907",
+        "908",
+        "909",
+        "910",
+        "912",
+        "913",
+        "914",
+        "915",
+        "916",
+        "917",
+        "918",
+        "919",
+        "920",
+        "925",
+        "928",
+        "929",
+        "930",
+        "931",
+        "934",
+        "936",
+        "937",
+        "938",
+        "940",
+        "941",
+        "947",
+        "949",
+        "951",
+        "952",
+        "954",
+        "956",
+        "959",
+        "970",
+        "971",
+        "972",
+        "973",
+        "975",
+        "978",
+        "979",
+        "980",
+        "984",
+        "985",
+        "989"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Mayotte"
+    },
+    "cca3": "MYT",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "62"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Nauru"
+    },
+    "cca3": "NRU",
+    "idd": {
+      "root": "+6",
+      "suffixes": [
+        "74"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Mozambique"
+    },
+    "cca3": "MOZ",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "58"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Brazil"
+    },
+    "cca3": "BRA",
+    "idd": {
+      "root": "+5",
+      "suffixes": [
+        "5"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Cape Verde"
+    },
+    "cca3": "CPV",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "38"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Equatorial Guinea"
+    },
+    "cca3": "GNQ",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "40"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Albania"
+    },
+    "cca3": "ALB",
+    "idd": {
+      "root": "+3",
+      "suffixes": [
+        "55"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "United States Virgin Islands"
+    },
+    "cca3": "VIR",
+    "idd": {
+      "root": "+1",
+      "suffixes": [
+        "340"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Niue"
+    },
+    "cca3": "NIU",
+    "idd": {
+      "root": "+6",
+      "suffixes": [
+        "83"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Palau"
+    },
+    "cca3": "PLW",
+    "idd": {
+      "root": "+6",
+      "suffixes": [
+        "80"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Nigeria"
+    },
+    "cca3": "NGA",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "34"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "British Virgin Islands"
+    },
+    "cca3": "VGB",
+    "idd": {
+      "root": "+1",
+      "suffixes": [
+        "284"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Gambia"
+    },
+    "cca3": "GMB",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "20"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Somalia"
+    },
+    "cca3": "SOM",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "52"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Yemen"
+    },
+    "cca3": "YEM",
+    "idd": {
+      "root": "+9",
+      "suffixes": [
+        "67"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Malaysia"
+    },
+    "cca3": "MYS",
+    "idd": {
+      "root": "+6",
+      "suffixes": [
+        "0"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Dominica"
+    },
+    "cca3": "DMA",
+    "idd": {
+      "root": "+1",
+      "suffixes": [
+        "767"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "United Kingdom"
+    },
+    "cca3": "GBR",
+    "idd": {
+      "root": "+4",
+      "suffixes": [
+        "4"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Madagascar"
+    },
+    "cca3": "MDG",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "61"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Western Sahara"
+    },
+    "cca3": "ESH",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "125288",
+        "125289"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Cyprus"
+    },
+    "cca3": "CYP",
+    "idd": {
+      "root": "+3",
+      "suffixes": [
+        "57"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Antigua and Barbuda"
+    },
+    "cca3": "ATG",
+    "idd": {
+      "root": "+1",
+      "suffixes": [
+        "268"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Ireland"
+    },
+    "cca3": "IRL",
+    "idd": {
+      "root": "+3",
+      "suffixes": [
+        "53"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Paraguay"
+    },
+    "cca3": "PRY",
+    "idd": {
+      "root": "+5",
+      "suffixes": [
+        "95"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Sri Lanka"
+    },
+    "cca3": "LKA",
+    "idd": {
+      "root": "+9",
+      "suffixes": [
+        "4"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "South Africa"
+    },
+    "cca3": "ZAF",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "7"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Kuwait"
+    },
+    "cca3": "KWT",
+    "idd": {
+      "root": "+9",
+      "suffixes": [
+        "65"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Algeria"
+    },
+    "cca3": "DZA",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "13"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Croatia"
+    },
+    "cca3": "HRV",
+    "idd": {
+      "root": "+3",
+      "suffixes": [
+        "85"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Martinique"
+    },
+    "cca3": "MTQ",
+    "idd": {
+      "root": "+5",
+      "suffixes": [
+        "96"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Sierra Leone"
+    },
+    "cca3": "SLE",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "32"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Northern Mariana Islands"
+    },
+    "cca3": "MNP",
+    "idd": {
+      "root": "+1",
+      "suffixes": [
+        "670"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Rwanda"
+    },
+    "cca3": "RWA",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "50"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Syria"
+    },
+    "cca3": "SYR",
+    "idd": {
+      "root": "+9",
+      "suffixes": [
+        "63"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Saint Vincent and the Grenadines"
+    },
+    "cca3": "VCT",
+    "idd": {
+      "root": "+1",
+      "suffixes": [
+        "784"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Kosovo"
+    },
+    "cca3": "UNK",
+    "idd": {
+      "root": "+3",
+      "suffixes": [
+        "83"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Saint Lucia"
+    },
+    "cca3": "LCA",
+    "idd": {
+      "root": "+1",
+      "suffixes": [
+        "758"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Honduras"
+    },
+    "cca3": "HND",
+    "idd": {
+      "root": "+5",
+      "suffixes": [
+        "04"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Jordan"
+    },
+    "cca3": "JOR",
+    "idd": {
+      "root": "+9",
+      "suffixes": [
+        "62"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Tuvalu"
+    },
+    "cca3": "TUV",
+    "idd": {
+      "root": "+6",
+      "suffixes": [
+        "88"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Nepal"
+    },
+    "cca3": "NPL",
+    "idd": {
+      "root": "+9",
+      "suffixes": [
+        "77"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Liberia"
+    },
+    "cca3": "LBR",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "31"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Heard Island and McDonald Islands"
+    },
+    "cca3": "HMD",
+    "idd": {}
+  },
+  {
+    "name": {
+      "common": "Austria"
+    },
+    "cca3": "AUT",
+    "idd": {
+      "root": "+4",
+      "suffixes": [
+        "3"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Guernsey"
+    },
+    "cca3": "GGY",
+    "idd": {
+      "root": "+4",
+      "suffixes": [
+        "4"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Central African Republic"
+    },
+    "cca3": "CAF",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "36"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Mauritania"
+    },
+    "cca3": "MRT",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "22"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Djibouti"
+    },
+    "cca3": "DJI",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "53"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Fiji"
+    },
+    "cca3": "FJI",
+    "idd": {
+      "root": "+6",
+      "suffixes": [
+        "79"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Norway"
+    },
+    "cca3": "NOR",
+    "idd": {
+      "root": "+4",
+      "suffixes": [
+        "7"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Latvia"
+    },
+    "cca3": "LVA",
+    "idd": {
+      "root": "+3",
+      "suffixes": [
+        "71"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Falkland Islands"
+    },
+    "cca3": "FLK",
+    "idd": {
+      "root": "+5",
+      "suffixes": [
+        "00"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Kazakhstan"
+    },
+    "cca3": "KAZ",
+    "idd": {
+      "root": "+7",
+      "suffixes": [
+        "6",
+        "7"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Åland Islands"
+    },
+    "cca3": "ALA",
+    "idd": {
+      "root": "+3",
+      "suffixes": [
+        "5818"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Turkmenistan"
+    },
+    "cca3": "TKM",
+    "idd": {
+      "root": "+9",
+      "suffixes": [
+        "93"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Cocos (Keeling) Islands"
+    },
+    "cca3": "CCK",
+    "idd": {
+      "root": "+6",
+      "suffixes": [
+        "1"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Bulgaria"
+    },
+    "cca3": "BGR",
+    "idd": {
+      "root": "+3",
+      "suffixes": [
+        "59"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Tokelau"
+    },
+    "cca3": "TKL",
+    "idd": {
+      "root": "+6",
+      "suffixes": [
+        "90"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "New Caledonia"
+    },
+    "cca3": "NCL",
+    "idd": {
+      "root": "+6",
+      "suffixes": [
+        "87"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Barbados"
+    },
+    "cca3": "BRB",
+    "idd": {
+      "root": "+1",
+      "suffixes": [
+        "246"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "São Tomé and Príncipe"
+    },
+    "cca3": "STP",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "39"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Antarctica"
+    },
+    "cca3": "ATA",
+    "idd": {}
+  },
+  {
+    "name": {
+      "common": "Brunei"
+    },
+    "cca3": "BRN",
+    "idd": {
+      "root": "+6",
+      "suffixes": [
+        "73"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Bhutan"
+    },
+    "cca3": "BTN",
+    "idd": {
+      "root": "+9",
+      "suffixes": [
+        "75"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Cameroon"
+    },
+    "cca3": "CMR",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "37"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Argentina"
+    },
+    "cca3": "ARG",
+    "idd": {
+      "root": "+5",
+      "suffixes": [
+        "4"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Azerbaijan"
+    },
+    "cca3": "AZE",
+    "idd": {
+      "root": "+9",
+      "suffixes": [
+        "94"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Mexico"
+    },
+    "cca3": "MEX",
+    "idd": {
+      "root": "+5",
+      "suffixes": [
+        "2"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Morocco"
+    },
+    "cca3": "MAR",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "12"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Guatemala"
+    },
+    "cca3": "GTM",
+    "idd": {
+      "root": "+5",
+      "suffixes": [
+        "02"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Kenya"
+    },
+    "cca3": "KEN",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "54"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Malta"
+    },
+    "cca3": "MLT",
+    "idd": {
+      "root": "+3",
+      "suffixes": [
+        "56"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Czechia"
+    },
+    "cca3": "CZE",
+    "idd": {
+      "root": "+4",
+      "suffixes": [
+        "20"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Gibraltar"
+    },
+    "cca3": "GIB",
+    "idd": {
+      "root": "+3",
+      "suffixes": [
+        "50"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Aruba"
+    },
+    "cca3": "ABW",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "97"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Saint Barthélemy"
+    },
+    "cca3": "BLM",
+    "idd": {
+      "root": "+5",
+      "suffixes": [
+        "90"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Monaco"
+    },
+    "cca3": "MCO",
+    "idd": {
+      "root": "+3",
+      "suffixes": [
+        "77"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "United Arab Emirates"
+    },
+    "cca3": "ARE",
+    "idd": {
+      "root": "+9",
+      "suffixes": [
+        "71"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "South Sudan"
+    },
+    "cca3": "SSD",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "11"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Puerto Rico"
+    },
+    "cca3": "PRI",
+    "idd": {
+      "root": "+1",
+      "suffixes": [
+        "787",
+        "939"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "El Salvador"
+    },
+    "cca3": "SLV",
+    "idd": {
+      "root": "+5",
+      "suffixes": [
+        "03"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "France"
+    },
+    "cca3": "FRA",
+    "idd": {
+      "root": "+3",
+      "suffixes": [
+        "3"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Niger"
+    },
+    "cca3": "NER",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "27"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Ivory Coast"
+    },
+    "cca3": "CIV",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "25"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "South Georgia"
+    },
+    "cca3": "SGS",
+    "idd": {
+      "root": "+5",
+      "suffixes": [
+        "00"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Botswana"
+    },
+    "cca3": "BWA",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "67"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "British Indian Ocean Territory"
+    },
+    "cca3": "IOT",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "46"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Uzbekistan"
+    },
+    "cca3": "UZB",
+    "idd": {
+      "root": "+9",
+      "suffixes": [
+        "98"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Tunisia"
+    },
+    "cca3": "TUN",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "16"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Hong Kong"
+    },
+    "cca3": "HKG",
+    "idd": {
+      "root": "+8",
+      "suffixes": [
+        "52"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "North Macedonia"
+    },
+    "cca3": "MKD",
+    "idd": {
+      "root": "+3",
+      "suffixes": [
+        "89"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Suriname"
+    },
+    "cca3": "SUR",
+    "idd": {
+      "root": "+5",
+      "suffixes": [
+        "97"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Belgium"
+    },
+    "cca3": "BEL",
+    "idd": {
+      "root": "+3",
+      "suffixes": [
+        "2"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "American Samoa"
+    },
+    "cca3": "ASM",
+    "idd": {
+      "root": "+1",
+      "suffixes": [
+        "684"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Solomon Islands"
+    },
+    "cca3": "SLB",
+    "idd": {
+      "root": "+6",
+      "suffixes": [
+        "77"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Ukraine"
+    },
+    "cca3": "UKR",
+    "idd": {
+      "root": "+3",
+      "suffixes": [
+        "80"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Finland"
+    },
+    "cca3": "FIN",
+    "idd": {
+      "root": "+3",
+      "suffixes": [
+        "58"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Burkina Faso"
+    },
+    "cca3": "BFA",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "26"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Bosnia and Herzegovina"
+    },
+    "cca3": "BIH",
+    "idd": {
+      "root": "+3",
+      "suffixes": [
+        "87"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Iran"
+    },
+    "cca3": "IRN",
+    "idd": {
+      "root": "+9",
+      "suffixes": [
+        "8"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Cuba"
+    },
+    "cca3": "CUB",
+    "idd": {
+      "root": "+5",
+      "suffixes": [
+        "3"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Eritrea"
+    },
+    "cca3": "ERI",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "91"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Slovakia"
+    },
+    "cca3": "SVK",
+    "idd": {
+      "root": "+4",
+      "suffixes": [
+        "21"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Lithuania"
+    },
+    "cca3": "LTU",
+    "idd": {
+      "root": "+3",
+      "suffixes": [
+        "70"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Saint Martin"
+    },
+    "cca3": "MAF",
+    "idd": {
+      "root": "+5",
+      "suffixes": [
+        "90"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Pitcairn Islands"
+    },
+    "cca3": "PCN",
+    "idd": {
+      "root": "+6",
+      "suffixes": [
+        "4"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Guinea-Bissau"
+    },
+    "cca3": "GNB",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "45"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Montserrat"
+    },
+    "cca3": "MSR",
+    "idd": {
+      "root": "+1",
+      "suffixes": [
+        "664"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Turkey"
+    },
+    "cca3": "TUR",
+    "idd": {
+      "root": "+9",
+      "suffixes": [
+        "0"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Philippines"
+    },
+    "cca3": "PHL",
+    "idd": {
+      "root": "+6",
+      "suffixes": [
+        "3"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Vanuatu"
+    },
+    "cca3": "VUT",
+    "idd": {
+      "root": "+6",
+      "suffixes": [
+        "78"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Bolivia"
+    },
+    "cca3": "BOL",
+    "idd": {
+      "root": "+5",
+      "suffixes": [
+        "91"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Saint Kitts and Nevis"
+    },
+    "cca3": "KNA",
+    "idd": {
+      "root": "+1",
+      "suffixes": [
+        "869"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Romania"
+    },
+    "cca3": "ROU",
+    "idd": {
+      "root": "+4",
+      "suffixes": [
+        "0"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Cambodia"
+    },
+    "cca3": "KHM",
+    "idd": {
+      "root": "+8",
+      "suffixes": [
+        "55"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Zimbabwe"
+    },
+    "cca3": "ZWE",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "63"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Jersey"
+    },
+    "cca3": "JEY",
+    "idd": {
+      "root": "+4",
+      "suffixes": [
+        "4"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Kyrgyzstan"
+    },
+    "cca3": "KGZ",
+    "idd": {
+      "root": "+9",
+      "suffixes": [
+        "96"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Caribbean Netherlands"
+    },
+    "cca3": "BES",
+    "idd": {
+      "root": "+5",
+      "suffixes": [
+        "99"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Guyana"
+    },
+    "cca3": "GUY",
+    "idd": {
+      "root": "+5",
+      "suffixes": [
+        "92"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "United States Minor Outlying Islands"
+    },
+    "cca3": "UMI",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "68"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Armenia"
+    },
+    "cca3": "ARM",
+    "idd": {
+      "root": "+3",
+      "suffixes": [
+        "74"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Lebanon"
+    },
+    "cca3": "LBN",
+    "idd": {
+      "root": "+9",
+      "suffixes": [
+        "61"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Montenegro"
+    },
+    "cca3": "MNE",
+    "idd": {
+      "root": "+3",
+      "suffixes": [
+        "82"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Greenland"
+    },
+    "cca3": "GRL",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "99"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Papua New Guinea"
+    },
+    "cca3": "PNG",
+    "idd": {
+      "root": "+6",
+      "suffixes": [
+        "75"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Zambia"
+    },
+    "cca3": "ZMB",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "60"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Trinidad and Tobago"
+    },
+    "cca3": "TTO",
+    "idd": {
+      "root": "+1",
+      "suffixes": [
+        "868"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "French Southern and Antarctic Lands"
+    },
+    "cca3": "ATF",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "62"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Peru"
+    },
+    "cca3": "PER",
+    "idd": {
+      "root": "+5",
+      "suffixes": [
+        "1"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Sweden"
+    },
+    "cca3": "SWE",
+    "idd": {
+      "root": "+4",
+      "suffixes": [
+        "6"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Sudan"
+    },
+    "cca3": "SDN",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "49"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Saint Pierre and Miquelon"
+    },
+    "cca3": "SPM",
+    "idd": {
+      "root": "+5",
+      "suffixes": [
+        "08"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Oman"
+    },
+    "cca3": "OMN",
+    "idd": {
+      "root": "+9",
+      "suffixes": [
+        "68"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "India"
+    },
+    "cca3": "IND",
+    "idd": {
+      "root": "+9",
+      "suffixes": [
+        "1"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Taiwan"
+    },
+    "cca3": "TWN",
+    "idd": {
+      "root": "+8",
+      "suffixes": [
+        "86"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Mongolia"
+    },
+    "cca3": "MNG",
+    "idd": {
+      "root": "+9",
+      "suffixes": [
+        "76"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Senegal"
+    },
+    "cca3": "SEN",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "21"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Tanzania"
+    },
+    "cca3": "TZA",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "55"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Canada"
+    },
+    "cca3": "CAN",
+    "idd": {
+      "root": "+1",
+      "suffixes": [
+        ""
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Costa Rica"
+    },
+    "cca3": "CRI",
+    "idd": {
+      "root": "+5",
+      "suffixes": [
+        "06"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "China"
+    },
+    "cca3": "CHN",
+    "idd": {
+      "root": "+8",
+      "suffixes": [
+        "6"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Colombia"
+    },
+    "cca3": "COL",
+    "idd": {
+      "root": "+5",
+      "suffixes": [
+        "7"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Myanmar"
+    },
+    "cca3": "MMR",
+    "idd": {
+      "root": "+9",
+      "suffixes": [
+        "5"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Russia"
+    },
+    "cca3": "RUS",
+    "idd": {
+      "root": "+7",
+      "suffixes": [
+        "3",
+        "4",
+        "5",
+        "8",
+        "9"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "North Korea"
+    },
+    "cca3": "PRK",
+    "idd": {
+      "root": "+8",
+      "suffixes": [
+        "50"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Cayman Islands"
+    },
+    "cca3": "CYM",
+    "idd": {
+      "root": "+1",
+      "suffixes": [
+        "345"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Bouvet Island"
+    },
+    "cca3": "BVT",
+    "idd": {
+      "root": "+4",
+      "suffixes": [
+        "7"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Belarus"
+    },
+    "cca3": "BLR",
+    "idd": {
+      "root": "+3",
+      "suffixes": [
+        "75"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Portugal"
+    },
+    "cca3": "PRT",
+    "idd": {
+      "root": "+3",
+      "suffixes": [
+        "51"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Eswatini"
+    },
+    "cca3": "SWZ",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "68"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Poland"
+    },
+    "cca3": "POL",
+    "idd": {
+      "root": "+4",
+      "suffixes": [
+        "8"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Switzerland"
+    },
+    "cca3": "CHE",
+    "idd": {
+      "root": "+4",
+      "suffixes": [
+        "1"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Republic of the Congo"
+    },
+    "cca3": "COG",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "42"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Venezuela"
+    },
+    "cca3": "VEN",
+    "idd": {
+      "root": "+5",
+      "suffixes": [
+        "8"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Panama"
+    },
+    "cca3": "PAN",
+    "idd": {
+      "root": "+5",
+      "suffixes": [
+        "07"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Netherlands"
+    },
+    "cca3": "NLD",
+    "idd": {
+      "root": "+3",
+      "suffixes": [
+        "1"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Samoa"
+    },
+    "cca3": "WSM",
+    "idd": {
+      "root": "+6",
+      "suffixes": [
+        "85"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Denmark"
+    },
+    "cca3": "DNK",
+    "idd": {
+      "root": "+4",
+      "suffixes": [
+        "5"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Luxembourg"
+    },
+    "cca3": "LUX",
+    "idd": {
+      "root": "+3",
+      "suffixes": [
+        "52"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Faroe Islands"
+    },
+    "cca3": "FRO",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "98"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Slovenia"
+    },
+    "cca3": "SVN",
+    "idd": {
+      "root": "+3",
+      "suffixes": [
+        "86"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Togo"
+    },
+    "cca3": "TGO",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "28"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Thailand"
+    },
+    "cca3": "THA",
+    "idd": {
+      "root": "+6",
+      "suffixes": [
+        "6"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Wallis and Futuna"
+    },
+    "cca3": "WLF",
+    "idd": {
+      "root": "+6",
+      "suffixes": [
+        "81"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Bahamas"
+    },
+    "cca3": "BHS",
+    "idd": {
+      "root": "+1",
+      "suffixes": [
+        "242"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Tonga"
+    },
+    "cca3": "TON",
+    "idd": {
+      "root": "+6",
+      "suffixes": [
+        "76"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Greece"
+    },
+    "cca3": "GRC",
+    "idd": {
+      "root": "+3",
+      "suffixes": [
+        "0"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "San Marino"
+    },
+    "cca3": "SMR",
+    "idd": {
+      "root": "+3",
+      "suffixes": [
+        "78"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Réunion"
+    },
+    "cca3": "REU",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "62"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Vatican City"
+    },
+    "cca3": "VAT",
+    "idd": {
+      "root": "+3",
+      "suffixes": [
+        "906698",
+        "79"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Burundi"
+    },
+    "cca3": "BDI",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "57"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Bahrain"
+    },
+    "cca3": "BHR",
+    "idd": {
+      "root": "+9",
+      "suffixes": [
+        "73"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Marshall Islands"
+    },
+    "cca3": "MHL",
+    "idd": {
+      "root": "+6",
+      "suffixes": [
+        "92"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Turks and Caicos Islands"
+    },
+    "cca3": "TCA",
+    "idd": {
+      "root": "+1",
+      "suffixes": [
+        "649"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Isle of Man"
+    },
+    "cca3": "IMN",
+    "idd": {
+      "root": "+4",
+      "suffixes": [
+        "4"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Haiti"
+    },
+    "cca3": "HTI",
+    "idd": {
+      "root": "+5",
+      "suffixes": [
+        "09"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Afghanistan"
+    },
+    "cca3": "AFG",
+    "idd": {
+      "root": "+9",
+      "suffixes": [
+        "3"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Israel"
+    },
+    "cca3": "ISR",
+    "idd": {
+      "root": "+9",
+      "suffixes": [
+        "72"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Libya"
+    },
+    "cca3": "LBY",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "18"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Uruguay"
+    },
+    "cca3": "URY",
+    "idd": {
+      "root": "+5",
+      "suffixes": [
+        "98"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Norfolk Island"
+    },
+    "cca3": "NFK",
+    "idd": {
+      "root": "+6",
+      "suffixes": [
+        "72"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Nicaragua"
+    },
+    "cca3": "NIC",
+    "idd": {
+      "root": "+5",
+      "suffixes": [
+        "05"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Cook Islands"
+    },
+    "cca3": "COK",
+    "idd": {
+      "root": "+6",
+      "suffixes": [
+        "82"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Laos"
+    },
+    "cca3": "LAO",
+    "idd": {
+      "root": "+8",
+      "suffixes": [
+        "56"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Christmas Island"
+    },
+    "cca3": "CXR",
+    "idd": {
+      "root": "+6",
+      "suffixes": [
+        "1"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Saint Helena, Ascension and Tristan da Cunha"
+    },
+    "cca3": "SHN",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "90",
+        "47"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Anguilla"
+    },
+    "cca3": "AIA",
+    "idd": {
+      "root": "+1",
+      "suffixes": [
+        "264"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Micronesia"
+    },
+    "cca3": "FSM",
+    "idd": {
+      "root": "+6",
+      "suffixes": [
+        "91"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Germany"
+    },
+    "cca3": "DEU",
+    "idd": {
+      "root": "+4",
+      "suffixes": [
+        "9"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Guam"
+    },
+    "cca3": "GUM",
+    "idd": {
+      "root": "+1",
+      "suffixes": [
+        "671"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Kiribati"
+    },
+    "cca3": "KIR",
+    "idd": {
+      "root": "+6",
+      "suffixes": [
+        "86"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Sint Maarten"
+    },
+    "cca3": "SXM",
+    "idd": {
+      "root": "+1",
+      "suffixes": [
+        "721"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Spain"
+    },
+    "cca3": "ESP",
+    "idd": {
+      "root": "+3",
+      "suffixes": [
+        "4"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Jamaica"
+    },
+    "cca3": "JAM",
+    "idd": {
+      "root": "+1",
+      "suffixes": [
+        "876"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Palestine"
+    },
+    "cca3": "PSE",
+    "idd": {
+      "root": "+9",
+      "suffixes": [
+        "70"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "French Guiana"
+    },
+    "cca3": "GUF",
+    "idd": {
+      "root": "+5",
+      "suffixes": [
+        "94"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Andorra"
+    },
+    "cca3": "AND",
+    "idd": {
+      "root": "+3",
+      "suffixes": [
+        "76"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Chile"
+    },
+    "cca3": "CHL",
+    "idd": {
+      "root": "+5",
+      "suffixes": [
+        "6"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Lesotho"
+    },
+    "cca3": "LSO",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "66"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Australia"
+    },
+    "cca3": "AUS",
+    "idd": {
+      "root": "+6",
+      "suffixes": [
+        "1"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Grenada"
+    },
+    "cca3": "GRD",
+    "idd": {
+      "root": "+1",
+      "suffixes": [
+        "473"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Ghana"
+    },
+    "cca3": "GHA",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "33"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Seychelles"
+    },
+    "cca3": "SYC",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "48"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Angola"
+    },
+    "cca3": "AGO",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "44"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Bermuda"
+    },
+    "cca3": "BMU",
+    "idd": {
+      "root": "+1",
+      "suffixes": [
+        "441"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Pakistan"
+    },
+    "cca3": "PAK",
+    "idd": {
+      "root": "+9",
+      "suffixes": [
+        "2"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Mali"
+    },
+    "cca3": "MLI",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "23"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Saudi Arabia"
+    },
+    "cca3": "SAU",
+    "idd": {
+      "root": "+9",
+      "suffixes": [
+        "66"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Curaçao"
+    },
+    "cca3": "CUW",
+    "idd": {
+      "root": "+5",
+      "suffixes": [
+        "99"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "South Korea"
+    },
+    "cca3": "KOR",
+    "idd": {
+      "root": "+8",
+      "suffixes": [
+        "2"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Ethiopia"
+    },
+    "cca3": "ETH",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "51"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Guadeloupe"
+    },
+    "cca3": "GLP",
+    "idd": {
+      "root": "+5",
+      "suffixes": [
+        "90"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Bangladesh"
+    },
+    "cca3": "BGD",
+    "idd": {
+      "root": "+8",
+      "suffixes": [
+        "80"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "New Zealand"
+    },
+    "cca3": "NZL",
+    "idd": {
+      "root": "+6",
+      "suffixes": [
+        "4"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Comoros"
+    },
+    "cca3": "COM",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "69"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Belize"
+    },
+    "cca3": "BLZ",
+    "idd": {
+      "root": "+5",
+      "suffixes": [
+        "01"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Uganda"
+    },
+    "cca3": "UGA",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "56"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Singapore"
+    },
+    "cca3": "SGP",
+    "idd": {
+      "root": "+6",
+      "suffixes": [
+        "5"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Liechtenstein"
+    },
+    "cca3": "LIE",
+    "idd": {
+      "root": "+4",
+      "suffixes": [
+        "23"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Hungary"
+    },
+    "cca3": "HUN",
+    "idd": {
+      "root": "+3",
+      "suffixes": [
+        "6"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Iceland"
+    },
+    "cca3": "ISL",
+    "idd": {
+      "root": "+3",
+      "suffixes": [
+        "54"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Tajikistan"
+    },
+    "cca3": "TJK",
+    "idd": {
+      "root": "+9",
+      "suffixes": [
+        "92"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Namibia"
+    },
+    "cca3": "NAM",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "64"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Timor-Leste"
+    },
+    "cca3": "TLS",
+    "idd": {
+      "root": "+6",
+      "suffixes": [
+        "70"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Egypt"
+    },
+    "cca3": "EGY",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "0"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Serbia"
+    },
+    "cca3": "SRB",
+    "idd": {
+      "root": "+3",
+      "suffixes": [
+        "81"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Mauritius"
+    },
+    "cca3": "MUS",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "30"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Macau"
+    },
+    "cca3": "MAC",
+    "idd": {
+      "root": "+8",
+      "suffixes": [
+        "53"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "French Polynesia"
+    },
+    "cca3": "PYF",
+    "idd": {
+      "root": "+6",
+      "suffixes": [
+        "89"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Maldives"
+    },
+    "cca3": "MDV",
+    "idd": {
+      "root": "+9",
+      "suffixes": [
+        "60"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Indonesia"
+    },
+    "cca3": "IDN",
+    "idd": {
+      "root": "+6",
+      "suffixes": [
+        "2"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "DR Congo"
+    },
+    "cca3": "COD",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "43"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Estonia"
+    },
+    "cca3": "EST",
+    "idd": {
+      "root": "+3",
+      "suffixes": [
+        "72"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Vietnam"
+    },
+    "cca3": "VNM",
+    "idd": {
+      "root": "+8",
+      "suffixes": [
+        "4"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Italy"
+    },
+    "cca3": "ITA",
+    "idd": {
+      "root": "+3",
+      "suffixes": [
+        "9"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Guinea"
+    },
+    "cca3": "GIN",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "24"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Chad"
+    },
+    "cca3": "TCD",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "35"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Ecuador"
+    },
+    "cca3": "ECU",
+    "idd": {
+      "root": "+5",
+      "suffixes": [
+        "93"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Georgia"
+    },
+    "cca3": "GEO",
+    "idd": {
+      "root": "+9",
+      "suffixes": [
+        "95"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Malawi"
+    },
+    "cca3": "MWI",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "65"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Iraq"
+    },
+    "cca3": "IRQ",
+    "idd": {
+      "root": "+9",
+      "suffixes": [
+        "64"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Svalbard and Jan Mayen"
+    },
+    "cca3": "SJM",
+    "idd": {
+      "root": "+4",
+      "suffixes": [
+        "779"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Benin"
+    },
+    "cca3": "BEN",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "29"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Japan"
+    },
+    "cca3": "JPN",
+    "idd": {
+      "root": "+8",
+      "suffixes": [
+        "1"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Dominican Republic"
+    },
+    "cca3": "DOM",
+    "idd": {
+      "root": "+1",
+      "suffixes": [
+        "809",
+        "829",
+        "849"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Qatar"
+    },
+    "cca3": "QAT",
+    "idd": {
+      "root": "+9",
+      "suffixes": [
+        "74"
+      ]
+    }
+  },
+  {
+    "name": {
+      "common": "Gabon"
+    },
+    "cca3": "GAB",
+    "idd": {
+      "root": "+2",
+      "suffixes": [
+        "41"
+      ]
+    }
+  }
+]
