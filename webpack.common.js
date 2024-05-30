@@ -6,10 +6,12 @@ import FaviconsWebpackPlugin from 'favicons-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { fileURLToPath } from 'url';
 import { glob } from 'glob';
+import getMinifiedClassName from './getMinifiedClassName.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-export default {
+const config = (mode) => ({
+  mode: mode,
   entry: './src/index.tsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -49,7 +51,13 @@ export default {
               modules: {
                 mode: 'local',
                 auto: true,
-                localIdentName: '[name]__[local]--[hash:base64:5]',
+                ...((mode === 'production') ? {
+                  getLocalIdent: (context, localIdentName, localName) => (
+                    getMinifiedClassName(localName, context.resourcePath)
+                  ),
+                }: {
+                  localIdentName: '[name]__[local]--[hash:base64:5]',
+                }),
                 exportLocalsConvention: 'dashes',
               }
             }
@@ -114,4 +122,6 @@ export default {
       chunkFilename: '[id].css',
     }),
   ],
-};
+});
+
+export default config;

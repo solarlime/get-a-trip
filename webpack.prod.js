@@ -3,8 +3,9 @@ import TerserPlugin from 'terser-webpack-plugin';
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
 import common from './webpack.common.js';
 
-export default merge(common, {
-  mode: 'production',
+const mode = 'production';
+
+export default merge(common(mode), {
   optimization: {
     minimize: true,
     minimizer: [

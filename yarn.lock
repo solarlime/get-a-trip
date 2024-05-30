@@ -5512,7 +5512,9 @@ __metadata:
     glob: ^10.4.1
     html-loader: ^5.0.0
     html-webpack-plugin: ^5.6.0
+    incstr: ^1.2.3
     mini-css-extract-plugin: ^2.8.1
+    postcss: ^8.4.38
     postcss-loader: ^8.1.1
     react: ^18.2.0
     react-dom: ^18.2.0
@@ -6039,6 +6041,13 @@ __metadata:
   version: 0.1.4
   resolution: "imurmurhash@npm:0.1.4"
   checksum: 7cae75c8cd9a50f57dadd77482359f659eaebac0319dd9368bcd1714f55e65badd6929ca58569da2b6494ef13fdd5598cd700b1eba23f8b79c5f19d195a3ecf7
+  languageName: node
+  linkType: hard
+
+"incstr@npm:^1.2.3":
+  version: 1.2.3
+  resolution: "incstr@npm:1.2.3"
+  checksum: ee2767b8da04f7d91197cf4dcb574c5df0a33f8d9cf32f9e0bf1573946932904744d7dd2152d109f20be54ae215a1256dd37a10f7630ad409233e721cbff9dd3
   languageName: node
   linkType: hard
 
@@ -8103,7 +8112,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.4.33, postcss@npm:^8.4.4":
+"postcss@npm:^8.4.33, postcss@npm:^8.4.38, postcss@npm:^8.4.4":
   version: 8.4.38
   resolution: "postcss@npm:8.4.38"
   dependencies:
