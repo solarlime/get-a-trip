@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import { memo } from 'react';
 import { v4 as id } from 'uuid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -13,31 +14,42 @@ const Results = memo(() => {
 
   return (
     <Section id="results">
+      <h1 className={`title ${styles.container__title} ${styles.resultsTitle}`}>
+        {
+          (!filteredTours.isFilterRun)
+            ? (<>Your&nbsp;results will&nbsp;be there</>) : (!filteredTours.tours.length && !filteredTours.proposals.length)
+              ? (
+                <>
+                  Nothing fits your&nbsp;preferences
+                  {' '}
+                  <FontAwesomeIcon className={styles.customColorDanger} icon={faHeartCrack} />
+                </>
+              )
+              : (!filteredTours.tours.length && filteredTours.proposals.length)
+                ? (<>Nothing fits your&nbsp;preferences, but&nbsp;these&nbsp;variants are&nbsp;close to&nbsp;it</>)
+                : (<>Something fits your&nbsp;preferences!</>)
+        }
+      </h1>
       {
-        (!filteredTours.isFilterRun) ? (
-          <h1 className={`title ${styles.container__title} ${styles.resultsTitle}`}>Your results will be there</h1>
-        ) : (
-          (!filteredTours.tours.length) ? (
-            <h1 className={`title ${styles.container__title} ${styles.resultsTitle}`}>
-              Nothing fits your preferences perfectly
-              {' '}
-              <FontAwesomeIcon className={styles.customColorDanger} icon={faHeartCrack} />
-            </h1>
-          ) : (
-            <>
-              <h1 className={`title ${styles.container__title} ${styles.resultsTitle}`}>Something fits your preferences!</h1>
-              <div className={`columns is-multiline ${styles.container__columns_cards}`}>
-                {
-                  filteredTours.tours.map((productCardData) => (
-                    <div className={`column ${styles.cardContainer} is-one-third`} key={id()}>
-                      <ProductCard tour={productCardData} />
-                    </div>
-                  ))
-                }
-              </div>
-            </>
-          )
-        )
+        (filteredTours.tours.length || filteredTours.proposals.length) ? (
+          <div className={`columns is-multiline ${styles.container__columns_cards}`}>
+            {
+              (filteredTours.tours.length) ? (
+                filteredTours.tours.map((productCardData) => (
+                  <div className={`column ${styles.cardContainer} is-one-third`} key={id()}>
+                    <ProductCard tour={productCardData} />
+                  </div>
+                ))
+              ) : (
+                filteredTours.proposals.map((productCardData) => (
+                  <div className={`column ${styles.cardContainer} is-one-third`} key={id()}>
+                    <ProductCard tour={productCardData} />
+                  </div>
+                ))
+              )
+            }
+          </div>
+        ) : ''
       }
     </Section>
   );

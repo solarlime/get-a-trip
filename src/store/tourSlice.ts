@@ -15,7 +15,7 @@ const initialState: TourState = {
   images: {},
   tours: [],
   randomTours: [],
-  filteredTours: { tours: [], isFilterRun: false },
+  filteredTours: { tours: [], proposals: [], isFilterRun: false },
   chosenTour: {} as Tour,
   questionsAndAnswers: [] as Array<QuestionAndAnswer>,
 };
@@ -114,31 +114,41 @@ const createTourSlice: StateCreator<TourState & TourActions & SearchState> = (se
     } = get();
     if (!get().tours.length) await get().importTours();
     const { tours } = get();
+    const exactResult: Array<Tour> = [];
+    const notExactResult: Array<Tour> = [];
+    tours.filter((tour) => {
+      const checkIn = new Date(checkInDate.value);
+      const checkOut = new Date(checkInDate.value);
+      checkOut.setDate(checkOut.getDate() + +duration.value);
+      if (
+        // Tours should be now or in future
+        (tour.dates.end_date >= new Date())
+        // Tour should start earlier than check-in or equal to it
+        && (tour.dates.start_date <= checkIn)
+        // Tour should end later than check-in
+        && (tour.dates.end_date > checkIn)
+        // Tour should cover duration
+        && (tour.dates.end_date >= checkOut)
+        // Tour should have places
+        && (tour.left >= +companions.value)
+      ) {
+        return true;
+      }
+      return false;
+    }).forEach((possibleTour) => {
+      if (possibleTour.continent === destination.option.value) {
+        exactResult.push(possibleTour);
+      } else {
+        notExactResult.push(possibleTour);
+      }
+    });
+
     set((state) => ({
       ...state,
       filteredTours: {
         isFilterRun: true,
-        tours: tours.filter((tour) => {
-          const checkIn = new Date(checkInDate.value);
-          const checkOut = new Date(checkInDate.value);
-          checkOut.setDate(checkOut.getDate() + +duration.value);
-          if (
-            (tour.continent === destination.option.value)
-            // Tours should be now or in future
-            && (tour.dates.end_date >= new Date())
-            // Tour should start earlier than check-in or equal to it
-            && (tour.dates.start_date <= checkIn)
-            // Tour should end later than check-in
-            && (tour.dates.end_date > checkIn)
-            // Tour should cover duration
-            && (tour.dates.end_date >= checkOut)
-            // Tour should have places
-            && (tour.left >= +companions.value)
-          ) {
-            return true;
-          }
-          return false;
-        }),
+        tours: exactResult,
+        proposals: notExactResult,
       },
     }));
   },

@@ -21,6 +21,7 @@ export interface Tour {
 
 interface FilteredTours {
   tours: Array<Tour>,
+  proposals: Array<Tour>,
   isFilterRun: boolean,
 }
 
