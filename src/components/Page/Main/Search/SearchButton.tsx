@@ -20,7 +20,7 @@ const SearchButton = memo((props: { disabled: boolean }) => {
       onClick={getFilteredTours}
       ref={ref}
     >
-      <FontAwesomeIcon className={`${styles.search__button__icon} ${styles.colorWhite}`} icon={faMagnifyingGlass} />
+      <FontAwesomeIcon className={`${styles.search__button__icon} ${styles.customColorWhite}`} icon={faMagnifyingGlass} />
     </Link>
   );
 });

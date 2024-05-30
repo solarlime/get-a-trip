@@ -12,7 +12,7 @@ const InfoCard = memo((props: { first: string, second?: string, children?: React
           <div className="media">
             <div className={`media-content ${styles.card__content}`}>
               <p className={`${styles.card__content__title} title is-4`}>{first}</p>
-              <p className={`${styles.colorWhite} subtitle is-6`}>
+              <p className={`${styles.customColorWhite} subtitle is-6`}>
                 {(!second) ? children : second}
               </p>
             </div>

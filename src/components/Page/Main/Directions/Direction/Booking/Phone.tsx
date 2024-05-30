@@ -17,7 +17,7 @@ const Phone = memo(() => {
 
   return (
     <div className="field">
-      <label className={`label ${styles.colorWhite}`} htmlFor="phone">Phone number</label>
+      <label className={`label ${styles.customColorWhite}`} htmlFor="phone">Phone number</label>
       <div className={`field ${styles.dropdown} has-addons`}>
         <div id="people" className="control">
           <span className={`select ${styles.dropdown__selector}`}>

@@ -1,5 +1,6 @@
 import { memo, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { v4 as id } from 'uuid';
 
 import styles from './Bars.module.scss';
 
@@ -7,7 +8,7 @@ const Header = memo(() => {
   const [collapsed, setCollapsed] = useState(false);
 
   return (
-    <header>
+    <header className={styles.customBar}>
       <nav className={`navbar is-black is-fixed-top ${styles.navbar}`} role="navigation" aria-label="main navigation">
         <div className="container is-max-widescreen">
           <div className="navbar-brand">
@@ -50,35 +51,27 @@ const Header = memo(() => {
 
           <div className={`navbar-menu ${(!collapsed) ? '' : 'is-active'}`}>
             <div className={`navbar-end ${styles.navbar__links}`}>
-
-              <Link
-                className={`navbar-item ${styles.colorWhite}`}
-                to="/directions#search"
-                onClick={() => { if (collapsed) setCollapsed(!collapsed); }}
-              >
-                Find your direction
-              </Link>
-
-              <Link
-                className={`navbar-item ${styles.colorWhite}`}
-                to="/#about"
-                onClick={() => { if (collapsed) setCollapsed(!collapsed); }}
-              >
-                What we are doing
-              </Link>
-
-              <Link
-                className={`navbar-item ${styles.colorWhite}`}
-                to="/#featured"
-                onClick={() => { if (collapsed) setCollapsed(!collapsed); }}
-              >
-                Featured variants
-              </Link>
+              {
+                [
+                  { name: 'Find your direction', href: '/directions#search' },
+                  { name: 'What we are doing', href: '/#about' },
+                  { name: 'Featured variants', href: '/#featured' },
+                ].map((link) => (
+                  <Link
+                    key={id()}
+                    className={`navbar-item ${styles.customColorWhite}`}
+                    to={link.href}
+                    onClick={() => { if (collapsed) setCollapsed(!collapsed); }}
+                  >
+                    {link.name}
+                  </Link>
+                ))
+              }
             </div>
 
             <div className={`navbar-end ${styles.navbar__links}`}>
               <div className="navbar-item">
-                <a className={`${styles.colorWhite} button is-primary`} href="mailto:dmitriy@solarlime.dev?subject=Предложение о сотрудничестве" target="_blank" rel="noreferrer">
+                <a className={`${styles.customColorWhite} button is-primary`} href="mailto:dmitriy@solarlime.dev?subject=Предложение о сотрудничестве" target="_blank" rel="noreferrer">
                   Write us
                 </a>
               </div>

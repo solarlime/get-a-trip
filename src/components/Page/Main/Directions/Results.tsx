@@ -21,7 +21,7 @@ const Results = memo(() => {
             <h1 className={`title ${styles.container__title} ${styles.resultsTitle}`}>
               Nothing fits your preferences perfectly
               {' '}
-              <FontAwesomeIcon className={styles.colorDanger} icon={faHeartCrack} />
+              <FontAwesomeIcon className={styles.customColorDanger} icon={faHeartCrack} />
             </h1>
           ) : (
             <>

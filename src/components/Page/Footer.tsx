@@ -4,7 +4,7 @@ import styles from './Bars.module.scss';
 import { getYear } from '../../utils';
 
 const Footer = memo(() => (
-  <footer className="footer">
+  <footer className={`footer ${styles.customBar}`}>
     <div className={`${styles.footerContainer} container is-max-widescreen`}>
       <svg className={`${styles.logo} ${styles.footerContainer__logo}`} strokeMiterlimit="10" version="1.1" viewBox="0 0 266 38.5212" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg">
         <defs />

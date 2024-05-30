@@ -11,20 +11,27 @@
   color: $value;
 }
 
-.color-danger {
+.custom-color-danger {
   @include color(styles.$danger);
 }
 
-.color-green {
+.custom-color-green {
   @include color(variables.$green);
 }
 
-.color-dark {
+.custom-color-dark {
   @include color(styles.$dark);
 }
 
-.color-white {
+.custom-color-white {
   @include color(variables.$white);
+}
+
+// ----------------------------------------
+// Others
+
+.hidden {
+  display: none;
 }
 
 // ----------------------------------------

@@ -13,16 +13,16 @@ function Checkout() {
 
   return (
     <>
-      <main className="hero is-fullheight">
+      <main className={`hero ${styles.customMain} is-fullheight`}>
         <div className="hero-body">
-          <div className="columns container is-max-desktop">
+          <div className={`columns ${styles.content} container is-max-desktop`}>
             <section className="column">
               <button
                 className="button block"
                 type="button"
                 onClick={reset}
               >
-                <Link className={`is-small ${styles.colorDark}`} to={(location?.state?.previousLocationPathname) ? location.state.previousLocationPathname : '/'}>
+                <Link className={`is-small ${styles.customColorDark}`} to={(location?.state?.previousLocationPathname) ? location.state.previousLocationPathname : '/'}>
                   <FontAwesomeIcon icon={faArrowLeft} />
                   {' Back to Getatrip'}
                 </Link>

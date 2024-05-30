@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleExclamation } from '@fortawesome/free-solid-svg-icons';
 
 import useStore from '../../store/store';
-import styles from '../Checkout/Checkout.module.scss';
+import styles from '../Base.module.scss';
 
 const Email = memo((props: { classes?: string }) => {
   const { classes } = props;
@@ -30,7 +30,7 @@ const Email = memo((props: { classes?: string }) => {
         {
           (componentState.status === 'fail') ? (
             <span className="icon is-small is-right">
-              <FontAwesomeIcon className={styles.colorDanger} icon={faCircleExclamation} />
+              <FontAwesomeIcon className={styles.customColorDanger} icon={faCircleExclamation} />
             </span>
           ) : ''
         }

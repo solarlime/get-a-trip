@@ -8,7 +8,7 @@ import styles from './Page.module.scss';
 const Page = memo(() => (
   <>
     <Header />
-    <main className={styles.main}>
+    <main className={styles.customMain}>
       <Outlet />
     </main>
     <Footer />

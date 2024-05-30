@@ -8,515 +8,497 @@
 $navbar-height-full: Base.$navbar-height + 2 * navbar.$navbar-padding-vertical;
 $radius: Base.$radius;
 
-.main {
+.custom-main {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   background-color: variables.$white;
-}
 
-// ----------------------------------------
-// First screen
+  // ----------------------------------------
+  // First screen
 
-.first-screen {
-  position: relative;
-  background-color: variables.$white;
-
-  .first-screen__image {
-    transform: scaleX(-1);
-    opacity: 0.7;
-  }
-
-  .first-screen__content {
-    align-items: flex-start !important;
-    padding-right: variables.$side-padding;
-    padding-left: variables.$side-padding;
-
-    .first-screen__content__title {
-      font-size: 5rem;
-      max-width: 800px;
-      padding-top: 5.25rem;
-      padding-bottom: 1rem;
-      overflow-wrap: anywhere;
-
-      & + h2 {
-        max-width: 500px;
-      }
-
-      @include mixins.until(initial-variables.$desktop) {
-        font-size: 4rem;
-        max-width: 600px;
-      }
-
-      @include mixins.until(initial-variables.$tablet) {
-        font-size: 3rem;
-      }
-    }
-  }
-}
-
-.first-screen.directions {
-
-  .directions__content {
+  .first-screen {
     position: relative;
+    background-color: variables.$white;
 
-    .first-screen__content__title {
-      @media screen and (max-width: 360px) {
-        font-size: 2rem;
-      }
+    .first-screen__image {
+      transform: scaleX(-1);
+      opacity: 0.7;
     }
 
-    .directions__content__hosted {
-      position: absolute;
-      right: 0;
-      bottom: (variables.$hero-body-padding-vertical - 2rem) * (-1);
-      display: flex;
-      align-items: center;
-      column-gap: 0.5rem;
-      height: 40px;
-      border: 0;
-      z-index: 1;
+    .first-screen__content {
+      align-items: flex-start !important;
+      padding-right: variables.$side-padding;
+      padding-left: variables.$side-padding;
 
-      @media (max-width: 768px) {
-        bottom: 0;
-      }
+      .first-screen__content__title {
+        font-size: 5rem;
+        max-width: 800px;
+        padding-top: 5.25rem;
+        padding-bottom: 1rem;
+        overflow-wrap: anywhere;
 
-      span {
-        flex-shrink: 0;
-        color: variables.$black;
-
-        @media (min-width: 500px) {
-          &:before {
-            content: 'hosted ';
-          }
+        & + h2 {
+          max-width: 500px;
         }
-      }
 
-      svg {
-        flex-shrink: 0;
-        background-color: transparent;
-        height: 100%;
-        max-width: 100px;
-        border-radius: 0;
-        color: variables.$black;
-      }
-    }
-  }
-}
-
-// ----------------------------------------
-// Others
-
-.top-image {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 0;
-  object-fit: cover;
-  object-position: center top;
-
-  .directions & {
-    opacity: 0.3;
-  }
-}
-
-.dropdown {
-
-  .dropdown__selector:after {
-    border-color: variables.$black !important;
-  }
-}
-
-.disabled {
-  pointer-events: none;
-  cursor: default;
-  background-color: Base.$grey-light;
-}
-
-.results-title {
-  @include mixins.from(initial-variables.$tablet) {
-    font-size: 2rem !important;
-  }
-}
-
-.info-cards {
-
-  .info-cards__block {
-
-    @media (min-width: initial-variables.$tablet) and (max-width: 820px) {
-      flex: none;
-      width: 100%;
-    }
-
-    .info-card__child {
-      color: variables.$white;
-      text-decoration: underline;
-    }
-  }
-}
-
-// ----------------------------------------
-// Section
-
-.section {
-  scroll-margin: $navbar-height-full;
-
-  .section__body {
-    padding: 3rem variables.$side-padding 0;
-
-    .section__body__container {
-      padding: 1.5rem 0 0;
-
-      .container__title {
-        padding: 0 2rem;
-        font-size: 3rem;
-        text-align: center;
-        color: variables.$green;
-
-        &:not(:last-child) {
-          margin-bottom: 4rem;
-
-          @include mixins.until(initial-variables.$tablet) {
-            margin-bottom: 2rem;
-          }
+        @include mixins.until(initial-variables.$desktop) {
+          font-size: 4rem;
+          max-width: 600px;
         }
 
         @include mixins.until(initial-variables.$tablet) {
-          margin-bottom: 2rem;
+          font-size: 3rem;
+        }
+      }
+    }
+  }
+
+  .first-screen.directions {
+
+    .directions__content {
+      position: relative;
+
+      .first-screen__content__title {
+        @media screen and (max-width: 360px) {
           font-size: 2rem;
         }
       }
 
-      .container__columns_cards {
-        align-items: stretch;
-      }
+      .directions__content__hosted {
+        position: absolute;
+        right: 0;
+        bottom: (variables.$hero-body-padding-vertical - 2rem) * (-1);
+        display: flex;
+        align-items: center;
+        column-gap: 0.5rem;
+        height: 40px;
+        border: 0;
+        z-index: 1;
 
-      .container__columns {
-        position: relative;
+        @media (max-width: 768px) {
+          bottom: 0;
+        }
 
-        @media (min-width: initial-variables.$tablet) and (max-width: 768px) {
-          display: block;
+        span {
+          flex-shrink: 0;
+          color: variables.$black;
 
-          .columns__picture_left, .columns__picture_right {
-            min-width: 280px;
-          }
-
-          .columns__picture_left {
-            float: left;
-            margin-right: Base.$column-gap;
-          }
-
-          .columns__picture_right {
-            float: right;
-            margin-left: Base.$column-gap;
-          }
-
-          .columns__text {
-            margin: 0;
-            width: auto;
-
-            &:after {
-              content: '';
-              display: block;
-              clear: both;
+          @media (min-width: 500px) {
+            &:before {
+              content: 'hosted ';
             }
           }
         }
 
-        .columns__picture_left, .columns__picture_right {
-          height: auto;
-
-          @include mixins.from(768px) {
-            position: absolute;
-            height: 100%;
-          }
-
-          img.picture__image {
-            object-fit: cover;
-            border-radius: $radius;
-          }
-
-          .picture__image {
-            width: 100%;
-            height: 100%;
-          }
-        }
-
-        .columns__picture_right {
-          right: 0
-        }
-
-        .columns__picture_left {
-          left: 0
+        svg {
+          flex-shrink: 0;
+          background-color: transparent;
+          height: 100%;
+          max-width: 100px;
+          border-radius: 0;
+          color: variables.$black;
         }
       }
     }
   }
-}
 
-.section_coloured {
-  scroll-margin: $navbar-height-full;
+  // ----------------------------------------
+  // Others
 
-  .section__body {
-
-    .section__body__container {
-
-      .container__title {
-        color: variables.$white;
-      }
-
-      .container__columns {
-        color: variables.$white;
-      }
-    }
-  }
-}
-
-.section:last-of-type, .section_coloured, .section_before-coloured {
-  .section__body {
-    padding-bottom: 3rem;
-
-    .section__body__container {
-      padding-bottom: 1.5rem;
-    }
-  }
-}
-
-.section_top {
-  padding-top: $navbar-height-full;
-}
-
-// ----------------------------------------
-// Search
-
-.container__search {
-  padding: 1.5rem 3rem;
-  border-radius: $radius;
-  background-color: variables.$white;
-
-  form {
-    display: flex;
-    flex-direction: row;
-
-    .search__check-in-date {
-      flex-shrink: 0;
-    }
-
-    .search__duration, .search__people {
-      flex-grow: 1;
-    }
-
-    .search__button {
-      flex-shrink: 0;
-      min-width: var(--calculated-height, 72px);
-
-      .search__button__icon {
-        font-size: 1.5rem;
-      }
-    }
-
-    @media screen and (max-width: 768px) {
-      flex-direction: column;
-
-      .search__button {
-
-        &:after {
-          content: 'Search';
-          color: variables.$white;
-          padding-left: 10px;
-        }
-
-        .search__button__icon {
-          font-size: 1rem;
-        }
-      }
-    }
-  }
-}
-
-// ----------------------------------------
-// Carousel
-
-.appear {
-  opacity: 1;
-  transition: opacity 0.5s ease-out;
-}
-
-.disappear {
-  opacity: 0;
-  transition: opacity 0.5s ease-out;
-}
-
-.carousel {
-  position: relative;
-  aspect-ratio: 4/3;
-
-  .carousel__content {
-    height: 100%;
-  }
-
-  .carousel__buttons {
+  .top-image {
     position: absolute;
-    top: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     width: 100%;
     height: 100%;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    border-radius: 0;
+    object-fit: cover;
+    object-position: center top;
   }
-}
 
-// ----------------------------------------
-// Cards
+  .directions .top-image {
+    opacity: 0.3;
+  }
 
-.card-container {
+  .dropdown {
 
-  .container__columns_cards & {
+    .dropdown__selector:after {
+      border-color: variables.$black !important;
+    }
+  }
+
+  .disabled {
+    pointer-events: none;
+    cursor: default;
+    background-color: Base.$grey-light;
+  }
+
+  .results-title {
+    @include mixins.from(initial-variables.$tablet) {
+      font-size: 2rem !important;
+    }
+  }
+
+  .info-cards {
+
+    .info-cards__block {
+
+      @media (min-width: initial-variables.$tablet) and (max-width: 820px) {
+        flex: none;
+        width: 100%;
+      }
+
+      .info-card__child {
+        color: variables.$white;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  // ----------------------------------------
+  // Section
+
+  .section {
+    scroll-margin: $navbar-height-full;
+
+    .section__body {
+      padding: 3rem variables.$side-padding 0;
+
+      .section__body__container {
+        padding: 1.5rem 0 0;
+
+        .container__title {
+          padding: 0 2rem;
+          font-size: 3rem;
+          text-align: center;
+          color: variables.$green;
+
+          &:not(:last-child) {
+            margin-bottom: 4rem;
+
+            @include mixins.until(initial-variables.$tablet) {
+              margin-bottom: 2rem;
+            }
+          }
+
+          @include mixins.until(initial-variables.$tablet) {
+            margin-bottom: 2rem;
+            font-size: 2rem;
+          }
+        }
+
+        .container__columns_cards {
+          align-items: stretch;
+        }
+
+        .container__columns {
+          position: relative;
+
+          @media (min-width: initial-variables.$tablet) and (max-width: 768px) {
+            display: block;
+
+            .columns__picture_left, .columns__picture_right {
+              min-width: 280px;
+            }
+
+            .columns__picture_left {
+              float: left;
+              margin-right: Base.$column-gap;
+            }
+
+            .columns__picture_right {
+              float: right;
+              margin-left: Base.$column-gap;
+            }
+
+            .columns__text {
+              margin: 0;
+              width: auto;
+
+              &:after {
+                content: '';
+                display: block;
+                clear: both;
+              }
+            }
+          }
+
+          .columns__picture_left, .columns__picture_right {
+            height: auto;
+
+            @include mixins.from(768px) {
+              position: absolute;
+              height: 100%;
+            }
+
+            img.picture__image {
+              object-fit: cover;
+              border-radius: $radius;
+            }
+
+            .picture__image {
+              width: 100%;
+              height: 100%;
+            }
+          }
+
+          .columns__picture_right {
+            right: 0
+          }
+
+          .columns__picture_left {
+            left: 0
+          }
+        }
+      }
+    }
+  }
+
+  .section_coloured {
+    scroll-margin: $navbar-height-full;
+
+    .section__body {
+
+      .section__body__container {
+
+        .container__title {
+          color: variables.$white;
+        }
+
+        .container__columns {
+          color: variables.$white;
+        }
+      }
+    }
+  }
+
+  .section:last-of-type, .section_coloured, .section_before-coloured {
+    .section__body {
+      padding-bottom: 3rem;
+
+      .section__body__container {
+        padding-bottom: 1.5rem;
+      }
+    }
+  }
+
+  .section_top {
+    padding-top: $navbar-height-full;
+  }
+
+  // ----------------------------------------
+  // Search
+
+  .container__search {
+    padding: 1.5rem 3rem;
+    border-radius: $radius;
+    background-color: variables.$white;
+
+    form {
+      display: flex;
+      flex-direction: row;
+
+      .search__check-in-date {
+        flex-shrink: 0;
+      }
+
+      .search__duration, .search__people {
+        flex-grow: 1;
+      }
+
+      .search__button {
+        flex-shrink: 0;
+        min-width: var(--calculated-height, 72px);
+
+        .search__button__icon {
+          font-size: 1.5rem;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
+
+        .search__button {
+
+          &:after {
+            content: 'Search';
+            color: variables.$white;
+            padding-left: 10px;
+          }
+
+          .search__button__icon {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  // ----------------------------------------
+  // Carousel
+
+  .appear {
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+  }
+
+  .disappear {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+  }
+
+  .carousel {
+    position: relative;
+    aspect-ratio: 4/3;
+
+    .carousel__content {
+      height: 100%;
+    }
+
+    .carousel__buttons {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      height: 100%;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  // ----------------------------------------
+  // Cards
+
+  .container__columns_cards .card-container {
     @media (min-width: initial-variables.$tablet) and (max-width: 820px) {
       flex: none;
       width: 50%;
     }
   }
 
-  .card {
-    position: relative;
-    height: 100%;
-    border-radius: $radius;
-    background-color: variables.$green;
+  .card-container {
 
-    .card__label_left {
-      position: absolute;
-      right: Base.$card-content-padding;
-      top: Base.$card-content-padding;
-      border-color: transparent;
-      color: variables.$black;
-      background-color: variables.$white;
-      z-index: 1;
-    }
-
-    .card__label_hosted {
-      position: absolute;
-      right: Base.$card-content-padding;
-      bottom: Base.$card-content-padding;
-      display: flex;
-      align-items: center;
-      column-gap: 0.5rem;
-      height: 2.25rem;
-      border: 0;
-      color: variables.$white;
+    .card {
+      position: relative;
+      height: 100%;
+      border-radius: $radius;
       background-color: variables.$green;
-      z-index: 1;
 
-      span {
-        flex-shrink: 0;
-        font-size: 0.9rem;
+      .card__label_left {
+        position: absolute;
+        right: Base.$card-content-padding;
+        top: Base.$card-content-padding;
+        border-color: transparent;
+        color: variables.$black;
+        background-color: variables.$white;
+        z-index: 1;
+      }
+
+      .card__label_hosted {
+        position: absolute;
+        right: Base.$card-content-padding;
+        bottom: Base.$card-content-padding;
+        display: flex;
+        align-items: center;
+        column-gap: 0.5rem;
+        height: 2.25rem;
+        border: 0;
         color: variables.$white;
-      }
+        background-color: variables.$green;
+        z-index: 1;
 
-      svg {
-        flex-shrink: 0;
-        background-color: transparent;
-        height: 100%;
-        border-radius: 0;
-        color: variables.$white;
-      }
-    }
-
-    .card__image {
-      object-fit: cover;
-      border-radius: $radius $radius 0 0;
-    }
-
-    .card__content {
-      overflow: unset;
-
-      .card__content__title {
-        color: variables.$white;
-        padding-bottom: variables.$side-padding;
-      }
-    }
-  }
-}
-
-.card-container_featured {
-
-  @include mixins.until(initial-variables.$tablet) {
-    &:nth-child(2n) {
-      display: none
-    }
-  }
-}
-
-// ----------------------------------------
-// FAQ
-
-.faq-item {
-  overflow: hidden;
-
-  .faq-item__header {
-    color: variables.$white;
-    background-color: variables.$green;
-
-    .faq-item__header__text {
-      padding: 1.5rem;
-      color: variables.$white;
-      font-size: 1.5rem;
-
-      @include mixins.until(initial-variables.$tablet) {
-        font-size: 1.25rem;
-      }
-    }
-  }
-
-  .faq-item__content_default {
-    display: none;
-  }
-
-  .faq-item__content_opened {
-    display: block;
-  }
-}
-
-// ----------------------------------------
-// Booking
-
-.booking {
-  justify-content: space-between;
-
-  .booking__price {
-    position: relative;
-
-    .booking__price__price-box {
-      position: sticky;
-      top: $navbar-height-full + Base.$column-gap;
-
-      .price-box__content {
-        padding: 1rem;
-
-        .price-box__content__title {
-          margin-bottom: 1.5rem;
-          color: variables.$green;
-          font-size: 1.5rem;
-          text-align: center;
-
-          @include mixins.until(initial-variables.$tablet) {
-            font-size: 1.25rem;
-          }
+        span {
+          flex-shrink: 0;
+          font-size: 0.9rem;
+          color: variables.$white;
         }
 
-        .price-box__content__part {
+        svg {
+          flex-shrink: 0;
+          background-color: transparent;
+          height: 100%;
+          border-radius: 0;
+          color: variables.$white;
+        }
+      }
 
-          &:not(:first-of-type) {
-            margin-top: 1.5rem;
-          }
+      .card__image {
+        object-fit: cover;
+        border-radius: $radius $radius 0 0;
+      }
 
-          .part__title {
-            margin-bottom: 1rem;
+      .card__content {
+        overflow: unset;
+
+        .card__content__title {
+          color: variables.$white;
+          padding-bottom: variables.$side-padding;
+        }
+      }
+    }
+  }
+
+  .card-container_featured {
+
+    @include mixins.until(initial-variables.$tablet) {
+      &:nth-child(2n) {
+        display: none
+      }
+    }
+  }
+
+  // ----------------------------------------
+  // FAQ
+
+  .faq-item {
+    overflow: hidden;
+
+    .faq-item__header {
+      color: variables.$white;
+      background-color: variables.$green;
+
+      .faq-item__header__text {
+        padding: 1.5rem;
+        color: variables.$white;
+        font-size: 1.5rem;
+
+        @include mixins.until(initial-variables.$tablet) {
+          font-size: 1.25rem;
+        }
+      }
+    }
+
+    .faq-item__content_default {
+      display: none;
+    }
+
+    .faq-item__content_opened {
+      display: block;
+    }
+  }
+
+  // ----------------------------------------
+  // Booking
+
+  .booking {
+    justify-content: space-between;
+
+    .booking__price {
+      position: relative;
+
+      .booking__price__price-box {
+        position: sticky;
+        top: $navbar-height-full + Base.$column-gap;
+
+        .price-box__content {
+          padding: 1rem;
+
+          .price-box__content__title {
+            margin-bottom: 1.5rem;
             color: variables.$green;
-            font-size: 1.25rem;
+            font-size: 1.5rem;
             text-align: center;
 
             @include mixins.until(initial-variables.$tablet) {
@@ -524,104 +506,124 @@ $radius: Base.$radius;
             }
           }
 
-          .part__list-item, .part__list-item_bold {
-            display: flex;
-            column-gap: 0.5rem;
+          .price-box__content__part {
 
-            .part__list-item__key {
-              flex-grow: 1;
+            &:not(:first-of-type) {
+              margin-top: 1.5rem;
             }
 
-            .part__list-item__value {
-              flex-shrink: 0;
-              text-align: right;
-            }
-          }
-
-          .part__list-item_bold {
-            font-weight: 600;
-            font-size: 1.5rem;
-
-            @include mixins.until(initial-variables.$tablet) {
+            .part__title {
+              margin-bottom: 1rem;
+              color: variables.$green;
               font-size: 1.25rem;
+              text-align: center;
+
+              @include mixins.until(initial-variables.$tablet) {
+                font-size: 1.25rem;
+              }
+            }
+
+            .part__list-item, .part__list-item_bold {
+              display: flex;
+              column-gap: 0.5rem;
+
+              .part__list-item__key {
+                flex-grow: 1;
+              }
+
+              .part__list-item__value {
+                flex-shrink: 0;
+                text-align: right;
+              }
+            }
+
+            .part__list-item_bold {
+              font-weight: 600;
+              font-size: 1.5rem;
+
+              @include mixins.until(initial-variables.$tablet) {
+                font-size: 1.25rem;
+              }
+            }
+
+            .part__button {
+              display: block;
+              color: variables.$white;
             }
           }
 
-          .part__button {
-            display: block;
-            color: variables.$white;
-          }
-        }
-
-      }
-    }
-  }
-
-  .booking__info {
-
-    .info__part {
-      &:not(:last-child) {
-        margin-bottom: 2rem;
-      }
-
-      .info__part__title {
-        font-size: 1.5rem;
-        color: variables.$white;
-
-        @include mixins.until(initial-variables.$tablet) {
-          font-size: 1.25rem;
         }
       }
-
-      .info__part__content {
-        margin-bottom: 1.5rem;
-        color: variables.$white;
-      }
-
-      .info__part__call {
-        display: block;
-        padding-top: 0.75rem;
-      }
-    }
-  }
-
-  @mixin column-width($size) {
-    width: calc(#{math.percentage(math.div($size, 12))} - #{Base.$column-gap} / 2);
-  }
-
-  @include mixins.until(920px) {
-    .booking__price {
-      @include column-width(5);
-    }
-  }
-
-  //@media (min-width: initial-variables.$tablet) and (max-width: 820px) {
-  @media (max-width: 820px) {
-    .booking__price {
-      @include column-width(5.5);
     }
 
     .booking__info {
-      @include column-width(6.5);
 
-      .info__part__flexible {
-        display: block;
+      .info__part {
+        &:not(:last-child) {
+          margin-bottom: 2rem;
+        }
+
+        .info__part__title {
+          font-size: 1.5rem;
+          color: variables.$white;
+
+          @include mixins.until(initial-variables.$tablet) {
+            font-size: 1.25rem;
+          }
+        }
+
+        .info__part__content {
+          margin-bottom: 1.5rem;
+          color: variables.$white;
+        }
+
+        .info__part__call {
+          display: block;
+          padding-top: 0.75rem;
+        }
+      }
+    }
+
+    @mixin column-width($size) {
+      width: calc(#{math.percentage(math.div($size, 12))} - #{Base.$column-gap} / 2);
+    }
+
+    @include mixins.until(920px) {
+      .booking__price {
+        @include column-width(5);
+      }
+    }
+
+    //@media (min-width: initial-variables.$tablet) and (max-width: 820px) {
+    @media (max-width: 820px) {
+      .booking__price {
+        @include column-width(5.5);
+      }
+
+      .booking__info {
+        @include column-width(6.5);
+
+        .info__part__flexible {
+          display: block;
+        }
+      }
+    }
+
+    @media (max-width: 640px) {
+      display: flex;
+      flex-direction: column;
+
+      .booking__info, .booking__price {
+        width: 100%;
+      }
+
+      .booking__price {
+        order: 1;
       }
     }
   }
 
-  @media (max-width: 640px) {
-    display: flex;
-    flex-direction: column;
+  // ----------------------------------------
 
-    .booking__info, .booking__price {
-      width: 100%;
-    }
 
-    .booking__price {
-      order: 1;
-    }
-  }
 }
-
-// ----------------------------------------

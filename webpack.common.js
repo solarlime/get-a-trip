@@ -5,6 +5,7 @@ import HtmlWebPackPlugin from'html-webpack-plugin';
 import FaviconsWebpackPlugin from 'favicons-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { fileURLToPath } from 'url';
+import { glob } from 'glob';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -50,6 +51,28 @@ export default {
                 auto: true,
                 localIdentName: '[name]__[local]--[hash:base64:5]',
                 exportLocalsConvention: 'dashes',
+              }
+            }
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                plugins: [
+                  [
+                    '@fullhuman/postcss-purgecss',
+                    {
+                      content: [
+                        `${path.join(__dirname, "src")}/index.html`,
+                        ...glob.sync(`${path.join(__dirname, "src")}/**/*.tsx`, { nodir: true }),
+                      ],
+                      variables: true,
+                      safelist: {
+                        deep: [/custom-/],
+                      },
+                    },
+                  ]
+                ],
               }
             }
           },

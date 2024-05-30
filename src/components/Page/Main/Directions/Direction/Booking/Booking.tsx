@@ -28,10 +28,10 @@ const Booking = memo(() => {
               <div className="block">
                 <div className={`columns ${styles.info__part__flexible}`}>
                   <div className="column">
-                    <Name type="First name" camelType="firstName" setter="setFirstName" classes={styles.colorWhite} />
+                    <Name type="First name" camelType="firstName" setter="setFirstName" classes={styles.customColorWhite} />
                   </div>
                   <div className="column">
-                    <Name type="Last name" camelType="lastName" setter="setLastName" classes={styles.colorWhite} />
+                    <Name type="Last name" camelType="lastName" setter="setLastName" classes={styles.customColorWhite} />
                   </div>
                 </div>
               </div>
@@ -39,7 +39,7 @@ const Booking = memo(() => {
                 <Phone />
               </div>
               <div className="block">
-                <Email classes={styles.colorWhite} />
+                <Email classes={styles.customColorWhite} />
               </div>
             </div>
             <div className={styles.info__part}>
@@ -47,18 +47,18 @@ const Booking = memo(() => {
               <div className="block">
                 <div className={`columns ${styles.info__part__flexible}`}>
                   <div className="column">
-                    <Duration classes={styles.colorWhite} />
+                    <Duration classes={styles.customColorWhite} />
                   </div>
                   <div className="column">
-                    <Dropdown label="Room" type="room" setter="setRoom" classes={styles.colorWhite} />
+                    <Dropdown label="Room" type="room" setter="setRoom" classes={styles.customColorWhite} />
                   </div>
                 </div>
                 <div className={`columns ${styles.info__part__flexible}`}>
                   <div className="column">
-                    <Dropdown label="SIM card" type="sim" setter="setSim" classes={styles.colorWhite} />
+                    <Dropdown label="SIM card" type="sim" setter="setSim" classes={styles.customColorWhite} />
                   </div>
                   <div className="column">
-                    <Dropdown label="Travel insurance" type="insurance" setter="setInsurance" classes={styles.colorWhite} />
+                    <Dropdown label="Travel insurance" type="insurance" setter="setInsurance" classes={styles.customColorWhite} />
                   </div>
                 </div>
               </div>
@@ -69,7 +69,7 @@ const Booking = memo(() => {
                 <p className={styles.info__part__content}>
                   We recommend using
                   {' '}
-                  <strong className={styles.colorWhite}>Skyscanner</strong>
+                  <strong className={styles.customColorWhite}>Skyscanner</strong>
                   {' '}
                   to&nbsp;find the&nbsp;cheapest tickets. Enhance your&nbsp;deal
                   {' '}

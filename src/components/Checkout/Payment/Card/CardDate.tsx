@@ -55,7 +55,7 @@ const CardDate = memo(() => {
         required
       />
       <span className={`icon is-small is-right ${(componentState.status !== 'fail') ? styles.hidden : ''}`}>
-        <FontAwesomeIcon className={styles.colorDanger} icon={faCircleExclamation} />
+        <FontAwesomeIcon className={styles.customColorDanger} icon={faCircleExclamation} />
       </span>
     </div>
   );

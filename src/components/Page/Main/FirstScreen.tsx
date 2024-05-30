@@ -35,7 +35,7 @@ function FirstScreen() {
           <h1 className={`title ${styles.firstScreen__content__title}`}>From a&nbsp;small trip to&nbsp;a&nbsp;big adventure</h1>
           <p className="buttons">
             <Link
-              className={`${styles.colorWhite} button is-primary`}
+              className={`${styles.customColorWhite} button is-primary`}
               to="/directions#search"
             >
               <span>Find your tour now</span>

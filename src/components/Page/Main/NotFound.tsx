@@ -13,7 +13,7 @@ function NotFound() {
             <p className="block">There&apos;s no&nbsp;route for&nbsp;the&nbsp;direction you&apos;re&nbsp;looking&nbsp;for. But&nbsp;you&nbsp;can&nbsp;find some&nbsp;others!</p>
             <p className="buttons">
               <Link
-                className={`button ${styles.colorWhite} is-primary`}
+                className={`button ${styles.customColorWhite} is-primary`}
                 to="/directions"
               >
                 <span>Find your tour now</span>

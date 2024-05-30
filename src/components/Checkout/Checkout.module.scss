@@ -1,47 +1,54 @@
 @use "src/components/Base.module";
 @use "bulma/sass/utilities/controls";
 
-// Card information
+.custom-main {
 
-.card-info {
-  .card-info__cvc {
-    border-top-right-radius: 0;
-  }
+  // Card information
 
-  .card-info__date {
-    border-top-left-radius: 0;
-  }
+  .card-info {
+    .card-info__cvc {
+      border-top-right-radius: 0;
+    }
 
-  .card-info__number {
-    margin-bottom: -1px;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-  }
+    .card-info__date {
+      border-top-left-radius: 0;
+    }
+
+    .card-info__number {
+      margin-bottom: -1px;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+    }
 
     .card-info__number_focused {
       z-index: 7;
     }
 
-  .card-info__number-icons {
-    width: auto !important;
-    column-gap: 0.5rem;
-    padding-right: controls.$control-padding-horizontal;
+    .card-info__number-icons {
+      width: auto !important;
+      column-gap: 0.5rem;
+      padding-right: controls.$control-padding-horizontal;
+    }
   }
+
+  // ----------------------------------------
+  // Others
+
+  .content {
+
+    @media (max-width: 700px) {
+      display: block;
+    }
+  }
+
+  .country-selector:after {
+    border-color: Base.$dark !important;
+  }
+
+  .icon_focused {
+    z-index: 8;
+  }
+
+  // ----------------------------------------
+
 }
-
-// ----------------------------------------
-// Others
-
-.country-selector:after {
-  border-color: Base.$dark !important;
-}
-
-.hidden {
-  display: none;
-}
-
-.icon_focused {
-  z-index: 8;
-}
-
-// ----------------------------------------

@@ -53,13 +53,13 @@ const ProductCard = memo((props: { tour: Tour }) => {
         <div className="block">
           <div className={styles.card__content}>
             <p className={`${styles.card__content__title} title is-4`}>{date}</p>
-            <p className={`${styles.colorWhite} subtitle is-6`}>{location}</p>
+            <p className={`${styles.customColorWhite} subtitle is-6`}>{location}</p>
           </div>
         </div>
 
         <div>
           <Link
-            className={`button ${styles.colorGreen} is-white is-size-6`}
+            className={`button ${styles.customColorGreen} is-white`}
             to={`/directions/${location.toLocaleLowerCase()
               .replace(', ', '-')
               .replace(' ', '-')}-${year}-${startDate.replace(/ /i, '-')}#top`}

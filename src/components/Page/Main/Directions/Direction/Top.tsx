@@ -39,7 +39,7 @@ const Top = memo((props: { tour: Tour }) => {
           <h2 className="subtitle">A&nbsp;place you&apos;ll&nbsp;want to&nbsp;come back&nbsp;to. More&nbsp;than&nbsp;once</h2>
           <p className="buttons">
             <Link
-              className={`button ${styles.colorWhite} is-primary`}
+              className={`button ${styles.customColorWhite} is-primary`}
               to="./#booking"
             >
               <span>Book now</span>

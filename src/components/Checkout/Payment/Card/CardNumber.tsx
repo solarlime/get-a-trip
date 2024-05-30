@@ -71,7 +71,7 @@ const CardNumber = memo(() => {
       {
           (componentState.status === 'fail') ? (
             <span className={`icon is-small is-right ${(componentState.focused) ? styles.icon_focused : ''}`}>
-              <FontAwesomeIcon className={styles.colorDanger} icon={faCircleExclamation} />
+              <FontAwesomeIcon className={styles.customColorDanger} icon={faCircleExclamation} />
             </span>
           ) : (
             <span className={`icon is-small is-right ${styles.cardInfo__numberIcons} ${(componentState.focused) ? styles.icon_focused : ''}`}>
@@ -84,10 +84,10 @@ const CardNumber = memo(() => {
                       <FontAwesomeIcon icon={faCcAmex} />
                       <FontAwesomeIcon icon={faCcJcb} />
                     </>
-                  ) : (componentState.provider === 'visa') ? <FontAwesomeIcon className={styles.colorGreen} icon={faCcVisa} />
-                    : (componentState.provider === 'mastercard') ? <FontAwesomeIcon className={styles.colorGreen} icon={faCcMastercard} />
-                      : (componentState.provider === 'amex') ? <FontAwesomeIcon className={styles.colorGreen} icon={faCcAmex} />
-                        : <FontAwesomeIcon className={styles.colorGreen} icon={faCcJcb} />
+                  ) : (componentState.provider === 'visa') ? <FontAwesomeIcon className={styles.customColorGreen} icon={faCcVisa} />
+                    : (componentState.provider === 'mastercard') ? <FontAwesomeIcon className={styles.customColorGreen} icon={faCcMastercard} />
+                      : (componentState.provider === 'amex') ? <FontAwesomeIcon className={styles.customColorGreen} icon={faCcAmex} />
+                        : <FontAwesomeIcon className={styles.customColorGreen} icon={faCcJcb} />
               }
             </span>
           )
