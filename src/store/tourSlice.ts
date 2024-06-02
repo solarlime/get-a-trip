@@ -28,9 +28,10 @@ const createTourSlice: StateCreator<TourState & TourActions & SearchState> = (se
       const result = await unsplash.photos.get({ photoId: id });
       if (result.response) {
         set((state) => ({
+          // 'filter: blur()' does not work, that's why blur is added via imgix
           images: {
             ...state.images,
-            [id]: { value: result.response.urls.raw },
+            [id]: { full: result.response.urls.raw, thumb: `${result.response.urls.thumb}&blur=25` },
           },
         }));
         console.info(`Image author: ${result.response.user.first_name} ${result.response.user.last_name}, link: ${result.response.links.html}?utm_source=Homepage&utm_medium=referral`);

@@ -1,4 +1,7 @@
-import type { Base } from './base';
+export interface ImageLinks {
+  full: string,
+  thumb: string,
+}
 
 export interface Tour {
   place: string,
@@ -31,7 +34,7 @@ export interface QuestionAndAnswer {
 }
 
 export interface Images {
-  [key: string]: Base,
+  [key: string]: ImageLinks,
 }
 
 export interface TourState {

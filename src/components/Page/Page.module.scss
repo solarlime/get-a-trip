@@ -425,6 +425,7 @@ $radius: Base.$radius;
       }
 
       .card__image {
+        height: 100%;
         object-fit: cover;
         border-radius: $radius $radius 0 0;
       }

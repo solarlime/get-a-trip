@@ -1,4 +1,4 @@
-import type { Images } from './store/types/tour';
+import type { ImageLinks, Images } from './store/types/tour';
 
 export const formatter = (value: Date | string): { date: string, year: number } => {
   let date: Date;
@@ -42,18 +42,21 @@ export const setSrcset = (src: string, srcSet: Array<number>) => srcSet
 export const cacheImages = async (
   allImages: Images,
   neededImages: Array<string>,
-  sizes: string,
-  srcSet: Array<number>,
+  type: keyof ImageLinks,
+  sizes?: string,
+  srcSet?: Array<number>,
 ) => {
   const imagesToCache = Object.entries(allImages)
     .filter((entry) => neededImages.includes(entry[0]))
-    .map((entry) => entry[1].value);
+    .map((entry) => entry[1][type]);
   const promises = imagesToCache.map(
     (src: string): Promise<void> => new Promise((resolve, reject) => {
       const img = new Image();
       img.src = src;
-      img.srcset = setSrcset(src, srcSet);
-      img.sizes = sizes;
+      if (srcSet && sizes) {
+        img.srcset = setSrcset(src, srcSet);
+        img.sizes = sizes;
+      }
       img.addEventListener('load', () => resolve());
       img.addEventListener('error', () => reject());
     }),

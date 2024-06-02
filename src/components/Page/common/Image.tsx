@@ -5,7 +5,7 @@ import { setSrcset } from '../../../utils';
 
 const Image = forwardRef(
   (
-    props: { className: string, src: string, sizes: string, srcSet: Array<number>, alt: string },
+    props: { className: string, src: string, sizes?: string, srcSet?: Array<number>, alt: string },
     ref: ForwardedRef<HTMLImageElement>,
   ) => {
     const {
@@ -16,8 +16,8 @@ const Image = forwardRef(
       <img
         className={className}
         src={src}
-        srcSet={setSrcset(src, srcSet)}
-        sizes={sizes}
+        srcSet={(srcSet) ? setSrcset(src, srcSet) : ''}
+        sizes={(sizes) || ''}
         alt={alt}
         ref={ref}
         onLoad={(event) => {
