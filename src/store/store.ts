@@ -1,4 +1,4 @@
-import { create } from 'zustand';
+import { create, StateCreator } from 'zustand';
 import { devtools, persist, createJSONStorage } from 'zustand/middleware';
 
 import type { PaymentActions, PaymentState } from './types/payment';
@@ -10,24 +10,25 @@ import createTourSlice from './tourSlice';
 import createSearchSlice from './searchSlice';
 import createBookingSlice from './bookingSlice';
 
-const useStore = create<
-PaymentState &
+export type States = PaymentState &
 PaymentActions &
 TourState &
 TourActions &
 SearchState &
 SearchActions &
 BookingState &
-BookingActions
->()(
+BookingActions;
+export const storeCreator: StateCreator<States> = (...a) => ({
+  ...createPaymentSlice(...a),
+  ...createTourSlice(...a),
+  ...createSearchSlice(...a),
+  ...createBookingSlice(...a),
+});
+
+const useStore = create<States>()(
   devtools(
     persist(
-      (...a) => ({
-        ...createPaymentSlice(...a),
-        ...createTourSlice(...a),
-        ...createSearchSlice(...a),
-        ...createBookingSlice(...a),
-      }),
+      storeCreator,
       {
         name: 'getatripStore',
         storage: createJSONStorage(() => sessionStorage),
