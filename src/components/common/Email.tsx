@@ -29,7 +29,7 @@ const Email = memo((props: { classes?: string }) => {
         />
         {
           (componentState.status === 'fail') ? (
-            <span className="icon is-small is-right">
+            <span role="contentinfo" className="icon is-small is-right">
               <FontAwesomeIcon className={styles.customColorDanger} icon={faCircleExclamation} />
             </span>
           ) : ''
