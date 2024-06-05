@@ -3,29 +3,39 @@ import { isAlpha } from 'validator';
 
 import useStore from '../../store/store';
 
+type FieldType = 'cardholder_name' | 'first_name' | 'last_name';
+type Camelised<T> = T extends FieldType ? ('cardholderName' | 'firstName' | 'lastName') : ('setCardholderName' | 'setFirstName' | 'setLastName');
+
+const labelise = (fieldType: FieldType) => fieldType.charAt(0).toLocaleUpperCase() + fieldType.replace(/(_)/g, ' ').slice(1);
+const camelise = (fieldType: FieldType | `set_${FieldType}`) => fieldType
+  .split('_')
+  .map((substring, index) => ((index === 0)
+    ? substring.charAt(0).toLocaleLowerCase()
+    : substring.charAt(0).toLocaleUpperCase()) + substring.slice(1))
+  .join('');
+
 const Name = memo((props: {
-  type: 'Cardholder name' | 'First name' | 'Last name',
-  camelType: 'cardholderName' | 'firstName' | 'lastName'
-  setter: 'setCardholderNameState' | 'setFirstName' | 'setLastName'
+  type: FieldType,
   classes?: string
 }) => {
-  const {
-    type, camelType, setter, classes,
-  } = props;
+  const { type, classes } = props;
+  const label = labelise(type);
+  const camelType = camelise(type) as Camelised<FieldType>;
+  const setter = camelise(`set_${type}`) as Camelised<`set_${FieldType}`>;
   const componentState = useStore((state) => state[camelType]);
   const setState = useStore((state) => state[setter]);
 
   return (
     <div className="field">
       <label className={`label ${(classes) || ''}`} htmlFor={camelType}>
-        {type}
+        {label}
       </label>
       <div className="control">
         <input
           id={camelType}
           className={`input ${(componentState.status !== 'idle') ? 'is-success' : ''}`}
           type="text"
-          placeholder={(camelType === 'cardholderName') ? 'Full name on card' : (camelType === 'firstName') ? 'Sigmund' : 'Freud'}
+          placeholder={(type === 'cardholder_name') ? 'Full name on card' : (type === 'first_name') ? 'Sigmund' : 'Freud'}
           value={componentState.value}
           onChange={(event) => {
             const input = event.target.value.trimStart();

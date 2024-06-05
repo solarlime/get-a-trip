@@ -41,15 +41,15 @@ const createPaymentSlice: StateCreator<PaymentState & PaymentActions> = (set, ge
       { ...state, countries: countriesAndCodesAndPhonesList }
     ));
   },
-  setEmailState: (newState) => set((state) => ({ ...state, email: newState })),
-  setCardholderNameState: (newState) => set(
+  setEmail: (newState) => set((state) => ({ ...state, email: newState })),
+  setCardholderName: (newState) => set(
     (state) => ({ ...state, cardholderName: newState }),
   ),
-  setCardNumberState: (newState) => set((state) => ({ ...state, cardNumber: newState })),
-  setCardCvcState: (newState) => set(
+  setCardNumber: (newState) => set((state) => ({ ...state, cardNumber: newState })),
+  setCardCvc: (newState) => set(
     (state) => ({ ...state, cardCvc: newState }),
   ),
-  setCardDateState: (newState) => set(
+  setCardDate: (newState) => set(
     (state) => ({ ...state, cardDate: newState }),
   ),
   reset: () => set(() => ({ ...initialState, countries: get().countries })),

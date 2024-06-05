@@ -5,8 +5,8 @@ import { expect } from '@jest/globals';
 const failState = async (
   user: UserEvent,
   input: HTMLElement,
-  tip: HTMLElement,
   stringToType: string,
+  tip: HTMLElement,
 ) => {
   await act(async () => {
     await user.click(input);
@@ -16,14 +16,16 @@ const failState = async (
 
   expect(input).toHaveClass('is-danger');
   expect(await screen.findByRole('contentinfo')).toBeInTheDocument();
-  expect(tip).not.toHaveClass('hidden');
+  if (tip) {
+    expect(tip).not.toHaveClass('hidden');
+  }
 };
 
 const successState = async (
   user: UserEvent,
   input: HTMLElement,
-  tip: HTMLElement,
   stringToType: string,
+  tip?: HTMLElement,
 ) => {
   await act(async () => {
     await user.click(input);
@@ -33,16 +35,20 @@ const successState = async (
 
   expect(input).toHaveClass('is-success');
   expect(input).not.toHaveClass('is-danger');
-  expect(tip).toHaveClass('hidden');
+  if (tip) {
+    expect(tip).toHaveClass('hidden');
+  }
 };
 
 const idleState = async (
   input: HTMLElement,
-  tip: HTMLElement,
+  tip?: HTMLElement,
 ) => {
   expect(input).not.toHaveClass('is-danger');
   expect(input).not.toHaveClass('is-success');
-  expect(tip).toHaveClass('hidden');
+  if (tip) {
+    expect(tip).toHaveClass('hidden');
+  }
 };
 
 export { idleState, failState, successState };

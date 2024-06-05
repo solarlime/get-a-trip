@@ -9,7 +9,7 @@ import styles from '../Base.module.scss';
 const Email = memo((props: { classes?: string }) => {
   const { classes } = props;
   const componentState = useStore((state) => state.email);
-  const setState = useStore((state) => state.setEmailState);
+  const setState = useStore((state) => state.setEmail);
 
   return (
     <div className="field">

@@ -9,7 +9,7 @@ import useStore from '../../../../store/store';
 const CardCvc = memo(() => {
   const componentState = useStore((state) => state.cardCvc);
   const cardProvider = useStore((state) => state.cardNumber.provider);
-  const setState = useStore((state) => state.setCardCvcState);
+  const setState = useStore((state) => state.setCardCvc);
 
   useEffect(() => {
     setState({ value: '', status: 'idle' });

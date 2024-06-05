@@ -5,6 +5,7 @@ import userEvent from '@testing-library/user-event';
 import { failState, idleState, successState } from './inputStates';
 import Payment from '../src/components/Checkout/Payment/Payment';
 import Email from '../src/components/common/Email';
+import Name from '../src/components/common/Name';
 
 describe('Payment component', () => {
   test('Idle state', async () => {
@@ -25,7 +26,19 @@ describe('Payment component', () => {
     const tip = await screen.findByText('Your email is incomplete.');
 
     await idleState(input, tip);
-    await failState(user, input, tip, 'sigmund');
-    await successState(user, input, tip, 'sigmund@freud.site');
+    await failState(user, input, 'sigmund', tip);
+    await successState(user, input, 'sigmund@freud.site', tip);
+  });
+
+  test('Cardholder name', async () => {
+    const user = userEvent.setup();
+
+    render(<Name type="cardholder_name" />);
+    expect(await screen.findByText(/^Cardholder name$/)).toBeInTheDocument();
+
+    const input = await screen.findByRole('textbox');
+
+    await idleState(input);
+    await successState(user, input, 'Sigmund Freud');
   });
 });

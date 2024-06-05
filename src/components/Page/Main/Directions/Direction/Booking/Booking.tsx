@@ -28,10 +28,10 @@ const Booking = memo(() => {
               <div className="block">
                 <div className={`columns ${styles.info__part__flexible}`}>
                   <div className="column">
-                    <Name type="First name" camelType="firstName" setter="setFirstName" classes={styles.customColorWhite} />
+                    <Name type="first_name" classes={styles.customColorWhite} />
                   </div>
                   <div className="column">
-                    <Name type="Last name" camelType="lastName" setter="setLastName" classes={styles.customColorWhite} />
+                    <Name type="last_name" classes={styles.customColorWhite} />
                   </div>
                 </div>
               </div>

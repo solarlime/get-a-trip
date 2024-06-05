@@ -18,7 +18,7 @@ const prettify = (numberString: string) => {
 
 const CardDate = memo(() => {
   const componentState = useStore((state) => state.cardDate);
-  const setState = useStore((state) => state.setCardDateState);
+  const setState = useStore((state) => state.setCardDate);
   return (
     <div className="control is-expanded has-icons-right">
       <input

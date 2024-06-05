@@ -22,7 +22,7 @@ const prettify = (numberString: string) => {
 
 const CardNumber = memo(() => {
   const componentState = useStore((state) => state.cardNumber);
-  const setState = useStore((state) => state.setCardNumberState);
+  const setState = useStore((state) => state.setCardNumber);
 
   return (
     <div className="control has-icons-right">

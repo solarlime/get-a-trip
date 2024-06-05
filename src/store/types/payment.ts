@@ -30,10 +30,10 @@ export interface PaymentState {
 
 export interface PaymentActions {
   getCountries: () => Promise<void>,
-  setEmailState: (newState: Email) => void,
-  setCardholderNameState: (newState: CardholderName) => void,
-  setCardNumberState: (newState: CardNumber) => void,
-  setCardCvcState: (newState: CardCvc) => void,
-  setCardDateState: (newState: CardDate) => void,
+  setEmail: (newState: Email) => void,
+  setCardholderName: (newState: CardholderName) => void,
+  setCardNumber: (newState: CardNumber) => void,
+  setCardCvc: (newState: CardCvc) => void,
+  setCardDate: (newState: CardDate) => void,
   reset: () => void,
 }

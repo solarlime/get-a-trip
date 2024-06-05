@@ -12,7 +12,7 @@ const Payment = memo(() => (
     <div className="payment-form block">
       <Email />
       <Card />
-      <Name type="Cardholder name" camelType="cardholderName" setter="setCardholderNameState" />
+      <Name type="cardholder_name" />
       <Country />
     </div>
     <PayButton />
