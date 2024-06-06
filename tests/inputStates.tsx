@@ -41,9 +41,18 @@ const successState = async (
 };
 
 const idleState = async (
+  user: UserEvent,
   input: HTMLElement,
+  clear: boolean = false,
   tip?: HTMLElement,
 ) => {
+  if (clear) {
+    await act(async () => {
+      await user.clear(input);
+      await user.tab();
+    });
+  }
+
   expect(input).not.toHaveClass('is-danger');
   expect(input).not.toHaveClass('is-success');
   if (tip) {

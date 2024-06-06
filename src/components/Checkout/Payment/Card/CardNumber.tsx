@@ -70,7 +70,7 @@ const CardNumber = memo(() => {
       />
       {
           (componentState.status === 'fail') ? (
-            <span className={`icon is-small is-right ${(componentState.focused) ? styles.icon_focused : ''}`}>
+            <span role="contentinfo" className={`icon is-small is-right ${(componentState.focused) ? styles.icon_focused : ''}`}>
               <FontAwesomeIcon className={styles.customColorDanger} icon={faCircleExclamation} />
             </span>
           ) : (
