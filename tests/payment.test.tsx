@@ -3,18 +3,11 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { failState, idleState, successState } from './inputStates';
+import cardCases from './cardInformation';
 import Payment from '../src/components/Checkout/Payment/Payment';
 import Email from '../src/components/common/Email';
 import Name from '../src/components/common/Name';
 import Card from '../src/components/Checkout/Payment/Card/Card';
-
-const cardCases = [
-  { type: 'Invalid MC', value: '5491073231179293', isValid: false },
-  { type: 'Mastercard', value: '5491073231179294', isValid: true },
-  { type: 'Visa', value: '4088183012699253', isValid: true },
-  { type: 'JCB', value: '3529694058980430', isValid: true },
-  { type: 'Amex', value: '375520898980093', isValid: true },
-];
 
 describe('Payment component', () => {
   test('Idle state', async () => {
@@ -54,7 +47,7 @@ describe('Payment component', () => {
   });
 
   describe.each(cardCases)('Card information', (cardCase) => {
-    test(`${cardCase.type} number`, async () => {
+    test(`${cardCase.type}: number`, async () => {
       const user = userEvent.setup();
 
       render(<Card />);
@@ -65,10 +58,30 @@ describe('Payment component', () => {
 
       await idleState(user, numberInput);
 
-      if (cardCase.isValid) {
-        await successState(user, numberInput, cardCase.value, numberTip);
+      if (cardCase.isValidNumber) {
+        await successState(user, numberInput, cardCase.number, numberTip);
       } else {
-        await failState(user, numberInput, cardCase.value, numberTip);
+        await failState(user, numberInput, cardCase.number, numberTip);
+        await idleState(user, numberInput, true);
+      }
+    });
+
+    test(`${cardCase.type}: date`, async () => {
+      const user = userEvent.setup();
+
+      render(<Card />);
+      expect(await screen.findByText(/^Card information$/)).toBeInTheDocument();
+
+      const dateInput = await screen.findByPlaceholderText('MM / YY');
+      const dateTip = await screen.findByText('Your card\'s expiration date is invalid.');
+
+      await idleState(user, dateInput);
+
+      if (cardCase.isValidDate) {
+        await successState(user, dateInput, cardCase.date, dateTip);
+      } else {
+        await failState(user, dateInput, cardCase.date, dateTip);
+        await idleState(user, dateInput, true);
       }
     });
   });
