@@ -1,5 +1,5 @@
 import { describe, test, expect } from '@jest/globals';
-import { render, screen } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { failState, idleState, successState } from './inputStates';
@@ -46,8 +46,8 @@ describe('Payment component', () => {
     await successState(user, input, 'Sigmund Freud');
   });
 
-  describe.each(cardCases)('Card information', (cardCase) => {
-    test(`${cardCase.type}: number`, async () => {
+  describe.each(Object.entries(cardCases))('Card number + date', (type, cardCase) => {
+    test(`${type}: number`, async () => {
       const user = userEvent.setup();
 
       render(<Card />);
@@ -66,7 +66,7 @@ describe('Payment component', () => {
       }
     });
 
-    test(`${cardCase.type}: date`, async () => {
+    test(`${type}: date`, async () => {
       const user = userEvent.setup();
 
       render(<Card />);
@@ -84,5 +84,45 @@ describe('Payment component', () => {
         await idleState(user, dateInput, true);
       }
     });
+  });
+
+  test.each([
+    cardCases.jcb_wrong_date, cardCases.amex_all_ok,
+  ])('CVC', async (cardCase) => {
+    const user = userEvent.setup();
+
+    render(<Card />);
+    expect(await screen.findByText(/^Card information$/)).toBeInTheDocument();
+
+    const numberInput = await screen.findByPlaceholderText('1234 1234 1234 1234');
+    const cvcInput = await screen.findByPlaceholderText('CVC');
+    const cvcTip = await screen.findByText('Your card\'s security code is incomplete.');
+
+    // Fill CVC, but not card number: idle
+    await act(async () => {
+      await user.click(cvcInput);
+      await user.type(cvcInput, cardCase.cvc);
+      await user.tab();
+    });
+    expect(cvcInput).not.toHaveClass('is-danger');
+    expect(cvcInput).not.toHaveClass('is-success');
+    expect(cvcTip).toHaveClass('hidden');
+
+    // After - fill number: cleared & idle
+    await act(async () => {
+      await user.click(numberInput);
+      await user.type(numberInput, cardCase.number);
+      await user.tab();
+    });
+    expect(cvcInput).not.toHaveClass('is-danger');
+    expect(cvcInput).not.toHaveClass('is-success');
+    expect(cvcTip).toHaveClass('hidden');
+    expect(cvcInput).toHaveValue('');
+
+    // After - fill too short CVC: fail
+    await failState(user, cvcInput, cardCase.cvc.slice(0, -1), cvcTip);
+
+    await idleState(user, cvcInput, true, cvcTip);
+    await successState(user, cvcInput, cardCase.cvc, cvcTip);
   });
 });

@@ -2,25 +2,34 @@ const validDate = `01 / ${(new Date().getFullYear() + 1).toString().slice(-2)}`;
 const invalidDate1 = `01 / ${(new Date().getFullYear() - 1).toString().slice(-2)}`;
 const invalidDate2 = '01 / 2';
 
-const cardCases = [
-  {
-    type: 'Amex (all ok)', number: '375520898980093', isValidNumber: true, date: validDate, isValidDate: true,
+export interface CardCase {
+  number: string,
+  isValidNumber: boolean,
+  date: string,
+  isValidDate: boolean,
+  cvc: string,
+  isValidCvc: boolean,
+}
+
+const cardCases: { [key: string]: CardCase } = {
+  amex_all_ok: {
+    number: '375520898980093', isValidNumber: true, date: validDate, isValidDate: true, cvc: '1024', isValidCvc: true,
   },
-  {
-    type: 'Mastercard (wrong cvc)', number: '5491073231179294', isValidNumber: true, date: validDate, isValidDate: true,
+  mastercard_wrong_cvc: {
+    number: '5491073231179294', isValidNumber: true, date: validDate, isValidDate: true, cvc: '64', isValidCvc: false,
   },
-  {
-    type: 'Visa (wrong date)', number: '4088183012699253', isValidNumber: true, date: invalidDate1, isValidDate: false,
+  visa_wrong_date: {
+    number: '4088183012699253', isValidNumber: true, date: invalidDate1, isValidDate: false, cvc: '512', isValidCvc: true,
   },
-  {
-    type: 'JCB (wrong date)', number: '3529694058980430', isValidNumber: true, date: invalidDate2, isValidDate: false,
+  jcb_wrong_date: {
+    number: '3529694058980430', isValidNumber: true, date: invalidDate2, isValidDate: false, cvc: '512', isValidCvc: true,
   },
-  {
-    type: 'Amex (wrong cvc)', number: '375520898980093', isValidNumber: true, date: validDate, isValidDate: true,
+  amex_wrong_cvc: {
+    number: '375520898980093', isValidNumber: true, date: validDate, isValidDate: true, cvc: '512', isValidCvc: false,
   },
-  {
-    type: 'Mastercard (wrong number)', number: '5491073231179293', isValidNumber: false, date: validDate, isValidDate: true,
+  mastercard_wrong_number: {
+    number: '5491073231179293', isValidNumber: false, date: validDate, isValidDate: true, cvc: '512', isValidCvc: true,
   },
-];
+};
 
 export default cardCases;
