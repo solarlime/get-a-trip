@@ -24,7 +24,7 @@ describe('Payment component', () => {
     render(<Email />);
     expect(await screen.findByText(/^Email$/)).toBeInTheDocument();
 
-    const input = await screen.findByRole('textbox');
+    const input = await screen.findByPlaceholderText('sigmund@freud.site');
     const tip = await screen.findByText('Your email is incomplete.');
 
     await idleState(user, input, false, tip);
@@ -39,7 +39,7 @@ describe('Payment component', () => {
     render(<Name type="cardholder_name" />);
     expect(await screen.findByText(/^Cardholder name$/)).toBeInTheDocument();
 
-    const input = await screen.findByRole('textbox');
+    const input = await screen.findByPlaceholderText('Full name on card');
 
     await idleState(user, input);
     await idleState(user, input, true);
@@ -124,5 +124,31 @@ describe('Payment component', () => {
 
     await idleState(user, cvcInput, true, cvcTip);
     await successState(user, cvcInput, cardCase.cvc, cvcTip);
+  });
+
+  test('Filled form', async () => {
+    const user = userEvent.setup();
+
+    render(<Payment />);
+    expect(await screen.findByText(/^Pay with card$/)).toBeInTheDocument();
+
+    const button = await screen.findByRole('button');
+    expect(button).toBeDisabled();
+
+    const cardCase = cardCases.amex_all_ok;
+
+    const emailInput = await screen.findByPlaceholderText('sigmund@freud.site');
+    const numberInput = await screen.findByPlaceholderText('1234 1234 1234 1234');
+    const dateInput = await screen.findByPlaceholderText('MM / YY');
+    const cvcInput = await screen.findByPlaceholderText('CVC');
+    const cardholderNameInput = await screen.findByPlaceholderText('Full name on card');
+
+    await successState(user, emailInput, 'sigmund@freud.site');
+    await successState(user, numberInput, cardCase.number);
+    await successState(user, dateInput, cardCase.date);
+    await successState(user, cvcInput, cardCase.cvc);
+    await successState(user, cardholderNameInput, 'Sigmund Freud');
+
+    expect(button).not.toHaveClass('disabled');
   });
 });
