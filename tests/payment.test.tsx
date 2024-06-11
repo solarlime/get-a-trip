@@ -27,10 +27,10 @@ describe('Payment component', () => {
     const input = await screen.findByPlaceholderText('sigmund@freud.site');
     const tip = await screen.findByText('Your email is incomplete.');
 
-    await idleState(user, input, false, tip);
-    await failState(user, input, 'sigmund', tip);
-    await idleState(user, input, true, tip);
-    await successState(user, input, 'sigmund@freud.site', tip);
+    await idleState(user, input, false, { tip });
+    await failState(user, input, 'sigmund', { tip });
+    await idleState(user, input, true, { tip });
+    await successState(user, input, 'sigmund@freud.site', { tip });
   });
 
   test('Cardholder name', async () => {
@@ -59,9 +59,9 @@ describe('Payment component', () => {
       await idleState(user, numberInput);
 
       if (cardCase.isValidNumber) {
-        await successState(user, numberInput, cardCase.number, numberTip);
+        await successState(user, numberInput, cardCase.number, { tip: numberTip });
       } else {
-        await failState(user, numberInput, cardCase.number, numberTip);
+        await failState(user, numberInput, cardCase.number, { tip: numberTip });
         await idleState(user, numberInput, true);
       }
     });
@@ -78,9 +78,9 @@ describe('Payment component', () => {
       await idleState(user, dateInput);
 
       if (cardCase.isValidDate) {
-        await successState(user, dateInput, cardCase.date, dateTip);
+        await successState(user, dateInput, cardCase.date, { tip: dateTip });
       } else {
-        await failState(user, dateInput, cardCase.date, dateTip);
+        await failState(user, dateInput, cardCase.date, { tip: dateTip });
         await idleState(user, dateInput, true);
       }
     });
@@ -120,10 +120,10 @@ describe('Payment component', () => {
     expect(cvcInput).toHaveValue('');
 
     // After - fill too short CVC: fail
-    await failState(user, cvcInput, cardCase.cvc.slice(0, -1), cvcTip);
+    await failState(user, cvcInput, cardCase.cvc.slice(0, -1), { tip: cvcTip });
 
-    await idleState(user, cvcInput, true, cvcTip);
-    await successState(user, cvcInput, cardCase.cvc, cvcTip);
+    await idleState(user, cvcInput, true, { tip: cvcTip });
+    await successState(user, cvcInput, cardCase.cvc, { tip: cvcTip });
   });
 
   test('Filled form', async () => {
