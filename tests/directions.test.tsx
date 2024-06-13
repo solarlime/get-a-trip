@@ -49,4 +49,30 @@ describe('Directions component', () => {
       await failState(user, checkInInput, dateCase.date);
     }
   });
+
+  test('Filled form', async () => {
+    const user = userEvent.setup();
+
+    render(<Search title="Find your perfect tour" />, { wrapper: BrowserRouter });
+    expect(await screen.findByText(/^Find your perfect tour$/)).toBeInTheDocument();
+
+    const button = await screen.findByRole('link');
+    expect(button).toHaveClass('disabled');
+
+    const searchCase = dates().future;
+
+    const destinationInput = await screen.findByTestId('destination');
+    const checkInInput = await screen.findByPlaceholderText('Add dates');
+    const durationInput = await screen.findByPlaceholderText('Number of nights');
+    const peopleInput = await screen.findByPlaceholderText('How many will go?');
+
+    await user.selectOptions(destinationInput, 'Europe');
+    expect((screen.getByRole('option', { name: 'Europe' }) as HTMLOptionElement).selected).toBe(true);
+
+    await successState(user, checkInInput, searchCase.date, { ignoreClass: true });
+    await successState(user, durationInput, '1', { ignoreClass: true });
+    await successState(user, peopleInput, '1', { ignoreClass: true });
+
+    expect(button).not.toHaveClass('disabled');
+  });
 });

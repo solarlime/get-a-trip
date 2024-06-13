@@ -18,11 +18,12 @@ const Dropdown = memo((props: {
 
   return (
     <div className={`${styles.dropdown} ${(type !== 'destination') ? 'field' : ''}`}>
-      <label className={`label ${(classes) || ''}`} htmlFor="where">{label}</label>
-      <div id="where" className="control">
+      <label className={`label ${(classes) || ''}`} htmlFor={type}>{label}</label>
+      <div id={type} className="control">
         <div className={`select ${styles.dropdown__selector} is-fullwidth`}>
           <select
             value={componentState.option.value}
+            data-testid={type}
             // @ts-ignore
             onChange={(event) => setComponentState({ ...componentState, status: 'success', option: componentState.options.find((option) => option.value === event.target.value) })}
           >
