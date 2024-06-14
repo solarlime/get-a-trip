@@ -60,6 +60,7 @@ const ProductCard = memo((props: { tour: Tour }) => {
         <div>
           <Link
             className={`button ${styles.customColorGreen} is-white`}
+            data-testid="test-direction"
             to={`/directions/${location.toLocaleLowerCase()
               .replace(', ', '-')
               .replace(' ', '-')}-${year}-${startDate.replace(/ /i, '-')}#top`}

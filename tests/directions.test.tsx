@@ -1,15 +1,22 @@
 import {
   describe, test, expect, jest,
 } from '@jest/globals';
-import { render, screen } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-import userEvent from '@testing-library/user-event';
+import userEvent, { type UserEvent } from '@testing-library/user-event';
 
 import { failState, idleState, successState } from './inputStates';
 import Search from '../src/components/Page/Main/Search/Search';
 import CheckInDate from '../src/components/Page/Main/Search/CheckInDate';
+import Directions from '../src/components/Page/Main/Directions/Directions';
 
 jest.mock('../src/components/Page/Main/Search/useButtonSize', () => ({
+  __esModule: true,
+  default: jest.fn(),
+  namedExport: jest.fn(),
+}));
+
+jest.mock('../src/components/Page/common/Hoster', () => ({
   __esModule: true,
   default: jest.fn(),
   namedExport: jest.fn(),
@@ -22,6 +29,35 @@ const dates = () => {
     future: { date: `${date.getFullYear() + 1}-${(date.getMonth() + 1 < 10) ? `0${date.getMonth() + 1}` : date.getMonth() + 1}-${date.getDate()}`, isValid: true },
     past: { date: `${date.getFullYear() - 1}-${(date.getMonth() + 1 < 10) ? `0${date.getMonth() + 1}` : date.getMonth() + 1}-${date.getDate()}`, isValid: false },
   };
+};
+
+const searchCases = (): Array<{ date: string, continent: 'Europe' | 'Asia', filterResult: 'precise' | 'soft' | 'none' }> => {
+  const date = new Date();
+  return [
+    { date: `${date.getFullYear()}-08-10`, continent: 'Asia', filterResult: 'precise' },
+    { date: `${date.getFullYear()}-08-10`, continent: 'Europe', filterResult: 'soft' },
+    { date: `${date.getFullYear()}-07-09`, continent: 'Asia', filterResult: 'none' },
+  ];
+};
+
+const fillSearch = async (user: UserEvent, button: HTMLElement, date: string, continent: 'Europe' | 'Asia') => {
+  expect(button).toHaveClass('disabled');
+
+  const destinationInput = await screen.findByTestId('destination');
+  const checkInInput = await screen.findByPlaceholderText('Add dates');
+  const durationInput = await screen.findByPlaceholderText('Number of nights');
+  const peopleInput = await screen.findByPlaceholderText('How many will go?');
+
+  await act(async () => {
+    await user.selectOptions(destinationInput, continent);
+  });
+  expect((screen.getByRole('option', { name: continent }) as HTMLOptionElement).selected).toBe(true);
+
+  await successState(user, checkInInput, date, { ignoreClass: true });
+  await successState(user, durationInput, '1', { ignoreClass: true });
+  await successState(user, peopleInput, '1', { ignoreClass: true });
+
+  expect(button).not.toHaveClass('disabled');
 };
 
 describe('Directions component', () => {
@@ -57,22 +93,30 @@ describe('Directions component', () => {
     expect(await screen.findByText(/^Find your perfect tour$/)).toBeInTheDocument();
 
     const button = await screen.findByRole('link');
-    expect(button).toHaveClass('disabled');
+    await fillSearch(user, button, dates().future.date, 'Asia');
+  });
 
-    const searchCase = dates().future;
+  test.each(searchCases())('Searching', async (searchCase) => {
+    const user = userEvent.setup();
 
-    const destinationInput = await screen.findByTestId('destination');
-    const checkInInput = await screen.findByPlaceholderText('Add dates');
-    const durationInput = await screen.findByPlaceholderText('Number of nights');
-    const peopleInput = await screen.findByPlaceholderText('How many will go?');
+    render(<Directions />, { wrapper: BrowserRouter });
+    expect(await screen.findByText(/^Your results will be there$/)).toBeInTheDocument();
 
-    await user.selectOptions(destinationInput, 'Europe');
-    expect((screen.getByRole('option', { name: 'Europe' }) as HTMLOptionElement).selected).toBe(true);
+    const button = await screen.findByRole('link');
+    await fillSearch(user, button, searchCase.date, searchCase.continent);
 
-    await successState(user, checkInInput, searchCase.date, { ignoreClass: true });
-    await successState(user, durationInput, '1', { ignoreClass: true });
-    await successState(user, peopleInput, '1', { ignoreClass: true });
-
-    expect(button).not.toHaveClass('disabled');
+    await user.click(button);
+    if (searchCase.filterResult === 'precise') {
+      expect(await screen.findByText(/^Something fits your preferences!$/)).toBeInTheDocument();
+      expect(screen.queryByTestId('test-direction')).toBeInTheDocument();
+    }
+    if (searchCase.filterResult === 'soft') {
+      expect(await screen.findByText(/^Nothing fits your preferences, but these variants are close to it$/)).toBeInTheDocument();
+      expect(screen.queryByTestId('test-direction')).toBeInTheDocument();
+    }
+    if (searchCase.filterResult === 'none') {
+      expect(await screen.findByText(/^Nothing fits your preferences$/)).toBeInTheDocument();
+      expect(screen.queryByTestId('test-direction')).not.toBeInTheDocument();
+    }
   });
 });

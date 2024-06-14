@@ -1,0 +1,18 @@
+{
+  "results": [
+    {
+      "place": "Testenburg",
+      "country": "Testia",
+      "continent": "Asia",
+      "accommodation": "https://www.test.test/test.html",
+      "basicPrice": "100",
+      "hostedby": "resorterra",
+      "dates": [
+        { "start_date": "01-08", "end_date": "25-08" }
+      ],
+      "image_id": "testenburg",
+      "carousel": ["testenburg1", "testenburg2", "testenburg3"],
+      "description": ["Test", "Test", "Test"]
+    }
+  ]
+}
