@@ -18,8 +18,8 @@ export interface BookingState {
   lastName: LastName,
   phone: Phone,
   room: Room,
-  sim: Sim,
-  insurance: Insurance,
+  simCard: Sim,
+  travelInsurance: Insurance,
   total: number,
 }
 
@@ -28,7 +28,7 @@ export interface BookingActions {
   setLastName: (newState: LastName) => void,
   setPhone: (newState: Phone) => void,
   setRoom: (newState: Room) => void,
-  setSim: (newState: Sim) => void,
-  setInsurance: (newState: Insurance) => void,
+  setSimCard: (newState: Sim) => void,
+  setTravelInsurance: (newState: Insurance) => void,
   setTotal: (total: number) => void,
 }

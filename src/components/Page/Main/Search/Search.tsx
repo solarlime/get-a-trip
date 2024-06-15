@@ -11,7 +11,7 @@ import Section from '../../common/Section';
 
 const Search = memo((props: { title: string }) => {
   const { title } = props;
-  const destination = useStore((state) => state.destination);
+  const destination = useStore((state) => state.whereToGo);
   const checkInDate = useStore((state) => state.checkInDate);
   const duration = useStore((state) => state.duration);
   const companions = useStore((state) => state.companions);
@@ -27,7 +27,7 @@ const Search = memo((props: { title: string }) => {
       <h1 className={`title ${styles.container__title}`}>{title}</h1>
       <div className={`container ${styles.container__search}`}>
         <form className="field is-grouped">
-          <Dropdown label="Where" type="destination" setter="setDestination" />
+          <Dropdown type="where_to_go" />
           <CheckInDate />
           <Duration />
           <People />

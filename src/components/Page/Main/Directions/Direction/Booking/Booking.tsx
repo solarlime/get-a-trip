@@ -50,15 +50,15 @@ const Booking = memo(() => {
                     <Duration classes={styles.customColorWhite} />
                   </div>
                   <div className="column">
-                    <Dropdown label="Room" type="room" setter="setRoom" classes={styles.customColorWhite} />
+                    <Dropdown type="room" classes={styles.customColorWhite} />
                   </div>
                 </div>
                 <div className={`columns ${styles.info__part__flexible}`}>
                   <div className="column">
-                    <Dropdown label="SIM card" type="sim" setter="setSim" classes={styles.customColorWhite} />
+                    <Dropdown type="SIM_card" classes={styles.customColorWhite} />
                   </div>
                   <div className="column">
-                    <Dropdown label="Travel insurance" type="insurance" setter="setInsurance" classes={styles.customColorWhite} />
+                    <Dropdown type="travel_insurance" classes={styles.customColorWhite} />
                   </div>
                 </div>
               </div>

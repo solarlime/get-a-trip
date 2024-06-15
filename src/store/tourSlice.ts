@@ -111,7 +111,7 @@ const createTourSlice: StateCreator<TourState & TourActions & SearchState> = (se
   },
   getFilteredTours: async () => {
     const {
-      destination, checkInDate, duration, companions,
+      whereToGo, checkInDate, duration, companions,
     } = get();
     if (!get().tours.length) await get().importTours();
     const { tours } = get();
@@ -137,7 +137,7 @@ const createTourSlice: StateCreator<TourState & TourActions & SearchState> = (se
       }
       return false;
     }).forEach((possibleTour) => {
-      if (possibleTour.continent === destination.option.value) {
+      if (possibleTour.continent === whereToGo.option.value) {
         exactResult.push(possibleTour);
       } else {
         notExactResult.push(possibleTour);

@@ -3,7 +3,7 @@ import { StateCreator } from 'zustand';
 import type { SearchState, SearchActions } from './types/search';
 
 const initialState: SearchState = {
-  destination: {
+  whereToGo: {
     option: { value: '' },
     status: 'idle',
     options: [
@@ -17,7 +17,7 @@ const initialState: SearchState = {
 
 const createSearchSlice: StateCreator<SearchState & SearchActions> = (set) => ({
   ...initialState,
-  setDestination: (newState) => set((state) => ({ ...state, destination: newState })),
+  setWhereToGo: (newState) => set((state) => ({ ...state, whereToGo: newState })),
   setCheckInDate: (newState) => set((state) => ({ ...state, checkInDate: newState })),
   setDuration: (newState) => {
     if (+newState.value > 0) {

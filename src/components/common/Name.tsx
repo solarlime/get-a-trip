@@ -11,7 +11,7 @@ const camelise = (fieldType: FieldType | `set_${FieldType}`) => fieldType
   .split('_')
   .map((substring, index) => ((index === 0)
     ? substring.charAt(0).toLocaleLowerCase()
-    : substring.charAt(0).toLocaleUpperCase()) + substring.slice(1))
+    : substring.charAt(0).toLocaleUpperCase()) + substring.slice(1).toLocaleLowerCase())
   .join('');
 
 const Name = memo((props: {

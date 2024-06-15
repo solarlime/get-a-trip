@@ -17,7 +17,7 @@ const initialState: BookingState = {
     ],
     isRecurring: true,
   },
-  sim: {
+  simCard: {
     option: { value: '', price: 0 },
     status: 'idle',
     options: [
@@ -27,7 +27,7 @@ const initialState: BookingState = {
     ],
     isRecurring: false,
   },
-  insurance: {
+  travelInsurance: {
     option: { value: '', price: 0 },
     status: 'idle',
     options: [
@@ -46,8 +46,8 @@ const createBookingSlice: StateCreator<BookingState & BookingActions> = (set) =>
   setLastName: (newState) => set((state) => ({ ...state, lastName: newState })),
   setPhone: (newState) => set((state) => ({ ...state, phone: newState })),
   setRoom: (newState) => set((state) => ({ ...state, room: newState })),
-  setSim: (newState) => set((state) => ({ ...state, sim: newState })),
-  setInsurance: (newState) => set((state) => ({ ...state, insurance: newState })),
+  setSimCard: (newState) => set((state) => ({ ...state, simCard: newState })),
+  setTravelInsurance: (newState) => set((state) => ({ ...state, travelInsurance: newState })),
   setTotal: (total) => set((state) => ({ ...state, total })),
 });
 

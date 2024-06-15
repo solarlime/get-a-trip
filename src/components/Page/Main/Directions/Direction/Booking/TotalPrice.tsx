@@ -16,8 +16,8 @@ const TotalPrice = memo(() => {
   const basicPrice = useStore((state) => state.chosenTour.basicPrice);
   const duration = useStore((state) => state.duration);
   const room = useStore((state) => state.room);
-  const sim = useStore((state) => state.sim);
-  const insurance = useStore((state) => state.insurance);
+  const sim = useStore((state) => state.simCard);
+  const insurance = useStore((state) => state.travelInsurance);
   const total = useStore((state) => state.total);
   const setTotal = useStore((state) => state.setTotal);
 

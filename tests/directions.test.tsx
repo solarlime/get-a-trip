@@ -43,7 +43,7 @@ const searchCases = (): Array<{ date: string, continent: 'Europe' | 'Asia', filt
 const fillSearch = async (user: UserEvent, button: HTMLElement, date: string, continent: 'Europe' | 'Asia') => {
   expect(button).toHaveClass('disabled');
 
-  const destinationInput = await screen.findByTestId('destination');
+  const destinationInput = await screen.findByTestId('where_to_go');
   const checkInInput = await screen.findByPlaceholderText('Add dates');
   const durationInput = await screen.findByPlaceholderText('Number of nights');
   const peopleInput = await screen.findByPlaceholderText('How many will go?');
