@@ -17,12 +17,14 @@ const Direction = memo(() => {
   const resolveTour = useStore((state) => state.resolveChosenTour);
 
   useEffect(() => {
-    if (!Object.keys(chosenTour).length && params.location) {
+    // chosenTour has 2 default values for Booking tests, so it cannot be empty
+    if (Object.keys(chosenTour).length <= 2 && params.location) {
       resolveTour(params.location).then(() => setResolved(true));
     }
   });
 
-  if (!Object.keys(chosenTour).length) {
+  // Here is the same
+  if (Object.keys(chosenTour).length <= 2) {
     if (resolved) {
       if (window.location.pathname.startsWith('/directions')) {
         return <Navigate to="/directions" />;

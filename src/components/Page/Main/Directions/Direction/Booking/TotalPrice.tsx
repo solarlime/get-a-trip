@@ -57,7 +57,7 @@ const TotalPrice = memo(() => {
   }, [calculated]);
 
   return (
-    <div className={`box ${styles.booking__price__priceBox}`}>
+    <div className={`box ${styles.booking__price__priceBox}`} data-testid="checkout_box">
       <div className={styles.priceBox__content}>
         <h3 className={`title ${styles.priceBox__content__title}`}>Price details</h3>
         {

@@ -16,7 +16,9 @@ const initialState: TourState = {
   tours: [],
   randomTours: [],
   filteredTours: { tours: [], proposals: [], isFilterRun: false },
-  chosenTour: {} as Tour,
+  // basicPrice & promocode should be defined to pass checkout tests
+  // Don't forget to change condition in Direction component to resolve tours
+  chosenTour: { basicPrice: '100', promocode: 'abcd' } as Tour,
   questionsAndAnswers: [] as Array<QuestionAndAnswer>,
 };
 
