@@ -17,7 +17,7 @@ const unsplashResult = {
 
 const handlers = [
   http.get('https://restcountries.com/v3.1/all', () => HttpResponse.error()),
-  http.get('https://api.unsplash.com/photos/testenburg', () => HttpResponse.json(unsplashResult)),
+  http.get('https://api.unsplash.com/photos/*', () => HttpResponse.json(unsplashResult)),
 ];
 
 const server = setupServer(...handlers);

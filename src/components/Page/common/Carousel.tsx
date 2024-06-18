@@ -32,7 +32,10 @@ const Carousel = memo((props: { imageLocation: 'left' | 'right', pictures?: Arra
   }, [neededImages]);
 
   return (
-    <div className={`column is-5 ${styles.carousel} ${(imageLocation === 'left') ? styles.columns__picture_left : styles.columns__picture_right}`}>
+    <div
+      className={`column is-5 ${styles.carousel} ${(imageLocation === 'left') ? styles.columns__picture_left : styles.columns__picture_right}`}
+      data-testid="carousel"
+    >
       <div className={styles.carousel__content}>
         {
           // @ts-ignore
@@ -61,9 +64,9 @@ const Carousel = memo((props: { imageLocation: 'left' | 'right', pictures?: Arra
           disabled={isDisabled}
           onClick={() => {
             (shownRef.current as unknown as HTMLImageElement).classList.add(styles.disappear);
-            setTimeout(() => {
-              setShown((previous) => (
-                (previous === 0) ? tour.carousel.length - 1 : previous - 1));
+            const timeout = setTimeout(() => {
+              clearTimeout(timeout);
+              setShown((previous) => ((previous === 0) ? tour.carousel.length - 1 : previous - 1));
             }, 500);
           }}
         >
@@ -77,9 +80,9 @@ const Carousel = memo((props: { imageLocation: 'left' | 'right', pictures?: Arra
           disabled={isDisabled}
           onClick={() => {
             (shownRef.current as unknown as HTMLImageElement).classList.add(styles.disappear);
-            setTimeout(() => {
-              setShown((previous) => (
-                (previous === tour.carousel.length - 1) ? 0 : previous + 1));
+            const timeout = setTimeout(() => {
+              clearTimeout(timeout);
+              setShown((previous) => ((previous === tour.carousel.length - 1) ? 0 : previous + 1));
             }, 500);
           }}
         >
