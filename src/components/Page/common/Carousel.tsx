@@ -18,6 +18,7 @@ const Carousel = memo((props: { imageLocation: 'left' | 'right', pictures?: Arra
   const [shown, setShown] = useState(0);
   const [isDisabled, setIsDisabled] = useState(true);
   const shownRef: MutableRefObject<HTMLImageElement | null> = useRef(null);
+  const stableStorageRef = useRef({ inProgress: false });
 
   const updateDisabled = useCallback((buttonState: boolean) => setIsDisabled(buttonState), []);
 
@@ -63,11 +64,16 @@ const Carousel = memo((props: { imageLocation: 'left' | 'right', pictures?: Arra
           type="button"
           disabled={isDisabled}
           onClick={() => {
-            (shownRef.current as unknown as HTMLImageElement).classList.add(styles.disappear);
-            const timeout = setTimeout(() => {
-              clearTimeout(timeout);
-              setShown((previous) => ((previous === 0) ? tour.carousel.length - 1 : previous - 1));
-            }, 500);
+            if (!stableStorageRef.current.inProgress) {
+              stableStorageRef.current.inProgress = true;
+              (shownRef.current as unknown as HTMLImageElement).classList.add(styles.disappear);
+              const timeout = setTimeout(() => {
+                clearTimeout(timeout);
+                stableStorageRef.current.inProgress = false;
+                setShown((previous) => (
+                  (previous === 0) ? tour.carousel.length - 1 : previous - 1));
+              }, 500);
+            }
           }}
         >
           <span className="icon">
@@ -79,11 +85,16 @@ const Carousel = memo((props: { imageLocation: 'left' | 'right', pictures?: Arra
           type="button"
           disabled={isDisabled}
           onClick={() => {
-            (shownRef.current as unknown as HTMLImageElement).classList.add(styles.disappear);
-            const timeout = setTimeout(() => {
-              clearTimeout(timeout);
-              setShown((previous) => ((previous === tour.carousel.length - 1) ? 0 : previous + 1));
-            }, 500);
+            if (!stableStorageRef.current.inProgress) {
+              stableStorageRef.current.inProgress = true;
+              (shownRef.current as unknown as HTMLImageElement).classList.add(styles.disappear);
+              const timeout = setTimeout(() => {
+                clearTimeout(timeout);
+                stableStorageRef.current.inProgress = false;
+                setShown((previous) => (
+                  (previous === tour.carousel.length - 1) ? 0 : previous + 1));
+              }, 500);
+            }
           }}
         >
           <span className="icon">

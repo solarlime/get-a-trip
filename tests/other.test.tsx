@@ -1,6 +1,6 @@
 import { test, expect, jest } from '@jest/globals';
 import {
-  findAllByRole, findByRole, fireEvent, render, screen, waitFor,
+  act, findAllByRole, findByRole, fireEvent, render, screen, waitFor,
 } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import userEvent from '@testing-library/user-event';
@@ -60,7 +60,10 @@ test('Testing carousel', async () => {
     expect(img).not.toHaveClass('disappear');
   });
 
-  await user.click(buttons[1]);
+  await act(async () => {
+    await new Promise((resolve) => { setTimeout(resolve, 1000); });
+    await user.click(buttons[1]);
+  });
   expect(img).toHaveClass('disappear');
   fireEvent(img, new Event('load'));
   await waitFor(() => {
