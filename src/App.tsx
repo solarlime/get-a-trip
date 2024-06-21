@@ -24,6 +24,18 @@ const router = createBrowserRouter(
 );
 
 function App() {
+  const locationStorageRef = useRef({ previousLocation: '' });
+  const resetCheckoutForm = useStore((state) => state.reset);
+
+  useEffect(() => {
+    router.subscribe((state) => {
+      if ((state.historyAction.toLocaleLowerCase() === 'pop') && locationStorageRef.current.previousLocation === '/checkout') {
+        resetCheckoutForm();
+      }
+      locationStorageRef.current.previousLocation = state.location.pathname;
+    });
+  }, []);
+
   return (
     <RouterProvider router={router} />
   );
