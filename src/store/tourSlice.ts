@@ -91,8 +91,12 @@ const createTourSlice: StateCreator<TourState & TourActions & SearchState> = (se
     const indexes: Array<number> = [];
     const places: Array<string> = [];
     const hosters: Array<string> = [];
+    const limit = upTo ** 2;
     for (let i = 0; i < upTo; i += 1) {
       const randomIndex = Math.floor(Math.random() * tours.length);
+      if (upTo > limit) {
+        break;
+      }
       if (
         indexes.includes(randomIndex)
         || places.includes(tours[randomIndex].place)

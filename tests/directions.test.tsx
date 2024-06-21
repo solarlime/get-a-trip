@@ -1,6 +1,4 @@
-import {
-  describe, test, expect, jest,
-} from '@jest/globals';
+import { describe, test, expect } from '@jest/globals';
 import { act, render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import userEvent, { type UserEvent } from '@testing-library/user-event';
@@ -9,18 +7,6 @@ import { failState, idleState, successState } from './inputStates';
 import Search from '../src/components/Page/Main/Search/Search';
 import CheckInDate from '../src/components/Page/Main/Search/CheckInDate';
 import Directions from '../src/components/Page/Main/Directions/Directions';
-
-jest.mock('../src/components/Page/Main/Search/useButtonSize', () => ({
-  __esModule: true,
-  default: jest.fn(),
-  namedExport: jest.fn(),
-}));
-
-jest.mock('../src/components/Page/common/Hoster', () => ({
-  __esModule: true,
-  default: jest.fn(),
-  namedExport: jest.fn(),
-}));
 
 const dates = () => {
   const date = new Date();

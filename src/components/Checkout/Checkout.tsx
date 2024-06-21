@@ -17,18 +17,17 @@ function Checkout() {
         <div className="hero-body">
           <div className={`columns ${styles.content} container is-max-desktop`}>
             <section className="column">
-              <button
-                className="button block"
-                type="button"
+              <Link
+                className={`button block ${styles.customColorDark}`}
+                to={(location?.state?.previousLocationPathname) ? location.state.previousLocationPathname : '/'}
                 onClick={reset}
+                data-testid="back_button"
               >
-                <Link className={`is-small ${styles.customColorDark}`} to={(location?.state?.previousLocationPathname) ? location.state.previousLocationPathname : '/'}>
-                  <FontAwesomeIcon icon={faArrowLeft} />
-                  {' Back to Getatrip'}
-                </Link>
-              </button>
+                <FontAwesomeIcon icon={faArrowLeft} />
+                <span>&nbsp;Back to Getatrip</span>
+              </Link>
               <h2 className="subtitle is-4">Your total payment</h2>
-              <h1 className="title is-1">{`${total}$`}</h1>
+              <h1 className="title is-1" data-testid="Checkout_value">{`${total}$`}</h1>
             </section>
             <Payment />
           </div>

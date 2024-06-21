@@ -25,5 +25,5 @@ module.exports = {
     '\\.svg$': '<rootDir>/tests/__mocks__/svg.ts',
   },
   setupFiles: ['<rootDir>/jest.polyfills.cjs'],
-  setupFilesAfterEnv: ['<rootDir>/tests/setupTests.ts'],
+  setupFilesAfterEnv: ['<rootDir>/tests/setupTests.tsx'],
 };

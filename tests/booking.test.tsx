@@ -1,6 +1,4 @@
-import {
-  describe, test, expect,
-} from '@jest/globals';
+import { describe, test, expect } from '@jest/globals';
 import { act, render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import userEvent, { type UserEvent } from '@testing-library/user-event';
@@ -8,8 +6,7 @@ import userEvent, { type UserEvent } from '@testing-library/user-event';
 import Booking from '../src/components/Page/Main/Directions/Direction/Booking/Booking';
 import { successState } from './inputStates';
 
-const fillInTripSettings = async (user: UserEvent) => {
-  const total = await screen.findByTestId('Total_value');
+const fillInTripSettings = async (user: UserEvent, total: HTMLElement) => {
   const checkoutBox = await screen.findByTestId('checkout_box');
   expect(total).toHaveTextContent('0$');
   expect(checkoutBox).not.toHaveTextContent('room');
@@ -45,6 +42,22 @@ const fillInTripSettings = async (user: UserEvent) => {
   expect(total.textContent).not.toHaveLength(2);
 };
 
+export const fillInBookingForm = async (user: UserEvent, total: HTMLElement) => {
+  const firstNameInput = await screen.findByPlaceholderText('Sigmund');
+  await successState(user, firstNameInput, 'Sigmund', { ignoreClass: true });
+
+  const lastNameInput = await screen.findByPlaceholderText('Freud');
+  await successState(user, lastNameInput, 'Freud', { ignoreClass: true });
+
+  const phoneInput = await screen.findByPlaceholderText('and a bit more numbers');
+  await successState(user, phoneInput, '1234567890', { ignoreClass: true });
+
+  const emailInput = await screen.findByPlaceholderText('sigmund@freud.site');
+  await successState(user, emailInput, 'sigmund@freud.site');
+
+  await fillInTripSettings(user, total);
+};
+
 describe('Booking', () => {
   test('Idle booking state', async () => {
     render(<Booking />, { wrapper: BrowserRouter });
@@ -60,7 +73,8 @@ describe('Booking', () => {
     render(<Booking />, { wrapper: BrowserRouter });
     expect(await screen.findByText(/^Start your adventure now!$/)).toBeInTheDocument();
 
-    await fillInTripSettings(user);
+    const total = await screen.findByTestId('Total_value');
+    await fillInTripSettings(user, total);
 
     const button = await screen.findByText('Checkout');
     expect(button).toHaveClass('disabled');
@@ -75,20 +89,8 @@ describe('Booking', () => {
     const button = await screen.findByText('Checkout');
     expect(button).toHaveClass('disabled');
 
-    const firstNameInput = await screen.findByPlaceholderText('Sigmund');
-    await successState(user, firstNameInput, 'Sigmund', { ignoreClass: true });
-
-    const lastNameInput = await screen.findByPlaceholderText('Freud');
-    await successState(user, lastNameInput, 'Freud', { ignoreClass: true });
-
-    const phoneInput = await screen.findByPlaceholderText('and a bit more numbers');
-    await successState(user, phoneInput, '1234567890', { ignoreClass: true });
-
-    const emailInput = await screen.findByPlaceholderText('sigmund@freud.site');
-    await successState(user, emailInput, 'sigmund@freud.site');
-
-    await fillInTripSettings(user);
-
+    const total = await screen.findByTestId('Total_value');
+    await fillInBookingForm(user, total);
     expect(button).not.toHaveClass('disabled');
   });
 });
