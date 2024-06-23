@@ -8,4 +8,9 @@ A little demo of a service for buying tours. Find some you like, add some extras
 - React
 - React Router
 - Zustand
-- Bulma
+- Bulma + Font Awesome icons
+
+## Also
+- built with Webpack
+- tested with Jest / React Testing Library / MSW
+- images taken from Unsplash
