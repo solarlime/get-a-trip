@@ -39,6 +39,10 @@
     @media (max-width: 700px) {
       display: block;
     }
+
+    .content__left__subtitle {
+      margin-bottom: 0;
+    }
   }
 
   .country-selector:after {

@@ -36,6 +36,7 @@ $radius: Base.$radius;
         max-width: 800px;
         padding-top: 5.25rem;
         padding-bottom: 1rem;
+        margin-bottom: 0;
         overflow-wrap: anywhere;
 
         & + h2 {
@@ -71,7 +72,6 @@ $radius: Base.$radius;
         bottom: (variables.$hero-body-padding-vertical - 2rem) * (-1);
         display: flex;
         align-items: center;
-        column-gap: 0.5rem;
         height: 40px;
         border: 0;
         z-index: 1;
@@ -82,6 +82,7 @@ $radius: Base.$radius;
 
         span {
           flex-shrink: 0;
+          margin-right: 0.5rem;
           color: variables.$black;
 
           @media (min-width: 500px) {
@@ -316,6 +317,14 @@ $radius: Base.$radius;
 
       @media screen and (max-width: 768px) {
         flex-direction: column;
+        gap: 0;
+
+        & > * {
+          margin-bottom: 0.75rem;
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
 
         .search__button {
 
@@ -348,7 +357,21 @@ $radius: Base.$radius;
 
   .carousel {
     position: relative;
-    aspect-ratio: 4/3;
+    aspect-ratio: 4 / 3;
+
+    @supports not (aspect-ratio: 4 / 3) {
+      .carousel__content {
+        padding-top: 75%;
+        height: 0 !important;
+        position: relative;
+        overflow: hidden;
+
+        img {
+          position: absolute;
+          top: 0;
+        }
+      }
+    }
 
     .carousel__content {
       height: 100%;
@@ -402,7 +425,6 @@ $radius: Base.$radius;
         bottom: Base.$card-content-padding;
         display: flex;
         align-items: center;
-        column-gap: 0.5rem;
         height: 2.25rem;
         border: 0;
         color: variables.$white;
@@ -411,6 +433,7 @@ $radius: Base.$radius;
 
         span {
           flex-shrink: 0;
+          margin-right: 0.5rem;
           font-size: 0.9rem;
           color: variables.$white;
         }
@@ -421,6 +444,15 @@ $radius: Base.$radius;
           height: 100%;
           border-radius: 0;
           color: variables.$white;
+        }
+      }
+
+      @supports not (aspect-ratio: 16 / 9) {
+        figure {
+          padding-top: 56.25%;
+          height: 0;
+          position: relative;
+          overflow: hidden;
         }
       }
 
@@ -436,6 +468,7 @@ $radius: Base.$radius;
         .card__content__title {
           color: variables.$white;
           padding-bottom: variables.$side-padding;
+          margin-bottom: 0;
         }
       }
     }

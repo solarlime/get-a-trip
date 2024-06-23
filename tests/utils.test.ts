@@ -1,6 +1,6 @@
 import { describe, test, expect } from '@jest/globals';
 
-import { nbspify } from '../src/utils';
+import { nbspify } from '../src/utils/utils';
 
 const sameCase = 'I cannot see any men';
 const testCases = [['I see a man', 'I see a\u00A0man'], [sameCase, sameCase]];

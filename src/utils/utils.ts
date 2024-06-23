@@ -1,4 +1,5 @@
-import type { ImageLinks, Images } from './store/types/tour';
+import type { ImageLinks, Images } from '../store/types/tour';
+import { setSrcset } from './setSrcset';
 
 export const formatter = (value: Date | string): { date: string, year: number } => {
   let date: Date;
@@ -29,15 +30,6 @@ export const nbspify = (str: string) => {
   const regex = /(?<space>[\s\u00A0](the|a|an|is|are|was|were|will|shall|and|to))\s/gi;
   return str.replace(regex, '$<space>\u00A0');
 };
-
-export const setSrcset = (src: string, srcSet: Array<number>) => srcSet
-  .reduce((previous, current, index, sources) => {
-    const newSource = `${previous}${src}&auto=format&fm=avif&q=50&w=${current}&crop=entropy&fit=clip ${current}w`;
-    if (index === sources.length - 1) {
-      return newSource;
-    }
-    return `${newSource}, `;
-  }, '');
 
 export const cacheImages = async (
   allImages: Images,

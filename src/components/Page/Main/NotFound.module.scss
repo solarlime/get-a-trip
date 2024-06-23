@@ -18,7 +18,6 @@ $navbar-height-full: Base.$navbar-height + 2 * navbar.$navbar-padding-vertical;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    gap: 2rem;
     padding: 0 variables.$side-padding;
 
     .section__body__container {
@@ -47,6 +46,7 @@ $navbar-height-full: Base.$navbar-height + 2 * navbar.$navbar-padding-vertical;
       width: 40vw;
       max-width: 270px;
       height: auto;
+      margin-top: 2rem;
     }
   }
 }

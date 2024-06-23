@@ -11,6 +11,12 @@ import Direction from './components/Page/Main/Directions/Direction/Direction';
 import NotFound from './components/Page/Main/NotFound';
 import useStore from './store/store';
 
+if (!window.ResizeObserver) {
+  (async () => {
+    window.ResizeObserver = await import('@juggle/resize-observer').then((module) => module.ResizeObserver);
+  })();
+}
+
 export const routes = createRoutesFromElements(
   <>
     <Route path="/" element={<Page />}>

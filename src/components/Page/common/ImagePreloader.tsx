@@ -4,7 +4,7 @@ import {
 
 import { ImageLinks } from '../../../store/types/tour';
 import Image from './Image';
-import { cacheImages } from '../../../utils';
+import { cacheImages } from '../../../utils/utils';
 
 type LoadingState = 0 | 1 | 2;
 

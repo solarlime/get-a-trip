@@ -26,7 +26,7 @@ function Checkout() {
                 <FontAwesomeIcon icon={faArrowLeft} />
                 <span>&nbsp;Back to Getatrip</span>
               </Link>
-              <h2 className="subtitle is-4">Your total payment</h2>
+              <h2 className={`${styles.content__left__subtitle} subtitle is-4`}>Your total payment</h2>
               <h1 className="title is-1" data-testid="Checkout_value">{`${total}$`}</h1>
             </section>
             <Payment />

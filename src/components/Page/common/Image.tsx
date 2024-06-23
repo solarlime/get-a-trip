@@ -1,7 +1,7 @@
 import { ForwardedRef, forwardRef } from 'react';
 
 import styles from '../Page.module.scss';
-import { setSrcset } from '../../../utils';
+import { setSrcset } from '../../../utils/setSrcset';
 
 const Image = forwardRef(
   (

@@ -50,6 +50,7 @@ const config = (mode) => ({
             options: {
               modules: {
                 mode: 'local',
+                namedExport: false,
                 auto: true,
                 ...((mode === 'production') ? {
                   getLocalIdent: (context, localIdentName, localName) => (

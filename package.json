@@ -90,6 +90,7 @@
     "webpack-merge": "^5.10.0"
   },
   "dependencies": {
+    "@juggle/resize-observer": "^3.4.0",
     "@react-hook/resize-observer": "^2.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

@@ -6,7 +6,7 @@ import Hoster, { Hosters } from '../../common/Hoster';
 import styles from '../../Page.module.scss';
 import useStore from '../../../../store/store';
 import ImagePreloader from '../../common/ImagePreloader';
-import { formatter } from '../../../../utils';
+import { formatter } from '../../../../utils/utils';
 
 const ProductCard = memo((props: { tour: Tour }) => {
   const { tour } = props;

@@ -1,7 +1,7 @@
 import { memo } from 'react';
 
 import styles from './Bars.module.scss';
-import { getYear } from '../../utils';
+import { getYear } from '../../utils/utils';
 
 const Footer = memo(() => (
   <footer className={`footer ${styles.customBar}`}>

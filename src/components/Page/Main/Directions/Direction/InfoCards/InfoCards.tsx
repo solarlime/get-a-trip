@@ -4,7 +4,7 @@ import styles from '../../../../Page.module.scss';
 import useStore from '../../../../../../store/store';
 import InfoCard from './InfoCard';
 import Section from '../../../../common/Section';
-import { formatter } from '../../../../../../utils';
+import { formatter } from '../../../../../../utils/utils';
 
 const InfoCards = memo(() => {
   const tour = useStore((state) => state.chosenTour);

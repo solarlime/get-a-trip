@@ -30,14 +30,19 @@ jest.mock('react-router-dom', () => {
   };
 });
 
-jest.mock('../src/utils.ts', () => {
-  const original = jest.requireActual<typeof import('../src/utils')>('../src/utils');
+jest.mock('../src/utils/utils.ts', () => {
+  const original = jest.requireActual<typeof import('../src/utils/utils')>('../src/utils/utils');
   return {
     __esModule: true,
     ...original,
     cacheImages: () => Promise.resolve(),
   };
 });
+
+jest.mock('../src/utils/setSrcset.ts', () => ({
+  __esModule: true,
+  setSrcset: jest.fn(() => ''),
+}));
 
 beforeAll(() => {
   server.listen();

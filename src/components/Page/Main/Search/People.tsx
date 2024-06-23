@@ -2,7 +2,7 @@ import { memo } from 'react';
 
 import styles from '../../Page.module.scss';
 import useStore from '../../../../store/store';
-import { placesLeft } from '../../../../utils';
+import { placesLeft } from '../../../../utils/utils';
 
 const People = memo(() => {
   const companions = useStore((state) => state.companions);

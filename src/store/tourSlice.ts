@@ -6,7 +6,7 @@ import type {
   TourState, TourActions, Tour, QuestionAndAnswer,
 } from './types/tour';
 import type { SearchState } from './types/search';
-import { formatter, nbspify, placesLeft } from '../utils';
+import { formatter, nbspify, placesLeft } from '../utils/utils';
 
 // @ts-ignore
 const unsplash = createApi({ accessKey: import.meta.env.UNSPLASH });
