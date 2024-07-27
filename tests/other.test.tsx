@@ -12,6 +12,7 @@ import { type ReactElement } from 'react';
 import Direction from '../src/components/Page/Main/Directions/Direction/Direction';
 import { routes } from '../src/App';
 import { fillInBookingForm } from './booking.test';
+import { futureMonth, futureMonthLetterString } from './__mocks__/mockResults';
 
 const renderWithRouter = (ui: ReactElement, { route = '/' } = {}) => {
   window.history.pushState({}, 'Test page', route);
@@ -22,8 +23,11 @@ const renderWithRouter = (ui: ReactElement, { route = '/' } = {}) => {
   };
 };
 
+const date = new Date();
+const year = (futureMonth <= date.getMonth() + 1) ? date.getFullYear() + 1 : date.getFullYear();
+
 test('Testing carousel', async () => {
-  const location = `testia-testenburg-${new Date().getFullYear()}-Aug-1`;
+  const location = `testia-testenburg-${year}-${futureMonthLetterString}-1`;
   jest.spyOn(reactRouterDom, 'useParams').mockReturnValue({ location });
   const { user } = renderWithRouter(<Direction />, { route: `/directions/${location}` });
   expect(await screen.findByText(/^About tour$/)).toBeInTheDocument();
@@ -93,7 +97,7 @@ describe('Routing', () => {
 
   test('Direction -> Checkout', async () => {
     const user = userEvent.setup();
-    const location = `testia-testenburg-${new Date().getFullYear()}-Aug-1`;
+    const location = `testia-testenburg-${year}-${futureMonthLetterString}-1`;
     jest.spyOn(reactRouterDom, 'useParams').mockReturnValue({ location });
 
     render(<RouterProvider router={createMemoryRouter(routes, { initialEntries: [`/directions/${location}`] })} />);

@@ -21,7 +21,7 @@ module.exports = {
   ],
   moduleNameMapper: {
     '\\.scss$': 'identity-obj-proxy',
-    'results.json': '<rootDir>/tests/__mocks__/mockResults.json',
+    'results.json': '<rootDir>/tests/__mocks__/mockResults.ts',
     '\\.svg$': '<rootDir>/tests/__mocks__/svg.ts',
   },
   setupFiles: ['<rootDir>/jest.polyfills.cjs'],

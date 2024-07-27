@@ -7,6 +7,7 @@ import { failState, idleState, successState } from './inputStates';
 import Search from '../src/components/Page/Main/Search/Search';
 import CheckInDate from '../src/components/Page/Main/Search/CheckInDate';
 import Directions from '../src/components/Page/Main/Directions/Directions';
+import { futureMonthString, beforeFutureMonthString, futureMonth } from './__mocks__/mockResults';
 
 const dates = () => {
   const date = new Date();
@@ -19,10 +20,11 @@ const dates = () => {
 
 const searchCases = (): Array<{ date: string, continent: 'Europe' | 'Asia', filterResult: 'precise' | 'soft' | 'none' }> => {
   const date = new Date();
+  const year = (futureMonth <= date.getMonth() + 1) ? date.getFullYear() + 1 : date.getFullYear();
   return [
-    { date: `${date.getFullYear()}-08-10`, continent: 'Asia', filterResult: 'precise' },
-    { date: `${date.getFullYear()}-08-10`, continent: 'Europe', filterResult: 'soft' },
-    { date: `${date.getFullYear()}-07-09`, continent: 'Asia', filterResult: 'none' },
+    { date: `${year}-${futureMonthString}-10`, continent: 'Asia', filterResult: 'precise' },
+    { date: `${year}-${futureMonthString}-10`, continent: 'Europe', filterResult: 'soft' },
+    { date: `${year}-${beforeFutureMonthString}-09`, continent: 'Asia', filterResult: 'none' },
   ];
 };
 
