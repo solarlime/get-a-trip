@@ -20,7 +20,7 @@
     "url": "https://github.com/solarlime/get-a-trip/issues"
   },
   "homepage": "https://get-a-trip.solarlime.dev",
-  "packageManager": "yarn@3.6.4",
+  "packageManager": "yarn@4.3.1",
   "devDependencies": {
     "@babel/cli": "^7.24.7",
     "@babel/core": "^7.24.7",
