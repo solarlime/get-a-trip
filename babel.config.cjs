@@ -10,7 +10,7 @@ module.exports = {
           safari: '11.1'
         },
         useBuiltIns: 'usage',
-        corejs: '3.37.1'
+        corejs: '3.38.1'
       }
     ],
     '@babel/preset-typescript',
