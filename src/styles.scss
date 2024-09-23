@@ -22,6 +22,10 @@
   $footer-padding: 3rem variables.$side-padding,
 );
 
+@forward "bulma/sass/components/navbar" with (
+  $navbar-burger-color: variables.$white,
+);
+
 @forward "bulma/sass/layout/hero" with (
   $hero-body-padding-medium: variables.$hero-body-padding-vertical variables.$side-padding,
 );
@@ -42,7 +46,6 @@
 @forward "bulma/sass/utilities/initial-variables";
 @forward "bulma/sass/utilities/derived-variables";
 
-@forward "bulma/sass/components/navbar";
 @forward "bulma/sass/components/card";
 
 @forward "bulma/sass/elements/button";
