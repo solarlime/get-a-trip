@@ -12,9 +12,9 @@ import { futureMonthString, beforeFutureMonthString, futureMonth } from './__moc
 const dates = () => {
   const date = new Date();
   return {
-    farFuture: { date: `${date.getFullYear() + 10}-${(date.getMonth() + 1 < 10) ? `0${date.getMonth() + 1}` : date.getMonth() + 1}-${date.getDate()}`, isValid: false },
-    future: { date: `${date.getFullYear() + 1}-${(date.getMonth() + 1 < 10) ? `0${date.getMonth() + 1}` : date.getMonth() + 1}-${date.getDate()}`, isValid: true },
-    past: { date: `${date.getFullYear() - 1}-${(date.getMonth() + 1 < 10) ? `0${date.getMonth() + 1}` : date.getMonth() + 1}-${date.getDate()}`, isValid: false },
+    farFuture: { date: `${date.getFullYear() + 10}-${(date.getMonth() + 1 < 10) ? `0${date.getMonth() + 1}` : date.getMonth() + 1}-${(date.getDate() < 10) ? `0${date.getDate()}` : date.getDate()}`, isValid: false },
+    future: { date: `${date.getFullYear() + 1}-${(date.getMonth() + 1 < 10) ? `0${date.getMonth() + 1}` : date.getMonth() + 1}-${(date.getDate() < 10) ? `0${date.getDate()}` : date.getDate()}`, isValid: true },
+    past: { date: `${date.getFullYear() - 1}-${(date.getMonth() + 1 < 10) ? `0${date.getMonth() + 1}` : date.getMonth() + 1}-${(date.getDate() < 10) ? `0${date.getDate()}` : date.getDate()}`, isValid: false },
   };
 };
 
