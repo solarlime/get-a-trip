@@ -6428,6 +6428,7 @@ __metadata:
     incstr: "npm:^1.2.3"
     jest: "npm:^29.7.0"
     jest-environment-jsdom: "npm:^29.7.0"
+    jest-fixed-jsdom: "npm:^0.0.9"
     mini-css-extract-plugin: "npm:^2.9.1"
     msw: "npm:^2.6.6"
     postcss: "npm:^8.4.41"
@@ -6441,7 +6442,6 @@ __metadata:
     ts-loader: "npm:^9.5.1"
     typescript: "npm:^5.5.4"
     typograf: "npm:^7.4.1"
-    undici: "npm:^6.19.8"
     unsplash-js: "npm:^7.0.19"
     uuid: "npm:^10.0.0"
     validator: "npm:^13.12.0"
@@ -7792,6 +7792,15 @@ __metadata:
     jest-mock: "npm:^29.7.0"
     jest-util: "npm:^29.7.0"
   checksum: 10/9cf7045adf2307cc93aed2f8488942e39388bff47ec1df149a997c6f714bfc66b2056768973770d3f8b1bf47396c19aa564877eb10ec978b952c6018ed1bd637
+  languageName: node
+  linkType: hard
+
+"jest-fixed-jsdom@npm:^0.0.9":
+  version: 0.0.9
+  resolution: "jest-fixed-jsdom@npm:0.0.9"
+  peerDependencies:
+    jest-environment-jsdom: ">=28.0.0"
+  checksum: 10/c0c1502c81de2c628f728d4c8cff1d66adf7dba3933d72198905bd395b95d393cc535d36469076e03c32f8f0c2200bffcc61065de0a4e5d6f83cfccad0da95cb
   languageName: node
   linkType: hard
 
@@ -11577,13 +11586,6 @@ __metadata:
   version: 5.26.5
   resolution: "undici-types@npm:5.26.5"
   checksum: 10/0097779d94bc0fd26f0418b3a05472410408877279141ded2bd449167be1aed7ea5b76f756562cb3586a07f251b90799bab22d9019ceba49c037c76445f7cddd
-  languageName: node
-  linkType: hard
-
-"undici@npm:^6.19.8":
-  version: 6.19.8
-  resolution: "undici@npm:6.19.8"
-  checksum: 10/19ae4ba38b029a664d99fd330935ef59136cf99edb04ed821042f27b5a9e84777265fb744c8a7abc83f2059afb019446c69a4ebef07bbc0ed6b2de8d67ef4090
   languageName: node
   linkType: hard
 

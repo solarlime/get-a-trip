@@ -1,6 +1,6 @@
 module.exports = {
   rootDir: __dirname,
-  testEnvironment: 'jest-environment-jsdom',
+  testEnvironment: 'jest-fixed-jsdom',
   testEnvironmentOptions: {
     /**
      * @note Opt-out from JSDOM using browser-style resolution
@@ -24,6 +24,5 @@ module.exports = {
     'results.json': '<rootDir>/tests/__mocks__/mockResults.ts',
     '\\.svg$': '<rootDir>/tests/__mocks__/svg.ts',
   },
-  setupFiles: ['<rootDir>/jest.polyfills.cjs'],
   setupFilesAfterEnv: ['<rootDir>/tests/setupTests.tsx'],
 };
