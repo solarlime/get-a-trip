@@ -2998,10 +2998,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/validator@npm:^13.12.0":
-  version: 13.12.0
-  resolution: "@types/validator@npm:13.12.0"
-  checksum: 10/b3344ef630ff9a3ffab4ce10da268e7be98ca2df9cbd956fb5cac860bd661c7ff6e82e0cdc7b253f037a98cf3b233fff3d04d28330bcd3ca2cafb0c52253976e
+"@types/validator@npm:^13.12.3":
+  version: 13.12.3
+  resolution: "@types/validator@npm:13.12.3"
+  checksum: 10/2ce42acdfc84a9b4ac46b0cc3cbc06b1319556843350882edb74112197696317408af8ae18665ba933786786819b39a6039b22f026dac0978f211982238fb4b3
   languageName: node
   linkType: hard
 
@@ -6380,7 +6380,7 @@ __metadata:
     "@types/react": "npm:^18.3.4"
     "@types/react-dom": "npm:^18.3.0"
     "@types/uuid": "npm:^9.0.8"
-    "@types/validator": "npm:^13.12.0"
+    "@types/validator": "npm:^13.12.3"
     "@typescript-eslint/eslint-plugin": "npm:^7.18.0"
     "@typescript-eslint/parser": "npm:^7.18.0"
     babel-jest: "npm:^29.7.0"
@@ -6424,7 +6424,7 @@ __metadata:
     typograf: "npm:^7.4.1"
     unsplash-js: "npm:^7.0.19"
     uuid: "npm:^10.0.0"
-    validator: "npm:^13.12.0"
+    validator: "npm:^13.15.0"
     webpack: "npm:^5.94.0"
     webpack-cli: "npm:^5.1.4"
     webpack-dev-server: "npm:^5.2.2"
@@ -11746,10 +11746,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"validator@npm:^13.12.0":
-  version: 13.12.0
-  resolution: "validator@npm:13.12.0"
-  checksum: 10/db6eb0725e2b67d60d30073ae8573982713b5903195d031dc3c7db7e82df8b74e8c13baef8e2106d146d979599fd61a06cde1fec5c148e4abd53d52817ff0fd9
+"validator@npm:^13.15.0":
+  version: 13.15.0
+  resolution: "validator@npm:13.15.0"
+  checksum: 10/cc4435e37a72d65c01d0a90d0f65da1fe09a805de35be1ec37e5379e1a612ab280277d7034a5369cd491a4f94c3b551f75dc4851090efafedf529a1ef76b1e0f
   languageName: node
   linkType: hard
 
