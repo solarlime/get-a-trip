@@ -97,7 +97,7 @@
     "typograf": "^7.4.1",
     "unsplash-js": "^7.0.19",
     "uuid": "^10.0.0",
-    "validator": "^13.12.0",
+    "validator": "^13.15.23",
     "zustand": "^4.5.5"
   }
 }
